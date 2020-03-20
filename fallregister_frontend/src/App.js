@@ -6,6 +6,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <form action="/action_page.php">
+
                     <h>Patientendaten</h>
                     <br></br>
                     <label for="fname">Vorname:</label>
@@ -108,8 +109,6 @@ function App() {
                     <br></br>
                     <label htmlFor="birthday">Telefonnummer:</label>
                     <input type="text" id="telephonnumber" name="telephonenumber"></input>
-                    <br></br>
-
                     <br></br>
 
                     <input type="submit" value="Submit"></input>

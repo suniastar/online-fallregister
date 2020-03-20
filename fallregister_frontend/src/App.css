@@ -13,6 +13,10 @@
   }
 }
 
+input{
+  margin-left: 10pxs;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -20,8 +24,13 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  font-size: calc(9px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: white;
+}
+h{
+  font-weight: bold;
+  font-size: calc(10px + 2vmin);
+  text-align: center;
 }
 
 .App-link {
