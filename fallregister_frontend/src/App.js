@@ -16,7 +16,7 @@ function App() {
   <input type="text" id="lname" name="lname"></input>
   <br></br>
   <label for="birthday">Geburtsdatum:</label>
-  <input type="text" id="birthday" name="birthday"></input>
+  <input type="date" id="birthday" name="birthday"></input>
   <br></br>
   <br></br>
   
