@@ -8,22 +8,16 @@ class CSVImportForm extends React.Component {
 
         return(
             <form action="/action_page.php">
-            <Grid
-        container
-        direction='column'
-        justify="center"
-            //alignItems='flex-start'
-            >
+            <Grid container direction='column' justify="center">
 
             <Grid>
-            <h>CSV Import</h>
+                <h>CSV Import</h>
             </Grid>
 
             <Grid>
-            <FormLabel for="lname">CSV Dokument hochladen: </FormLabel>
-            <Input type="file" id="csvFile" name="csvFile"></Input>
+                <FormLabel for="lname">CSV Dokument hochladen: </FormLabel>
+                <Input type="file" id="csvFile" name="csvFile"></Input>
             </Grid>
-
             <Input type="submit" value="Submit"></Input>
             </Grid>
             </form>
