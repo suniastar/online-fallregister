@@ -1,13 +1,6 @@
 package de.coronavirus.domain.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -38,18 +31,9 @@ public class Infected extends Entity {
     @JoinColumn(name = "accommodation_id")
     private Accommodation accommodation; // like hospital, care station or homeless accommodation
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "diagnosis_id")
-    private Diagnosis diagnosis;
-
-    @Column(name = "diagnosis_confirmed")
-    private boolean diagnosisConfirmed;
-
-    @Column(name = "date_of_illness")
-    private Date dateOfIllnes;
-
-    @Column(name = "date_of_diagnosis")
-    private Date dateOfDiagnosis;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "infected", fetch = FetchType.LAZY)
+    @OrderBy("date asc")
+    private List<Diagnosis> diagnosis;
 
     @Column(name = "date_of_death")
     private Date dateOfDeath;
