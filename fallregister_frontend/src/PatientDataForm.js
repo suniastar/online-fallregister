@@ -7,84 +7,86 @@ class PatientDataForm extends React.Component {
     constructor(){
         super();
         this.onSubmit = this.onSubmit.bind(this);
-        this.input = {
+    }
+    onSubmit(event){
+        event.preventDefault();
+        const json = {
             patient: {
-                firstname: "",
-                name: "",
+                firstname: document.getElementById("patientFirstName"),
+                name: document.getElementById("patientLastName"),
                 address:{
-                    street : "",
-                    housenumber: "",
-                    zipcode: 0,
-                    city:"",
-                    country:"",
+                    street : document.getElementById("patientFirstName"),
+                    housenumber: document.getElementById("patientFirstName"),
+                    zipcode: document.getElementById("patientFirstName"),
+                    city:document.getElementById("patientFirstName"),
+                    country:document.getElementById("patientFirstName"),
                 },
-                birthday: "",
-                sex: "",
-                phone: "",
-                email: ""
+                birthday: document.getElementById("patientBirthday"),
+                sex: document.getElementById("patientFirstName"),
+                phone: document.getElementById("patientPhone"),
+                email: document.getElementById("patientEmail")
             },
             detector: {
-                firstname: "",
-                name: "",
+                firstname: document.getElementById("patientFirstName"),
+                name: document.getElementById("patientFirstName"),
                 address:{
-                    street : "",
-                    housenumber: "",
-                    zipcode: 0,
-                    city:"",
-                    country:"",
+                    street : document.getElementById("patientFirstName"),
+                    housenumber: document.getElementById("patientFirstName"),
+                    zipcode: document.getElementById("patientFirstName"),
+                    city:document.getElementById("patientFirstName"),
+                    country:document.getElementById("patientFirstName"),
                 },
-                phone: "",
-                email: ""
+                phone: document.getElementById("patientFirstName"),
+                email: document.getElementById("patientFirstName")
             },
             diagnosis:{
-                suspected: false,
-                diagnosed: false,
-                dead: false,
-                dateOfSickness: "",
-                dateOfDiagnosis: "",
-                dateOfDeath: ""
+                suspected: document.getElementById("suspected"),
+                diagnosed: document.getElementById("diagnosed"),
+                dead: document.getElementById("death"),
+                dateOfSickness: document.getElementById("dayOfInfection"),
+                dateOfDiagnosis: document.getElementById("dayOfDiagnose"),
+                dateOfDeath: document.getElementById("dayOfDeath")
             },
             jobs:{
-                medical: false,
-                food: false,
-                communal: false,
+                medical: document.getElementById("medical"),
+                food: document.getElementById("food"),
+                communal: document.getElementById("epiCommunal"),
             },
             accommodation:{
-                communal:false,
-                hospital: false,
-                dateOfHospitalisation: "",
-                icu: false,
-                dateOfIcu: ""
+                communal:document.getElementById("accCommunal"),
+                hospital: document.getElementById("hospital"),
+                dateOfHospitalisation: document.getElementById("dateOfHospitalisation"),
+                icu: document.getElementById("patientFirstName"),
+                dateOfIcu: document.getElementById("patientFirstName"),
+                nameAndAddress: document.getElementById("addressAndPlace"),
             },
             gesundheitsamt: {
-                name: "",
+                name: document.getElementById("patientFirstName"),
                 address:{
-                    street : "",
-                    housenumber: "",
-                    zipcode: 0,
-                    city:"",
-                    country:"",
+                    street : document.getElementById("patientFirstName"),
+                    housenumber: document.getElementById("patientFirstName"),
+                    zipcode: document.getElementById("patientFirstName"),
+                    city:document.getElementById("patientFirstName"),
+                    country:document.getElementById("patientFirstName"),
                 },
-                phone: "",
-                email: "",
+                phone: document.getElementById("patientFirstName"),
+                email: document.getElementById("patientFirstName"),
             },
             laboratory: {
-                commission: false,
-                name: "",
+                commission: document.getElementById("patientFirstName"),
+                name: document.getElementById("patientFirstName"),
                 address:{
-                    street : "",
-                    housenumber: "",
-                    zipcode: 0,
-                    city:"",
-                    country:"",
+                    street : document.getElementById("patientFirstName"),
+                    housenumber: document.getElementById("patientFirstName"),
+                    zipcode: document.getElementById("patientFirstName"),
+                    city:document.getElementById("patientFirstName"),
+                    country:document.getElementById("patientFirstName"),
                 },
-                phone: "",
-                dateOfBiopsy: ""
+                phone: document.getElementById("patientFirstName"),
+                dateOfBiopsy: document.getElementById("patientFirstName")
             }
         }
-    }
-    onSubmit(){
-        alert("Tadaaaaaaa!");
+        console.log( json)
     }
     render(){
 
@@ -134,13 +136,13 @@ class PatientDataForm extends React.Component {
                             </Grid>
 
                             <Grid>
-                                <FormLabel for="fname" >Vorname:</FormLabel>
-                                <Input type="text" id="fname" name="fname"></Input>
+                                <FormLabel for="fname">Vorname:</FormLabel>
+                                <Input type="text" id="patientFirstName" name="fname" ref="myFirstname"></Input>
                             </Grid>
 
                             <Grid>
                                 <FormLabel for="lname">Nachname:</FormLabel>
-                                <Input type="text" id="lname" name="lname"></Input>
+                                <Input type="text" id="patientLastName" name="lname"></Input>
                             </Grid>
 
                             <Grid>
@@ -150,7 +152,7 @@ class PatientDataForm extends React.Component {
 
                             <Grid>
                                 <FormLabel for="birthday">Geburtsdatum:</FormLabel>
-                                <Input type="date" id="birthday" name="birthday"></Input>
+                                <Input type="date" id="patientBirthday" name="birthday"></Input>
                             </Grid>
 
                             <Grid>
@@ -162,12 +164,12 @@ class PatientDataForm extends React.Component {
 
                             <Grid>
                                 <FormLabel for="telephonenumber">Telefonnummer:</FormLabel>
-                                <Input type="tel" id="telephonenumber" name="telephonenumber"></Input>
+                                <Input type="tel" id="patientPhone" name="telephonenumber"></Input>
                             </Grid>
 
                             <Grid>
                                 <FormLabel for="email">Email:</FormLabel>
-                                <Input type="email" id="email" name="email"></Input>
+                                <Input type="email" id="patientEmail" name="email"></Input>
                             </Grid>
                         </Grid>
                         <div class="verticalDivider"></div>
@@ -182,29 +184,25 @@ class PatientDataForm extends React.Component {
                                   direction='column'
                             >
                                 <Grid>
-                                    <FormControlLabel control = {<Checkbox/>} label = "Verdacht" />
+                                    <FormControlLabel control = {<Checkbox id="suspected"/>} label = "Verdacht" />
                                 </Grid>
                                 <Grid>
-                                    <FormControlLabel control = {<Checkbox/>} label = "Klinische Diagnose" />
+                                    <FormControlLabel control = {<Checkbox id="diagnosed" />} label = "Klinische Diagnose" />
                                 </Grid>
                                 <Grid>
-                                    <FormControlLabel control = {<Checkbox/>} label = "Tod" />
+                                    <FormControlLabel control = {<Checkbox id="death" />} label = "Tod" />
                                 </Grid>
                                 <Grid>
                                     <FormLabel for="fname">Todesdatum:</FormLabel>
-                                    <Input type="date" id="dayOfDeath" name="dayOfDeath"></Input>
+                                    <Input type="date" id="dayOfDeath" name="dayOfDeath"id="dateOfDeath"></Input>
                                 </Grid>
                                 <Grid>
                                     <FormLabel for="dayOfInfection">Erkrankungsbeginn:</FormLabel>
-                                    <Input type="date" id="dayOfInfection" name="dayOfInfection"></Input>
+                                    <Input type="date" id="dayOfInfection" name="dayOfInfection"id="dateOfSickness"></Input>
                                 </Grid>
                                 <Grid>
                                     <FormLabel for="dayOfDiagnose">Diagnosedatum:</FormLabel>
-                                    <Input type="date" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
-                                </Grid>
-                                <Grid>
-                                    <FormLabel for="dayOfDeath">Datum der Meldung:</FormLabel>
-                                    <Input type="date" id="dayOfReport" name="dayOfReport"></Input>
+                                    <Input type="date" id="dayOfDiagnose" name="dayOfDiagnose"id="dateOfDiagnosis"></Input>
                                 </Grid>
                             </Grid>
 
@@ -231,26 +229,26 @@ class PatientDataForm extends React.Component {
                                 <FormLabel class="big">Epidemiologische Situation:</FormLabel>
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox/>} label = "Patient/in ist im medizinischen Bereich tätig" />
+                                <FormControlLabel control = {<Checkbox id="medical" />} label = "Patient/in ist im medizinischen Bereich tätig" />
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox/>} label = "Patient/in ist im Lebensmittelbereich tätig" />
+                                <FormControlLabel control = {<Checkbox id="food"/>} label = "Patient/in ist im Lebensmittelbereich tätig" />
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox/>} label = "Patient/in ist in Gemeinschaftseinrichtung tätig, z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkünfte" />
+                                <FormControlLabel control = {<Checkbox id="epiCommunal"/>} label = "Patient/in ist in Gemeinschaftseinrichtung tätig, z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkünfte" />
                             </Grid>
 
                             <Grid>
-                                <FormControlLabel control = {<Checkbox/>} label = "Patient/in wird betreut Gemeinschaftseinrichtung tätig, z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkünfte" />
+                                <FormControlLabel control = {<Checkbox id="accCommunal"/>} label = "Patient/in wird betreut Gemeinschaftseinrichtung tätig, z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkünfte" />
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox/>} label = "Patient/in ist in Krankenhaus/stationärer Pflegeeinrichtung seit" />
-                                <Input type="date" id="dateOfcare" name="dateOfcare"></Input>
+                                <FormControlLabel control = {<Checkbox id="hospital" />} label = "Patient/in ist in Krankenhaus/stationärer Pflegeeinrichtung seit" />
+                                <Input type="date" id="dateOfcare" name="dateOfcare" id="dateOfHospitalisation" ></Input>
                             </Grid>
                         </Grid>
                         <Grid xs={3}>
                             <FormLabel for="stay">Ort der Einrichtung</FormLabel>
-                            <Input type="text" id="stay" name="stay"></Input>
+                            <Input type="text" id="stay" name="stay" id="addressAndPlace"></Input> 
                         </Grid>
 
                     </Grid>
@@ -275,7 +273,7 @@ class PatientDataForm extends React.Component {
                         <Grid>
                             <FormControlLabel control = {<Checkbox/>} label = "Meldung ist Teil einer Erkrankungshäufung:" />
                             <FormLabel for="infectionSource"> Ausbruchsort, vermutete Exposition, etc.:</FormLabel>
-                            <Input type="text" id="infectionSource" name="infectionSource"></Input>
+                            <Input type="text" id="infectionExposition" name="infectionSource"></Input>
                         </Grid>
                     </Grid>
             <div class="horizontalDivider"></div>
