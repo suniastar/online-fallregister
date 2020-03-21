@@ -42,7 +42,7 @@ public class Infected {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "phone_numbers")
     private List<PhoneNumber> phoneNumbers;
-    
+
     @Column(name = "address")
     private Address address;
 
