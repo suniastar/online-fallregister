@@ -2,6 +2,7 @@ package de.coronavirus.application.dtos.service;
 
 import de.coronavirus.domain.model.Infected;
 
+import javax.persistence.Column;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +13,9 @@ public interface InfectedDto {
     String getLastName();
     Infected.Gender getGender();
     Date getDateOfBirth();
-    List<JobDto> getJobs();
+    boolean isJobInMedicalField();
+    boolean isJobInFoodFiled();
+    boolean isJobInCommunityField();
     AccommodationDto getAccommodation();
 
     Date getDateOfIllness();
