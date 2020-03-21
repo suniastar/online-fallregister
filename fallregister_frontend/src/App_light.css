@@ -150,7 +150,7 @@ label{
 .horizontalDivider{
     margin: 10px 0px;
     border:solid;
-    border-width: 1px;
+    border-width: 0.5px;
     border-color: black;
     height:100%;
     width:100%;
@@ -159,7 +159,7 @@ label{
 .verticalDivider{
     margin: 0px 10px;
     border:solid;
-    border-width: 1px;
+    border-width: 0.5px;
     border-color: black;
     height:100%;
 }
