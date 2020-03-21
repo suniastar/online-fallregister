@@ -245,14 +245,14 @@ class PatientDataForm extends React.Component {
                                 <FormControlLabel control = {<Checkbox id="hospital" />} label = "Patient/in ist in Krankenhaus/Pflegeeinrichtung seit:" />
                                 <Input type="date" id="dateOfcare" name="dateOfcare" id="dateOfHospitalisation" ></Input>
                             </Grid>
-                        </Grid>
-                        <Grid xs={3}>
+                            <Grid>
                             <FormLabel for="stay">Name und Ort der Einrichtung</FormLabel>
-                            <Input type="text" id="stay" name="stay" id="addressAndPlace"></Input> 
+                            <Input type="text" id="stay" name="stay" id="addressAndPlace"></Input>
+                            </Grid>
                         </Grid>
 
                     </Grid>
-
+                    <div className="horizontalDivider"></div>
                     <Grid container
                           direction='column'
                           justify='flex-start'
