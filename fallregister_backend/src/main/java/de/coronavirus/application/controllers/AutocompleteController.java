@@ -50,14 +50,14 @@ public class AutocompleteController implements AutocompleteAPI {
 	@Override
     PhoneNumberResponse autocompletePhone(@RequestParam String partialPhone) {
         List<PhoneNumber> phoneNumbers = autocompleteService.findPhoneNumbersStartingWith(partialPhone);
-        return phoneNumberMapper.toResponse(phoneNumbers);
+        return phoneNumberMapper.toResponseList(phoneNumbers);
 		
 	}
 	
 	@Override
     EmailAddressResponse autocompleteEmail(@RequestParam String partialEmail) {
         List<EmailAddress> emailAddresses = autocompleteService.findEmailAddressesStartingWith(partialEmail);
-        return emailAddressMapper.toResponse(emailAddresses);
+        return emailAddressMapper.toResponseList(emailAddresses);
 	}
 
 
@@ -75,7 +75,7 @@ public class AutocompleteController implements AutocompleteAPI {
 	@Override
     DiagnosisResponse autocompleteDiagnosis(@RequestParam String partialDiagnosis) {
         List<Diagnosis> diagnosis = autocompleteService.findDiagnosisStartingWith(partialDiagnosis);
-        return diagnosisMapper.toResponse(diagnosis);
+        return diagnosisMapper.toResponseList(diagnosis);
 	}
 
 }
