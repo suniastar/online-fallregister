@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Timed
 @Service
 @Transactional
-public class CoronaVirusService {
+public class InfectedService {
 
 
     @Autowired
-    public CoronaVirusService(/* TODO add possible repositories here and make them attributes */) {
+    public InfectedService(/* TODO add possible repositories here and make them attributes */) {
 
     }
 
