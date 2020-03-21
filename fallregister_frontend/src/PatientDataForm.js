@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import {Divider, FormLabel, Input, Grid} from '@material-ui/core/';
+import {Divider, FormLabel, Input, Grid, Border, Box} from '@material-ui/core/';
 
 class PatientDataForm extends React.Component {
     constructor(){
