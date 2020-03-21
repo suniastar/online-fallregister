@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import {InputLabel,FormLabel,FormControlLabel, Input, Grid, Checkbox} from '@material-ui/core/';
+import {InputLabel,FormLabel,FormControlLabel, Input, Grid, Checkbox, Border, Box} from '@material-ui/core/';
 
 class PatientDataForm extends React.Component {
     constructor(){
@@ -95,6 +95,7 @@ class PatientDataForm extends React.Component {
                                 <Input type="email" id="email" name="email"></Input>
                             </Grid>
                         </Grid>
+
                         <Grid container
                               direction='column'
                               item
@@ -203,16 +204,19 @@ class PatientDataForm extends React.Component {
                         </Grid>
                     </Grid>
 
+
                     <Grid container
                           direction='row'
                           justify='flex-start'
                           alignItems="stretch"
+
                     >
                         <Grid container
                               direction='column'
                               justify='flex-start'
                               alignItems="stretch"
-                              xs={6}
+                              xs={4}
+                              item
                         >
                             <Grid>
                                 <FormLabel class="big">Unverzueglich zu melden an:</FormLabel>
@@ -239,12 +243,38 @@ class PatientDataForm extends React.Component {
                             </Grid>
                         </Grid>
 
+                        <Grid container
+                              direction='column'
+                              xs={4}
+                              item
+                        >
+                            <Grid>
+                                <FormControlLabel control = {<Checkbox/>} label = "Es wurde ein Labor/eine Untersuchungsstelle mit der Erregerdiagnostik beauftragt." />
+                            </Grid>
+                            <Grid>
+                                <FormLabel for="labname"> Labor Name:</FormLabel>
+                                <Input type="text" id="labname" name="labname"></Input>
+                            </Grid>
+                            <Grid>
+                                <FormLabel for="lablocation"> Labor Ort:</FormLabel>
+                                <Input type="text" id="lablocation" name="lablocation"></Input>
+                            </Grid>
+                            <Grid>
+                                <FormLabel for="labphone"> Labor Telefonnummer:</FormLabel>
+                                <Input type="text" id="labphone" name="labphone"></Input>
+                            </Grid>
+                            <Grid>
+                                <FormLabel for="probedate"> Probenentnahme am:</FormLabel>
+                                <Input type="text" id="probedate" name="probedate"></Input>
+                            </Grid>
+                        </Grid>
 
                         <Grid container
                               direction='column'
                               justify='flex-start'
                               alignItems="stretch"
-                              xs={6}
+                              xs={4}
+                              item
                         >
                             <Grid>
                                 <FormLabel class="big">Melder</FormLabel>
