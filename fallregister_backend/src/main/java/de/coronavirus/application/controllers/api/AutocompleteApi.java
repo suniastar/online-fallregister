@@ -4,10 +4,6 @@ import de.coronavirus.application.dtos.response.AddressResponse;
 import de.coronavirus.application.dtos.response.DiagnosisResponse;
 import de.coronavirus.application.dtos.response.EmailAddressResponse;
 import de.coronavirus.application.dtos.response.PhoneNumberResponse;
-import de.coronavirus.domain.model.Address;
-import de.coronavirus.domain.model.Diagnosis;
-import de.coronavirus.domain.model.EmailAddress;
-import de.coronavirus.domain.model.PhoneNumber;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -27,14 +23,14 @@ public interface AutocompleteApi {
     @ApiResponses({
             @ApiResponse(code = 404, message = "Keine passende Telefonnummer gefunden")
     })
-    List<PhoneNumberResponse> autocompletePhone(@RequestParam String partialPhone);
+    PhoneNumberResponse autocompletePhone(@RequestParam String partialPhone);
 
     @GetMapping("/email")
     @ApiOperation(value =  "Liefert eine Liste an E-Mails zurück, die mit gegebenen Anfangsstück beginnen")
     @ApiResponses({
             @ApiResponse(code = 404, message = "Keine passende E-Mail gefunden")
     })
-    List<EmailAddressResponse> autocompleteEmail(@RequestParam String partialEmail);
+    EmailAddressResponse autocompleteEmail(@RequestParam String partialEmail);
 
 
     @GetMapping("/address")
@@ -49,6 +45,6 @@ public interface AutocompleteApi {
     @ApiResponses({
             @ApiResponse(code = 404, message = "Keine passende Diagnose gefunden")
     })
-    List<DiagnosisResponse> autocompleteDiagnosis(@RequestParam String partialDiagnosis);
+    DiagnosisResponse autocompleteDiagnosis(@RequestParam String partialDiagnosis);
 
 }
