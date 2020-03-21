@@ -62,12 +62,17 @@ label{
     color: black;
 }
 
-h{
+.big{
     font-size: 1.2em;
     font-weight: bold;
-    margin-left: calc(5vw + 6px);
-    text-align: center;
+
     line-height: 2em;
+}
+
+.box{
+    border-style: solid;
+    
+   
 }
 
 .App-link {

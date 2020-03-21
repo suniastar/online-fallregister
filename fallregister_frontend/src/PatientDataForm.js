@@ -28,7 +28,7 @@ class PatientDataForm extends React.Component {
                   xs={6}
             >
                 <Grid>
-                    <h>Patientendaten </h>
+                    <FormLabel class="big">Patientendaten </FormLabel>
                 </Grid>
 
                 <Grid>
@@ -83,7 +83,7 @@ class PatientDataForm extends React.Component {
                           justify= 'space-between'
                     >
                         <Grid>
-                            <FormLabel style={{fontSize: "1.2em", fontWeight: "bold"}}>Meldeformular</FormLabel>
+                            <FormLabel class="big">Meldeformular</FormLabel>
                         </Grid>
                         <Grid>
                             -Vertraulich-
@@ -91,56 +91,27 @@ class PatientDataForm extends React.Component {
                     </Grid>
                     <FormLabel>Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
                 </Grid>
-                <Grid container
-                      direction= 'row'
-                >
+               
                     <Grid container
                           direction= 'column'
                     >
-                        Verdacht, Diagnose, Tod?
-                    </Grid>
-                    <Grid container
-                          direction= 'column'
-                    >
-                        Impfstatus?
-
-                    </Grid>
+                        <Grid>
+                    <FormLabel for="fname">Verdacht</FormLabel>
+                    <Input type="text" id="fname" name="fname"></Input>
                 </Grid>
-            </Grid>
-
-        </Grid>
-
-
-
-
-
-
-
-
-
-
-
-        <Grid>
-        <FormLabel for="activity">Tätigkeit:</FormLabel>
-        <Input type="text" id="activity" name="activity"></Input>
-        </Grid>
-        <Grid>
-        <FormLabel for="care">Betreuung:</FormLabel>
-        <Input type="text" id="care" name="care"></Input>
-        </Grid>
-        <Grid>
-        <FormLabel for="stay">Unterbringung:</FormLabel>
-        <Input type="text" id="stay" name="stay"></Input>
-        </Grid>
-        <Grid>
+                <Grid>
+                    <FormLabel for="fname">Diagnose</FormLabel>
+                    <Input type="text" id="fname" name="fname"></Input>
+                </Grid>
+                <Grid>
         <FormLabel for="diagnose">Diagnose/Verdachtsdiagnose:</FormLabel>
         <Input type="text" id="diagnose" name="diagnose"></Input>
         </Grid>
-        <Grid>
-        <FormLabel for="stay">Unterbringung:</FormLabel>
-        <Input type="text" id="stay" name="stay"></Input>
-        </Grid>
-        <Grid>
+                <Grid>
+                    <FormLabel for="fname">Tod:</FormLabel>
+                    <Input type="text" id="fname" name="fname"></Input>
+                </Grid>
+                <Grid>
         <FormLabel for="dayOfInfection">Tag der Erkrankung:</FormLabel>
         <Input type="date" id="dayOfInfection" name="dayOfInfection"></Input>
         </Grid>
@@ -156,6 +127,62 @@ class PatientDataForm extends React.Component {
         <FormLabel for="timeslotOfInfection">Zeitraum der Infektion:</FormLabel>
         <Input type="date" id="timeslotOfInfection" name="timeslotOfInfection"></Input>
         </Grid>
+
+                    </Grid>
+                    
+              
+            </Grid>
+
+        </Grid>
+
+
+
+
+
+
+        <Grid container
+              direction= 'row'
+              justify= 'flex-start'
+              alignItems= "stretch"
+        >
+
+
+<Grid container
+              direction= 'column'
+              justify= 'flex-start'
+              alignItems= "stretch"
+              xs={6}
+        >
+                <Grid>
+        <FormLabel class="big">Edipemiologische Situation:</FormLabel>
+
+        </Grid>
+        <Grid>
+        <FormLabel for="activity">Tätigkeit:</FormLabel>
+        <Input type="text" id="activity" name="activity"></Input>
+        </Grid>
+        <Grid>
+        <FormLabel for="care">Betreuung:</FormLabel>
+        <Input type="text" id="care" name="care"></Input>
+        </Grid>
+        <Grid>
+        <FormLabel for="stay">Unterbringung:</FormLabel>
+        <Input type="text" id="stay" name="stay"></Input>
+        </Grid>
+</Grid>
+        <Grid xs={6}>
+        <FormLabel for="stay">Ort der Einrichtung</FormLabel>
+        <Input type="text" id="stay" name="stay"></Input>
+        </Grid>
+
+</Grid>
+
+<Grid container
+              direction= 'column'
+              justify= 'flex-start'
+              alignItems= "stretch"
+              
+        >
         <Grid>
         <FormLabel for="infectionSource">Infektionsquelle:</FormLabel>
         <Input type="text" id="infectionSource" name="infectionSource"></Input>
@@ -176,10 +203,22 @@ class PatientDataForm extends React.Component {
         <FormLabel for="dismissal">Entlassung:</FormLabel>
         <Input type="date" id="dismissal" name="dismissal"></Input>
         </Grid>
-        
+        </Grid>
 
-        <h>Labor</h>
-        
+        <Grid container
+              direction= 'row'
+              justify= 'flex-start'
+              alignItems= "stretch"
+        >
+        <Grid container
+              direction= 'column'
+              justify= 'flex-start'
+              alignItems= "stretch"
+              xs={4}
+        >
+        <Grid>
+        <FormLabel class="big">Unverzueglich zu melden an:</FormLabel>
+        </Grid>
         <Grid>
         <FormLabel for="fname">First name:</FormLabel>
         <Input type="text" id="fname" name="fname"></Input>
@@ -200,9 +239,37 @@ class PatientDataForm extends React.Component {
         <FormLabel for="labor">Untersuchungsstelle:</FormLabel>
         <Input type="text" id="labor" name="labor"></Input>
         </Grid>
+        </Grid>
 
-        
-        <h>Melder</h>
+        <Grid container
+              direction= 'column'
+              justify= 'flex-start'
+              alignItems= "stretch"
+              xs={4}
+        >
+             <Grid>
+        <FormLabel for="dayOfInfection">Tag der Erkrankung:</FormLabel>
+        <Input type="date" id="dayOfInfection" name="dayOfInfection"></Input>
+        </Grid>
+        <Grid>
+        <FormLabel for="dayOfDiagnose">Tag der Diagnose:</FormLabel>
+        <Input type="date" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
+        </Grid>
+        <Grid>
+        <FormLabel for="dayOfDiagnose">Tag der Meldung:</FormLabel>
+        <Input type="date" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
+        </Grid>
+            </Grid>
+
+        <Grid container
+              direction= 'column'
+              justify= 'flex-start'
+              alignItems= "stretch"
+              xs={4}
+        >
+        <Grid>
+        <FormLabel class="big">Melder</FormLabel>
+        </Grid>
         <Grid>
         <FormLabel for="fname">First name:</FormLabel>
         <Input type="text" id="fname" name="fname"></Input>
@@ -222,6 +289,8 @@ class PatientDataForm extends React.Component {
         <Grid>
         <FormLabel for="telephonnumber">Telefonnummer:</FormLabel>
         <Input type="tel" id="telephonnumber" name="telephonenumber"></Input>
+        </Grid>
+        </Grid>
         </Grid>
         <Input type="submit" value="Submit"></Input>
         </Grid>
