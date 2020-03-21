@@ -1,11 +1,16 @@
 
 import React from 'react';
-import {FormLabel, Input, Grid, Box, Borders} from '@material-ui/core/';
 
+import {Divider, FormLabel, Input, Grid, Box, Border} from '@material-ui/core/';
 
 class PatientDataForm extends React.Component {
-
-
+    constructor(){
+        super();
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onSubmit(){
+        alert("Tadaaaaaaa!");
+    }
     render(){
 
  return(
@@ -17,29 +22,13 @@ class PatientDataForm extends React.Component {
           alignItems='flex-start'
 
           >
-        <Grid>
-            <Grid container
-                  direction= 'row'
-                  justify= 'space-between'
-                  border={1}
-            >
 
-                <Grid>
-                    <FormLabel class="big">Meldeformular</FormLabel>
-                </Grid>
-
-                <Grid>
-                    -Vertraulich-
-                </Grid>
-            </Grid>
-            <FormLabel class= "big">Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
-        </Grid>
         <Grid container
               direction= 'row'
               justify= 'flex-start'
               alignItems= "stretch"
         >
-            <Box border={1} borderColor="#000">
+
             <Grid container
                   direction= 'column'
                   item
@@ -49,12 +38,10 @@ class PatientDataForm extends React.Component {
                     <FormLabel class="big">Patientendaten </FormLabel>
                 </Grid>
 
-
                 <Grid>
                     <FormLabel for="fname">Vorname:</FormLabel>
                     <Input type="text" id="fname" name="fname"></Input>
                 </Grid>
-
 
                 <Grid>
                     <FormLabel for="lname">Nachname:</FormLabel>
@@ -99,51 +86,60 @@ class PatientDataForm extends React.Component {
                   item
                   xs={6}
             >
+                <Grid>
+                    <Grid container
+                          direction= 'row'
+                          justify= 'space-between'
+                    >
+                        <Grid>
+                            <FormLabel class="big">Meldeformular</FormLabel>
+                        </Grid>
+                        <Grid>
+                            -Vertraulich-
+                        </Grid>
+                    </Grid>
+                    <FormLabel>Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
+                </Grid>
+               
                     <Grid container
                           direction= 'column'
                     >
                         <Grid>
-                            <FormLabel for="fname">Verdacht</FormLabel>
-                            <Input type="text" id="fname" name="fname"></Input>
-                        </Grid>
-
-                        <Grid>
-                            <FormLabel for="fname">Diagnose</FormLabel>
-                            <Input type="text" id="fname" name="fname"></Input>
-                        </Grid>
-
-                        <Grid>
-                            <FormLabel for="diagnose">Diagnose/Verdachtsdiagnose:</FormLabel>
-                            <Input type="text" id="diagnose" name="diagnose"></Input>
-                        </Grid>
-
-                        <Grid>
-                            <FormLabel for="fname">Tod:</FormLabel>
-                            <Input type="text" id="fname" name="fname"></Input>
-                        </Grid>
-
-                        <Grid>
-                            <FormLabel for="dayOfInfection">Tag der Erkrankung:</FormLabel>
-                            <Input type="date" id="dayOfInfection" name="dayOfInfection"></Input>
-                        </Grid>
-
-                        <Grid>
-                            <FormLabel for="dayOfDiagnose">Tag der Diagnose:</FormLabel>
-                            <Input type="date" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
-                        </Grid>
-
-                        <Grid>
-                            <FormLabel for="dayOfDeath">Tag des Todes:</FormLabel>
-                            <Input type="date" id="dayOfDeath" name="dayOfDeath"></Input>
-                        </Grid>
-
-                        <Grid>
-                            <FormLabel for="timeslotOfInfection">Zeitraum der Infektion:</FormLabel>
-                            <Input type="date" id="timeslotOfInfection" name="timeslotOfInfection"></Input>
-                        </Grid>
+                    <FormLabel for="fname">Verdacht</FormLabel>
+                    <Input type="text" id="fname" name="fname"></Input>
+                </Grid>
+                <Grid>
+                    <FormLabel for="fname">Diagnose</FormLabel>
+                    <Input type="text" id="fname" name="fname"></Input>
+                </Grid>
+                <Grid>
+        <FormLabel for="diagnose">Diagnose/Verdachtsdiagnose:</FormLabel>
+        <Input type="text" id="diagnose" name="diagnose"></Input>
+        </Grid>
+                <Grid>
+                    <FormLabel for="fname">Tod:</FormLabel>
+                    <Input type="text" id="fname" name="fname"></Input>
+                </Grid>
+                <Grid>
+        <FormLabel for="dayOfInfection">Tag der Erkrankung:</FormLabel>
+        <Input type="date" id="dayOfInfection" name="dayOfInfection"></Input>
+        </Grid>
+        <Grid>
+        <FormLabel for="dayOfDiagnose">Tag der Diagnose:</FormLabel>
+        <Input type="date" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
+        </Grid>
+        <Grid>
+        <FormLabel for="dayOfDeath">Tag des Todes:</FormLabel>
+        <Input type="date" id="dayOfDeath" name="dayOfDeath"></Input>
+        </Grid>
+        <Grid>
+        <FormLabel for="timeslotOfInfection">Zeitraum der Infektion:</FormLabel>
+        <Input type="date" id="timeslotOfInfection" name="timeslotOfInfection"></Input>
+        </Grid>
 
                     </Grid>
-
+                    
+              
             </Grid>
             </Box>
 

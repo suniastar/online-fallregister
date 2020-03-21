@@ -1,10 +1,52 @@
-.App {
+html,
+body {
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    background-color: #f2f2f2;
+}
+
+#App {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: calc(10px + 1vmin);
+    color: black;
+
+    position:relative;
     text-align: left;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
 }
 
 .App-logo {
     height: 40vmin;
     pointer-events: none;
+}
+
+.App-header {
+     background-color: #333333;
+     width: 100%;
+     font-size: calc(10px + 1vmin);
+     color: white;
+     display: inline-block;
+     overflow: auto;
+     white-space: nowrap;
+     margin:0;
+     padding:0;
+ }
+
+.App-header .MuiButton-root {
+    color: white !important;
+    padding: 12px 16px;
+}
+
+.App-main {
+    padding: 2em;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -38,12 +80,24 @@ select {margin-left: calc(5vw + 6px);
 }
 
 input[type=submit] {
-    background-color: lightgreen;
-    width:calc(80vw + 24px);
+    background-color: #328fee;
+    width:calc(70vw);
     max-width: 600px;
-    height: 48px;
-    font-size:1.2em;
+    height: 42px;
+    font-size:1.3em;
+    margin:24px  0px;
 }
+
+
+/*
+.MuiInput-underline:before {
+    border-bottom: none !important;
+}
+
+.MuiInput-underline:after {
+    border-bottom: none !important;
+}
+*/
 
 label{
     margin-left: calc(5vw + 6px);
@@ -51,54 +105,23 @@ label{
     line-height: 2em;
 }
 
-.App-header {
-    background-color: #333333;
-    min-width: 100%;
-    font-size: calc(10px + 1vmin);
-    color: white;
-    display: inline-block;
 
-    overflow: auto;
-    white-space: nowrap;
-    margin:0px auto;
-}
-
-
-.App-header .MuiButton-root {
-    color: white !important;
-    padding: 12px 16px;
-}
-
-.header-container {
-}
-
-.left {
+.alignleft {
     float: left;
 }
 
-.right {float: right}
-
-body {
-    background-color: #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    font-size: calc(10px + 1vmin);
-    color: black;
+.alignright {
+    float: right
 }
 
 .big{
     font-size: 1.2em;
     font-weight: bold;
-
     line-height: 2em;
 }
 
 .box{
     border-style: solid;
-    
-   
 }
 
 .App-link {

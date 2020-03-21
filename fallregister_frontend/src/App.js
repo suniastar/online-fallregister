@@ -8,7 +8,7 @@ import CSVImportForm from './CSVImportForm.js';
 class App extends React.Component {
     constructor(){
         super();
-        this.state = {buttontext: "csvimport"};
+        this.state = {buttontext: "manueller import"};
         this.onButtonClick = this.onButtonClick.bind(this);
     }
 
@@ -28,16 +28,18 @@ class App extends React.Component {
         }
 
         return (
-            <div className="App">
+            <div id="App">
                 <header className="App-header">
-                    <div class='left'>
+                    <div class='alignleft'>
                         <Button onClick={this.onButtonClick}>{this.state.buttontext}</Button>
-                        </div>
-            <div class='right'>
+                    </div>
+                    <div class='alignright'>
                         <Button onClick={this.Logout}>Logout</Button>
-            </div>
+                    </div>
                 </header>
-                {form}
+                <div class='App-main'>
+                    {form}
+                </div>
             </div>
         );
     }
