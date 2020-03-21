@@ -9,6 +9,6 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface PhoneNumberMapper {
 
-    PhoneNumberResponse toResponse(PhoneNumberDto phoneNumberDTO);
-    List<PhoneNumberResponse> toResponseList(List<PhoneNumberDto> phoneNumberDTOList);
+    PhoneNumberResponse toResponse(PhoneNumberDto phoneNumberDto);
+    List<PhoneNumberResponse> toResponseList(List<PhoneNumberDto> phoneNumberDtoList);
 }

@@ -2,7 +2,7 @@ package de.coronavirus.application.dtos.service;
 
 import java.util.List;
 
-public interface PostCodeDTO {
+public interface PostCodeDto {
 
     long getCode();
     String getCity();

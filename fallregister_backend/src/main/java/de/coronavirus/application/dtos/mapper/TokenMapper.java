@@ -9,6 +9,6 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface TokenMapper {
 
-    TokenResponse toResponse(TokenDto tokenDTO);
-    List<TokenResponse> toResponseList(List<TokenDto> tokenDTOList);
+    TokenResponse toResponse(TokenDto tokenDto);
+    List<TokenResponse> toResponseList(List<TokenDto> tokenDtoList);
 }

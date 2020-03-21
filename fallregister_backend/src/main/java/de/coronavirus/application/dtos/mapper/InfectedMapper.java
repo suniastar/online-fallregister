@@ -9,6 +9,6 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface InfectedMapper {
 
-    InfectedResponse toResponse(InfectedDto infectedDTO);
-    List<InfectedResponse> toResponseList(List<InfectedDto> infectedDTOList);
+    InfectedResponse toResponse(InfectedDto infectedDto);
+    List<InfectedResponse> toResponseList(List<InfectedDto> infectedDtoList);
 }
