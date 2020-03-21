@@ -6,7 +6,7 @@ public interface PhoneNumberDTO {
 
     long getId();
 
-    String getPhoneNumber();
+    String getNumber();
 
     List<EntityDTO> getEntities();
 }

@@ -18,6 +18,6 @@ public class PhoneNumber {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "phone_number")
-    private String phoneNumber;
+    @Column(name = "number")
+    private String number;
 }

@@ -13,6 +13,8 @@ import de.coronavirus.application.dtos.service.EmailAddressDTO;
 import de.coronavirus.application.dtos.service.PhoneNumberDTO;
 import de.coronavirus.application.dtos.service.DiagnosisDTO;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class AutocompleteService {
@@ -37,12 +39,12 @@ public class AutocompleteService {
     }
     
     public List<PhoneNumberDTO> findPhoneNumbersStartingWith(String partialNumber){
-    	
+    	return phoneNumberRepository.findTop10DtoByNumberStartsWithOrderByNumberAsc(partialNumber);
     }
     
     
     public List<AddressDTO> findAddressesStartingWith(String partialAddress){
-    	
+
     }
     
     

@@ -14,4 +14,5 @@ public interface PhoneNumberRepository extends JpaRepository<PhoneNumber,Long> {
     List<PhoneNumberDTO> findAllDtoBy();
 
     Optional<PhoneNumberDTO> findDtoById(Long id);
+    List<PhoneNumberDTO> findTop10DtoByNumberStartsWithOrderByNumberAsc(String partial);
 }

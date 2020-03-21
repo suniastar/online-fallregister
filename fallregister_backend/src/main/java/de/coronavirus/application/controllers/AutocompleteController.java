@@ -1,8 +1,8 @@
 package de.coronavirus.application.controllers;
 
-import de.coronavirus.application.controllers.api.AutocompleteAPI;
-import de.coronavirus.application.serive.AutocompleteService;
-import edu.kit.tm.cm.tlm.todomanagement.application.dtos.service.TodoListDto;
+import de.coronavirus.application.controllers.api.AutocompleteApi;
+import de.coronavirus.application.dtos.response.AddressResponse;
+import de.coronavirus.application.service.AutocompleteService;
 import de.coronavirus.application.dtos.service.AddressDTO;
 import de.coronavirus.application.dtos.service.EmailAddressDTO;
 import de.coronavirus.application.dtos.service.PhoneNumberDTO;
@@ -16,22 +16,22 @@ import de.coronavirus.application.dtos.mapper.EmailAddressMapper;
 import de.coronavirus.application.dtos.mapper.PhoneNumberMapper;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.ArrayList;
 
 
 @RestController
 @CrossOrigin
-public class AutocompleteController implements AutocompleteAPI {
+public class AutocompleteController implements AutocompleteApi {
 	
 	
 	
 	private final AutocompleteService autocompleteService;
 	private final AddressMapper addressMapper;
-	private final EmailAddressMapper emailAdressMapper;
+	private final EmailAddressMapper emailAddressMapper;
 	private final DiagnosisMapper diagnosisMapper;
 	private final PhoneNumberMapper phoneNumberMapper;
 
@@ -39,7 +39,7 @@ public class AutocompleteController implements AutocompleteAPI {
     @Autowired
     public AutocompleteController(AutocompleteService autocompleteService, 
     		AddressMapper addressMapper, 
-    		EmailAddressMapper emailAdressMapper,
+    		EmailAddressMapper emailAddressMapper,
     		DiagnosisMapper diagnosisMapper,
     		PhoneNumberMapper phoneNumberMapper) {
         this.autocompleteService = autocompleteService;
@@ -52,32 +52,28 @@ public class AutocompleteController implements AutocompleteAPI {
 
 	
 	@Override
-    PhoneNumberResponse autocompletePhone(@RequestParam String partialPhone) {
+    PhoneNumberResponse autocompletePhone(@PathVariable String partialPhone) {
         List<PhoneNumberDTO> phoneNumbers = autocompleteService.findPhoneNumbersStartingWith(partialPhone);
         return phoneNumberMapper.toResponseList(phoneNumbers);
 		
 	}
 	
 	@Override
-    EmailAddressResponse autocompleteEmail(@RequestParam String partialEmail) {
+    EmailAddressResponse autocompleteEmail(@PathVariable String partialEmail) {
         List<EmailAddressDTO> emailAddresses = autocompleteService.findEmailAddressesStartingWith(partialEmail);
         return emailAddressMapper.toResponseList(emailAddresses);
 	}
 
 
 	@Override
-    List<AddressResponse> autocompleteAddress(@RequestParam String partialStreet){
+    List<AddressResponse> autocompleteAddress(@PathVariable String partialStreet){
 		List<AddressDTO> addresses = autocompleteService.findAddressesStartingWith(partialStreet);
-		List<AddressResponse> responses = new ArrayList<>();
-		for (AddressDTO address : addresses) {
-			responses.add(addressMapper.toResponse(address));
-		}
-		return responses;
+		return AddressMapper.toResponseList(addresses);
 		
 	}
 
 	@Override
-    DiagnosisResponse autocompleteDiagnosis(@RequestParam String partialDiagnosis) {
+    DiagnosisResponse autocompleteDiagnosis(@PathVariable String partialDiagnosis) {
         List<DiagnosisDTO> diagnosis = autocompleteService.findDiagnosisStartingWith(partialDiagnosis);
         return diagnosisMapper.toResponseList(diagnosis);
 	}
