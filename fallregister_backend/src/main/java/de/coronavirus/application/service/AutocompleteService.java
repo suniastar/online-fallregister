@@ -8,6 +8,11 @@ import de.coronavirus.domain.infrastructure.repositories.EmailAddressRepository;
 import de.coronavirus.domain.infrastructure.repositories.PhoneNumberRepository;
 import de.coronavirus.domain.infrastructure.repositories.DiagnosisRepository;
 
+import de.coronavirus.application.dtos.service.AddressDTO;
+import de.coronavirus.application.dtos.service.EmailAddressDTO;
+import de.coronavirus.application.dtos.service.PhoneNumberDTO;
+import de.coronavirus.application.dtos.service.DiagnosisDTO;
+
 @Service
 @Transactional
 public class AutocompleteService {
@@ -31,22 +36,22 @@ public class AutocompleteService {
 
     }
     
-    public List<PhoneNumber> findPhoneNumbersStartingWith(String partialNumber){
+    public List<PhoneNumberDTO> findPhoneNumbersStartingWith(String partialNumber){
     	
     }
     
     
-    public List<Address> findAddressesStartingWith(String partialAddress){
+    public List<AddressDTO> findAddressesStartingWith(String partialAddress){
     	
     }
     
     
-    public List<EmailAddress> findEmailAddressesStartingWith(String partialEmailAddress){
+    public List<EmailAddressDTO> findEmailAddressesStartingWith(String partialEmailAddress){
     	
     }
     
     
-    public List<Diagnosis> findDiagnosisStartingWith(String partialDiagnosis){
+    public List<DiagnosisDTO> findDiagnosisStartingWith(String partialDiagnosis){
     	
     }
 

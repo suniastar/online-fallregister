@@ -3,6 +3,10 @@ package de.coronavirus.application.controllers;
 import de.coronavirus.application.controllers.api.AutocompleteAPI;
 import de.coronavirus.application.serive.AutocompleteService;
 import edu.kit.tm.cm.tlm.todomanagement.application.dtos.service.TodoListDto;
+import de.coronavirus.application.dtos.service.AddressDTO;
+import de.coronavirus.application.dtos.service.EmailAddressDTO;
+import de.coronavirus.application.dtos.service.PhoneNumberDTO;
+import de.coronavirus.application.dtos.service.DiagnosisDTO;
 import de.coronavirus.application.dtos.response.DiagnosisResponse;
 import de.coronavirus.application.dtos.response.EmailAddressResponse;
 import de.coronavirus.application.dtos.response.PhoneNumberResponse;
@@ -49,23 +53,23 @@ public class AutocompleteController implements AutocompleteAPI {
 	
 	@Override
     PhoneNumberResponse autocompletePhone(@RequestParam String partialPhone) {
-        List<PhoneNumber> phoneNumbers = autocompleteService.findPhoneNumbersStartingWith(partialPhone);
+        List<PhoneNumberDTO> phoneNumbers = autocompleteService.findPhoneNumbersStartingWith(partialPhone);
         return phoneNumberMapper.toResponseList(phoneNumbers);
 		
 	}
 	
 	@Override
     EmailAddressResponse autocompleteEmail(@RequestParam String partialEmail) {
-        List<EmailAddress> emailAddresses = autocompleteService.findEmailAddressesStartingWith(partialEmail);
+        List<EmailAddressDTO> emailAddresses = autocompleteService.findEmailAddressesStartingWith(partialEmail);
         return emailAddressMapper.toResponseList(emailAddresses);
 	}
 
 
 	@Override
     List<AddressResponse> autocompleteAddress(@RequestParam String partialStreet){
-		List<Address> addresses = autocompleteService.findAddressesStartingWith(partialStreet);
+		List<AddressDTO> addresses = autocompleteService.findAddressesStartingWith(partialStreet);
 		List<AddressResponse> responses = new ArrayList<>();
-		for (Address address : addresses) {
+		for (AddressDTO address : addresses) {
 			responses.add(addressMapper.toResponse(address));
 		}
 		return responses;
@@ -74,7 +78,7 @@ public class AutocompleteController implements AutocompleteAPI {
 
 	@Override
     DiagnosisResponse autocompleteDiagnosis(@RequestParam String partialDiagnosis) {
-        List<Diagnosis> diagnosis = autocompleteService.findDiagnosisStartingWith(partialDiagnosis);
+        List<DiagnosisDTO> diagnosis = autocompleteService.findDiagnosisStartingWith(partialDiagnosis);
         return diagnosisMapper.toResponseList(diagnosis);
 	}
 
