@@ -15,7 +15,7 @@ public class CreateInfectedRequest {
 
     /* Entity */
     @ApiModelProperty
-    List<String> phoneNumber;
+    List<String> phoneNumbers;
 
     /* -Address */
     @ApiModelProperty
@@ -54,7 +54,13 @@ public class CreateInfectedRequest {
     Date dateOfBirth;
 
     @ApiModelProperty
-    List<String> jobs;
+    boolean jobInMedicalField;
+
+    @ApiModelProperty
+    boolean jobInFoodField;
+
+    @ApiModelProperty
+    boolean jobInCommunityField;
 
     /* -Accommodation */
     @ApiModelProperty

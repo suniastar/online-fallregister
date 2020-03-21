@@ -6,11 +6,11 @@ import java.util.List;
 import de.coronavirus.domain.model.Infected;
 import de.coronavirus.domain.model.PhoneNumber;
 
-public class toModelConverter {
+public class ToModelConverter {
 
     public static PhoneNumber stringsToPhoneNumber(String phonenumber) {
         PhoneNumber number = new PhoneNumber();
-        number.setPhoneNumber();
+        number.setNumber(phonenumber);
         return number;
     }
 
@@ -54,7 +54,7 @@ public class toModelConverter {
      * @return an Infected.Gender
      */
     public static List<Infected.Gender> stringToGender(String ... genderStrings) {
-        List<Infected.Gender> resultGenders = ArrayList<Infected.Gender>(genderStrings.length);
+        List<Infected.Gender> resultGenders = new ArrayList<Infected.Gender>(genderStrings.length);
         for(String genderString : genderStrings) {
             resultGenders.add(stringToGender(genderString));
         }

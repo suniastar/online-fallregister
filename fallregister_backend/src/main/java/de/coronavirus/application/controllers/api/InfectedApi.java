@@ -69,6 +69,6 @@ public interface InfectedApi {
     @ApiResponses({
             @ApiResponse(code = 404, message = "infected not found")
     })
-    boolean deleteInfectedEntry(@PathVariable long id);
+    void deleteInfectedEntry(@PathVariable long id);
 
 }

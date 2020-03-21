@@ -35,7 +35,7 @@ public class InfectedController implements InfectedApi {
 
     @Override
     public InfectedResponse getInfectedEntry(@PathVariable long id) {
-        return infectedMapper.toResponse(infectedService.findInfected(id).get());
+        return infectedMapper.toResponse(infectedService.findInfected(id));
     }
 
     @Override
@@ -49,7 +49,7 @@ public class InfectedController implements InfectedApi {
     }
 
     @Override
-    public boolean deleteInfectedEntry(@PathVariable long id) {
+    public void deleteInfectedEntry(@PathVariable long id) {
         infectedService.delete(id);
     }
 
