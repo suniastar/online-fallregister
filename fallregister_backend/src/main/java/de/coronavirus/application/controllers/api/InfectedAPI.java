@@ -68,11 +68,3 @@ public interface InfectedAPI {
     boolean deleteInfectedEntry(@PathVariable long id);
 
 }
-
-
-/**
-GET /infected : List an Infizierten
-        GET /infected/{id}
-        POST /infected : Erstellen von Infizierten JSON Request
-        POST /infected/{id} : Update eines Infizierten
-        DELETE /infected/{id} : Löschen eines Infizierten
