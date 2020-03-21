@@ -22,7 +22,6 @@ class CSVImportForm extends React.Component {
             <Grid>
             <FormLabel for="lname">CSV Dokument hochladen: </FormLabel>
             <Input type="file" id="csvFile" name="csvFile"></Input>
-
             </Grid>
 
             <Input type="submit" value="Submit"></Input>

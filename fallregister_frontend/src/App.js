@@ -30,10 +30,14 @@ class App extends React.Component {
         return (
             <div className="App">
                 <header className="App-header">
-                <Button onClick={this.onButtonClick}>{this.state.buttontext}</Button>
-                
-                   {form}
+                    <div class='left'>
+                        <Button onClick={this.onButtonClick}>{this.state.buttontext}</Button>
+                        </div>
+            <div class='right'>
+                        <Button onClick={this.Logout}>Logout</Button>
+            </div>
                 </header>
+                {form}
             </div>
         );
     }
