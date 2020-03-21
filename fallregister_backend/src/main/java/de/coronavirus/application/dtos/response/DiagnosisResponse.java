@@ -9,6 +9,6 @@ import java.util.List;
 @Data
 @ApiModel("Diagnosis")
 public class DiagnosisResponse {
-    @ApiModelProperty
-    List<String> diagnosis;
+    @ApiModelProperty(position = 1)
+    List<String> diagnosticResult;
 }

@@ -7,6 +7,8 @@ import lombok.Data;
 @Data
 @ApiModel("Address")
 public class AddressResponse {
+    @ApiModelProperty(position = 0)
+    String countryName;
     @ApiModelProperty(position = 1)
     String cityName;
     @ApiModelProperty(position = 2)
