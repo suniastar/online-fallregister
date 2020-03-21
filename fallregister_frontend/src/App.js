@@ -8,15 +8,16 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <form action="/action_page.php">
-
-                    <h>Patientendaten</h>
-                    
-                    <Grid
+                <Grid
                       container
                       direction='column'
-                      justify="center"
+                      //justify="center"
+                     // spacing="10"
                       //alignItems='center'
                       >
+                    <Grid>
+                        <h>Patientendaten</h>
+                    </Grid>
                     <Grid>
                     <FormLabel for="fname">Vorname:</FormLabel>
                     <Input type="text" id="fname" name="fname"></Input>
