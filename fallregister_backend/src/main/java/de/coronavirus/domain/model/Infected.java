@@ -60,7 +60,7 @@ public class Infected {
     // TODO range of infection see: https://vladmihalcea.com/map-postgresql-range-column-type-jpa-hibernate/
 
     @Column(name = "infection_source")
-    private String infectionSource; // TODO maybe use a class or other data type?
+    private String infectionSource;
 
     // TODO range of treatment in hospital
 
