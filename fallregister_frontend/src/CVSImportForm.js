@@ -1,5 +1,10 @@
-export class CVSImportForm extends React.Component {
+
+import React from 'react';
+
+class CVSImportForm extends React.Component {
     render(){
         return  <h1>Hello World</h1>;
     }
 }
+
+export default CVSImportForm;
