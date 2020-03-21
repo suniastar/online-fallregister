@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import {FormLabel, Input, Grid} from '@material-ui/core/';
+import {FormLabel, Input, Grid, Button} from '@material-ui/core/';
 
 class CSVImportForm extends React.Component {
     render(){
@@ -10,15 +10,14 @@ class CSVImportForm extends React.Component {
             <form action="/action_page.php">
             <Grid container direction='column' justify="center">
 
-            <Grid>
+            <Grid Grid spacing={2}>
                 <h>CSV Import</h>
             </Grid>
 
             <Grid>
-                <FormLabel for="lname">CSV Dokument hochladen: </FormLabel>
-                <Input type="file" id="csvFile" name="csvFile"></Input>
+                <input type="file" id="csvFile" name="csvFile"></input>
             </Grid>
-            <Input type="submit" value="Submit"></Input>
+                <Button type="submit" value="Submit" variant="contained" color="primary" m={2}>Dokument hochladen</Button>
             </Grid>
             </form>
     );

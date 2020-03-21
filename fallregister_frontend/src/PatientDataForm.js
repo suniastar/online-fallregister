@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import {FormLabel, Input, Grid} from '@material-ui/core/';
+import {FormLabel, Input, Grid, Button} from '@material-ui/core/';
 
 class PatientDataForm extends React.Component {
     render(){
@@ -292,7 +292,7 @@ class PatientDataForm extends React.Component {
         </Grid>
         </Grid>
         </Grid>
-        <Input type="submit" value="Submit"></Input>
+            <Button type="submit" value="Submit" variant="contained" color="primary">Daten einreichen</Button>
         </Grid>
     </form>
  );
