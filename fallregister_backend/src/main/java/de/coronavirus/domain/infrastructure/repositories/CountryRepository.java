@@ -14,4 +14,5 @@ public interface CountryRepository extends JpaRepository<Country, Long> {
     List<CountryDto> findAllDtoBy();
 
     Optional<CountryDto> findDtoById(Long id);
+    List<CountryDto> findTop10ByNameStartsWith(String partial);
 }

@@ -13,5 +13,6 @@ public interface CityRepository extends JpaRepository<City,Long> {
 
     List<CityDto> findAllDtoBy();
     Optional<CityDto> findDtoById(Long id);
+    List<CityDto> findTop10ByNameStartsWith(String partial);
 
 }

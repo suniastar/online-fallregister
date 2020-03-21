@@ -4,13 +4,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
-@ApiModel("Address")
-public class AddressResponse {
+@ApiModel("Street")
+public class StreetResponse {
     @ApiModelProperty(position = 0)
-    String countryName;
-    @ApiModelProperty(position = 1)
-    String cityName;
-    @ApiModelProperty(position = 2)
-    long postCode;
+    List<String> streets;
 }
