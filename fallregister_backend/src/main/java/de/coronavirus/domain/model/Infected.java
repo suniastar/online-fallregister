@@ -41,8 +41,14 @@ public class Infected {
     @OrderBy("email asc")
     private List<EmailAddress> emailAddresses;
 
-    @Column(name = "jobs")
-    private Job job;
+    @Column(name = "job_medical_field")
+    private boolean jobInMedicalField;
+
+    @Column(name = "job_food_field")
+    private boolean jobInFoodFiled;
+
+    @Column(name = "job_community_field")
+    private boolean jobInCommunityField;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "accommodation_id")
