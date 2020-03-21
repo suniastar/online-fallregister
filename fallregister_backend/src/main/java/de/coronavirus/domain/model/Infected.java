@@ -40,6 +40,13 @@ public class Infected {
     private Date dateOfBirth;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "phone_numbers")
+    private List<PhoneNumber> phoneNumbers;
+    
+    @Column(name = "address")
+    private Address address;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "jobs")
     private List<Job> jobs;
 
