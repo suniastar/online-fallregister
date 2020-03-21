@@ -66,7 +66,7 @@ public class Infected extends Entity {
     // TODO range of treatment in hospital
 
     @Column(name = "intensive_care_treatment")
-    private boolean intensiveCateTreatment;
+    private boolean intensiveCareTreatment;
 
     public enum Gender {
 
