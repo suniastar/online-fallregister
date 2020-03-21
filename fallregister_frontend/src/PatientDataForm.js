@@ -12,48 +12,109 @@ class PatientDataForm extends React.Component {
           container
           direction='column'
           justify="center"
-          //alignItems='flex-start'
+          alignItems='flex-start'
 
           >
-        <Grid>
-            <h>Patientendaten</h>
+
+        <Grid container
+              direction= 'row'
+              justify= 'flex-start'
+        >
+
+            <Grid container
+                  direction= 'column'
+            >
+                <Grid>
+                    <h>Patientendaten </h>
+                </Grid>
+
+                <Grid>
+                    <FormLabel for="fname">Vorname:</FormLabel>
+                    <Input type="text" id="fname" name="fname"></Input>
+                </Grid>
+
+                <Grid>
+                    <FormLabel for="lname">Nachname:</FormLabel>
+                    <Input type="text" id="lname" name="lname"></Input>
+                </Grid>
+
+                <Grid>
+                <FormLabel for="address">Adresse:</FormLabel>
+                <Input type="text" id="address" name="address"></Input>
+                </Grid>
+
+                <Grid>
+                    <FormLabel for="birthday">Geburtsdatum:</FormLabel>
+                    <Input type="date" id="birthday" name="birthday"></Input>
+                </Grid>
+
+                <Grid>
+                    <FormLabel for="gender">Geschlecht:</FormLabel>
+
+                    <select id="gender" name="gender">
+                        <option value="" disabled selected>Select your option</option>
+                        <option value="male">Männlich</option>
+                        <option value="female">Weiblich</option>
+                        <option value="other">Sonstiges</option>
+                    </select>
+                </Grid>
+
+                <Grid>
+                    <FormLabel for="telephonenumber">Telefonnummer:</FormLabel>
+                    <Input type="tel" id="telephonenumber" name="telephonenumber"></Input>
+                </Grid>
+
+                <Grid>
+                    <FormLabel for="email">Email:</FormLabel>
+                    <Input type="email" id="email" name="email"></Input>
+                </Grid>
+            </Grid>
+            <Grid container
+                  direction= 'column'
+            >
+                <Grid>
+                    <Grid container
+                          direction= 'row'
+                          justify= 'space-between'
+                    >
+                        <Grid>
+                            <h>Meldeformular</h>
+                        </Grid>
+                        <Grid>
+                            -Vertraulich-
+                        </Grid>
+                    </Grid>
+                    <h>Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</h>
+                </Grid>
+                <Grid container
+                      direction= 'row'
+                >
+                    <Grid container
+                          direction= 'column'
+                    >
+                        //Verdacht, Diagnose, Tod?
+                    </Grid>
+                    <Grid container
+                          direction= 'column'
+                    >
+                        //Impfstatus?
+
+                    </Grid>
+                </Grid>
+            </Grid>
+
         </Grid>
-        <div style={{padding: 20}}>
-        <Grid container spacing={10}>
-        <FormLabel for="fname">Vorname:</FormLabel>
-        <Input type="text" id="fname" name="fname"></Input>
-        </Grid>
-        </div>
-        <Grid>
-        <FormLabel for="lname">Nachname:</FormLabel>
-        <Input type="text" id="lname" name="lname"></Input>
-        </Grid>
-        <Grid>
-        <FormLabel for="gender">Geschlecht:</FormLabel>
-     
-        <select id="gender" name="gender">
-        <option value="" disabled selected>Select your option</option>
-        <option value="male">Männlich</option>
-        <option value="female">Weiblich</option>
-        <option value="other">Sonstiges</option>
-        </select>
-        </Grid>
-        <Grid>
-        <FormLabel for="birthday">Geburtsdatum:</FormLabel>
-        <Input type="date" id="birthday" name="birthday"></Input>
-        </Grid>
-        <Grid>
-        <FormLabel for="address">Adresse:</FormLabel>
-        <Input type="text" id="address" name="address"></Input>
-        </Grid>
-        <Grid>                    
-        <FormLabel for="email">Email:</FormLabel>
-        <Input type="email" id="email" name="email"></Input>
-        </Grid>
-        <Grid>
-        <FormLabel for="telephonenumber">Telefonnummer:</FormLabel>
-        <Input type="tel" id="telephonenumber" name="telephonenumber"></Input>
-        </Grid>
+
+
+
+
+
+
+
+
+
+
+
         <Grid>
         <FormLabel for="activity">Tätigkeit:</FormLabel>
         <Input type="text" id="activity" name="activity"></Input>
