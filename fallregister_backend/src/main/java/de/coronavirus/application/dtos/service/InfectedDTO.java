@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-public interface InfectedDTO {
+public interface InfectedDTO extends EntityDTO {
 
     long getId();
     String getFirstName();

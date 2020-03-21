@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface CountryRepository extends JpaRepository<Country, Long> {
 
     List<CountryDTO> findAllDtoBy();
-    Optional<CountryDTO> findDtoById();
+    Optional<CountryDTO> findDtoById(Long id);
 }

@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface InfectedRepository extends JpaRepository<Infected, Long> {
 
     List<InfectedDTO> findAllDtoBy();
-    Optional<InfectedDTO> findDtoById();
+    Optional<InfectedDTO> findDtoById(Long id);
 }

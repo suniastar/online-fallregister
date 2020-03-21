@@ -28,7 +28,7 @@ public class City {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cities", orphanRemoval = true, fetch = FetchType.LAZY)
     @OrderBy("code asc")
-    private List<Long> postCodes;
+    private List<PostCode> postCodes;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id")

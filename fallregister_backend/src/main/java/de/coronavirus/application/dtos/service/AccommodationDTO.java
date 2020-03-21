@@ -1,11 +1,9 @@
 package de.coronavirus.application.dtos.service;
 
-import de.coronavirus.domain.model.Infected;
-
 import java.util.List;
 
-public interface AccommodationDTO {
+public interface AccommodationDTO extends EntityDTO {
     Long getId();
     String getName();
-    List<Infected> getInfected();
+    List<InfectedDTO> getInfected();
 }

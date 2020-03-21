@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, String> {
 
     List<UserDTO> findAllDtoBy();
-    Optional<UserDTO> findDtoById();
+    Optional<UserDTO> findDtoById(Long id);
 }

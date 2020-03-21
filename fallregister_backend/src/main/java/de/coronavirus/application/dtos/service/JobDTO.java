@@ -4,7 +4,7 @@ import de.coronavirus.domain.model.Infected;
 
 import java.util.List;
 
-public interface JobDTO {
+public interface JobDTO extends EntityDTO {
 
     long getId();
     String getName();
