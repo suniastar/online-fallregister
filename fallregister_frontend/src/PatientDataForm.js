@@ -223,7 +223,6 @@ class PatientDataForm extends React.Component {
                               direction='column'
                               justify='flex-start'
                               alignItems="stretch"
-                              xs={9}
                         >
                             <Grid>
                                 <FormLabel class="big">Epidemiologische Situation:</FormLabel>
@@ -245,14 +244,14 @@ class PatientDataForm extends React.Component {
                                 <FormControlLabel control = {<Checkbox id="hospital" />} label = "Patient/in ist in Krankenhaus/stationärer Pflegeeinrichtung seit" />
                                 <Input type="date" id="dateOfcare" name="dateOfcare" id="dateOfHospitalisation" ></Input>
                             </Grid>
-                        </Grid>
-                        <Grid xs={3}>
+                            <Grid>
                             <FormLabel for="stay">Ort der Einrichtung</FormLabel>
-                            <Input type="text" id="stay" name="stay" id="addressAndPlace"></Input> 
+                            <Input type="text" id="stay" name="stay" id="addressAndPlace"></Input>
+                            </Grid>
                         </Grid>
 
                     </Grid>
-
+                    <div className="horizontalDivider"></div>
                     <Grid container
                           direction='column'
                           justify='flex-start'
@@ -263,7 +262,7 @@ class PatientDataForm extends React.Component {
                             <FormLabel class="big">Angaben zur wahrscheinlichen Infektionsquelle:</FormLabel>
                         </Grid>
                         <Grid>
-                            <FormLabel for="infectionPlace">Wahrscheinlicher Infektionsort</FormLabel>
+                            <FormLabel for="infectionPlace">Wahrscheinlicher Infektionsort:</FormLabel>
                             <Input type="text" id="infectionPlace" name="infectionPlace"></Input>
                         </Grid>
                         <Grid>
