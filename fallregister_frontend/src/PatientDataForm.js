@@ -7,6 +7,81 @@ class PatientDataForm extends React.Component {
     constructor(){
         super();
         this.onSubmit = this.onSubmit.bind(this);
+        this.input = {
+            patient: {
+                firstname: "",
+                name: "",
+                address:{
+                    street : "",
+                    housenumber: "",
+                    zipcode: 00000,
+                    city:"",
+                    country:"",
+                },                            
+                birthday: "",
+                sex: "",
+                phone: "",
+                email: ""
+            },
+            detector: {
+                firstname: "",
+                name: "",
+                address:{
+                    street : "",
+                    housenumber: "",
+                    zipcode: 00000,
+                    city:"",
+                    country:"",
+                },                            
+                phone: "",
+                email: ""
+            },
+            diagnosis:{
+                suspected: false,
+                diagnosed: false,
+                dead: false,
+                dateOfSickness: "",
+                dateOfDiagnosis: "",
+                dateOfDeath: ""
+            },
+            jobs:{
+                medical: false,
+                food: false,
+                communal: false,
+            },
+            accommodation:{
+                communal:false,
+                hospital: false,
+                dateOfHospitalisation: "",
+                icu: false,
+                dateOfIcu: ""
+            },
+            gesundheitsamt: {
+                name: "",
+                address:{
+                    street : "",
+                    housenumber: "",
+                    zipcode: 00000,
+                    city:"",
+                    country:"",
+                },                            
+                phone: "",
+                email: "",
+            },
+            laboratory: {
+                commission: bool,
+                name: "",
+                address:{
+                    street : "",
+                    housenumber: "",
+                    zipcode: 00000,
+                    city:"",
+                    country:"",
+                },                            
+                phone: "",
+                dateOfBiopsy: ""
+            } 
+        }
     }
     onSubmit(){
         alert("Tadaaaaaaa!");
