@@ -17,6 +17,7 @@ import java.util.List;
 @Data
 @EqualsAndHashCode
 @Table(name = "post_codes")
+@javax.persistence.Entity
 public class PostCode {
 
     @Id
@@ -27,7 +28,7 @@ public class PostCode {
     @JoinColumn(name = "city_id")
     private City city;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post_code", orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @OrderBy("name asc")
     private List<Street> streets;
 }

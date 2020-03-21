@@ -5,17 +5,22 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import java.util.List;
 
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
+@Entity
 @Table(name = "accommodations")
-public class Accommodation extends Entity {
+public class Accommodation {
 
     @Id
     @Column(name = "id")
@@ -24,7 +29,19 @@ public class Accommodation extends Entity {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "accommodations", fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "phone_numbers")
+    private List<PhoneNumber> phoneNumber;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id")
+    private Address addresses;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OrderBy("email asc")
+    private List<EmailAddress> emailAddresses;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("name asc")
     private List<Infected> infected;
 }

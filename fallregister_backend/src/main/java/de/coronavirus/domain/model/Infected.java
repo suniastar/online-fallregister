@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -17,9 +18,10 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
+@Entity
 @Table(name = "infected")
-public class Infected extends Entity {
+public class Infected {
 
     @Id
     @Column(name = "id")
@@ -37,7 +39,7 @@ public class Infected extends Entity {
     @Column(name = "date_of_birth")
     private Date dateOfBirth;
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "infected", fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "jobs")
     private List<Job> jobs;
 
@@ -48,7 +50,7 @@ public class Infected extends Entity {
     @Column(name = "date_of_illness")
     private Date dateOfIllness;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "infected", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("date asc")
     private List<Diagnosis> diagnosis;
 
