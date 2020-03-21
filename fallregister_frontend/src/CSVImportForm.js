@@ -16,7 +16,7 @@ class CSVImportForm extends React.Component {
             >
 
             <Grid>
-            <h>CVS Import</h>
+            <h>CSV Import</h>
             </Grid>
 
             <Grid>
