@@ -2,13 +2,13 @@ package de.coronavirus.application.dtos.service;
 
 import java.util.Date;
 
-public interface DiagnosisDTO {
+public interface DiagnosisDto {
 
     long getId();
     String getDiagnosticResult();
     Date getDate();
-    DetectorDTO getDetector();
-    LaboratoryDTO getLaboratory();
+    DetectorDto getDetector();
+    LaboratoryDto getLaboratory();
     boolean getConfirmed();
-    InfectedDTO getInfected();
+    InfectedDto getInfected();
 }

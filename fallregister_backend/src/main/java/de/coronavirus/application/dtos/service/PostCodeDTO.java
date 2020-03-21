@@ -6,5 +6,5 @@ public interface PostCodeDTO {
 
     long getCode();
     String getCity();
-    List<StreetDTO> getStreets();
+    List<StreetDto> getStreets();
 }
