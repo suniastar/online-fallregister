@@ -14,7 +14,7 @@ class PatientDataForm extends React.Component {
                 address:{
                     street : "",
                     housenumber: "",
-                    zipcode: 00000,
+                    zipcode: 0,
                     city:"",
                     country:"",
                 },
@@ -29,7 +29,7 @@ class PatientDataForm extends React.Component {
                 address:{
                     street : "",
                     housenumber: "",
-                    zipcode: 00000,
+                    zipcode: 0,
                     city:"",
                     country:"",
                 },
@@ -61,7 +61,7 @@ class PatientDataForm extends React.Component {
                 address:{
                     street : "",
                     housenumber: "",
-                    zipcode: 00000,
+                    zipcode: 0,
                     city:"",
                     country:"",
                 },
@@ -69,12 +69,12 @@ class PatientDataForm extends React.Component {
                 email: "",
             },
             laboratory: {
-                commission: bool,
+                commission: false,
                 name: "",
                 address:{
                     street : "",
                     housenumber: "",
-                    zipcode: 00000,
+                    zipcode: 0,
                     city:"",
                     country:"",
                 },
