@@ -1,9 +1,9 @@
 package de.coronavirus.application.controllers.api;
 
-import de.coronavirus.application.dtos.response.AddressResponse;
-import de.coronavirus.application.dtos.response.DiagnosisResponse;
-import de.coronavirus.application.dtos.response.EmailAddressResponse;
-import de.coronavirus.application.dtos.response.PhoneNumberResponse;
+import de.coronavirus.application.dtos.response.*;
+import de.coronavirus.application.dtos.service.CityDto;
+import de.coronavirus.application.dtos.service.StreetDto;
+import de.coronavirus.domain.model.City;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -33,18 +33,39 @@ public interface AutocompleteApi {
     EmailAddressResponse autocompleteEmail(@RequestParam String partialEmail);
 
 
-    @GetMapping("/address")
-    @ApiOperation(value =  "Responds with list of Addresses whose street name begin with the given string")
+    @GetMapping("/street")
+    @ApiOperation(value =  "Responds with list of streets whose name begin with the given string")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "Did not find any matching addresses")
+            @ApiResponse(code = 404, message = "Did not find any matching streets")
     })
-    List<AddressResponse> autocompleteAddress(@RequestParam String partialStreet);
+    StreetResponse autocompleteStreet(@RequestParam String partialStreet);
 
-    @GetMapping("/diagnosis")
-    @ApiOperation(value =  "Responds with list of diagnosis results that begin with the given string")
+    @GetMapping("/postCode")
+    @ApiOperation(value =  "Responds with list of streets whose name begin with the given string")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "Did not find any matching diagnoses")
+            @ApiResponse(code = 404, message = "Did not find any matching streets")
     })
-    DiagnosisResponse autocompleteDiagnosis(@RequestParam String partialDiagnosis);
+    List<AddressResponse> autocompletePostalCode(@RequestParam String partialStreet);
+
+    @GetMapping("/city")
+    @ApiOperation(value =  "Responds with list of streets whose name begin with the given string")
+    @ApiResponses({
+            @ApiResponse(code = 404, message = "Did not find any matching streets")
+    })
+    List<AddressResponse> autocompleteCity(@RequestParam String partialCity);
+
+    @GetMapping("/country")
+    @ApiOperation(value =  "Responds with list of streets whose name begin with the given string")
+    @ApiResponses({
+            @ApiResponse(code = 404, message = "Did not find any matching streets")
+    })
+    List<AddressResponse> autocompleteCountry(@RequestParam String partialCountry);
+
+//    @GetMapping("/diagnosis")
+//    @ApiOperation(value =  "Responds with list of diagnosis results that begin with the given string")
+//    @ApiResponses({
+//            @ApiResponse(code = 404, message = "Did not find any matching diagnoses")
+//    })
+//    DiagnosisResponse autocompleteDiagnosis(@RequestParam String partialDiagnosis);
 
 }

@@ -14,4 +14,5 @@ public interface PostCodeRepository extends JpaRepository<PostCode, Long> {
     List<PostCodeDto> findAllDtoBy();
 
     Optional<PostCodeDto> findDtoByCode(Long code);
+    List<PostCodeDto> findTop10ByCodeStartsWith(String partial);
 }
