@@ -95,9 +95,9 @@ class PatientDataForm extends React.Component {
           direction='column'
           justify="center"
           alignItems='flex-start'
-          divided
 
                 >
+
         <Grid>
             <Grid container
                   direction= 'row'
@@ -138,7 +138,7 @@ class PatientDataForm extends React.Component {
                             </Grid>
 
                             <Grid>
-                                <FormLabel for="fname">Vorname:</FormLabel>
+                                <FormLabel for="fname" >Vorname:</FormLabel>
                                 <Input type="text" id="fname" name="fname"></Input>
                             </Grid>
 
@@ -323,7 +323,7 @@ class PatientDataForm extends React.Component {
                             </Grid>
                             <Grid>
                                 <FormLabel for="email">Email:</FormLabel>
-                                <Input type="date" id="email" name="email"></Input>
+                                <Input type="email" id="email" name="email"></Input>
                             </Grid>
                             <Grid>
                                 <FormLabel for="labor">Untersuchungsstelle:</FormLabel>
@@ -387,7 +387,7 @@ class PatientDataForm extends React.Component {
                             </Grid>
                             <Grid>
                                 <FormLabel for="email">Email:</FormLabel>
-                                <Input type="text" id="email" name="email"></Input>
+                                <Input type="email" id="email" name="email"></Input>
                             </Grid>
                             <Grid>
                                 <FormLabel for="telephonnumber">Telefonnummer:</FormLabel>
@@ -403,6 +403,10 @@ class PatientDataForm extends React.Component {
                     <Grid>
                     <Button type="submit" value="Submit" variant="contained" color="primary" >Daten einreichen</Button>
                     </Grid>
+
+                    <div class="submitButton">
+                        <Button type="submit" value="Submit" variant="contained" color="primary" >Daten einreichen</Button>
+                    </div>
 
                 </Grid>
         </Grid>
