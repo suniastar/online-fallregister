@@ -1,37 +1,30 @@
 package de.coronavirus.domain.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Table(name = "cities")
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
+import java.util.List;
+
+@Data
+@EqualsAndHashCode
+@Table(name = "users")
 public class User {
 
     @Id
-    @Column(name = "username")
-    private String username;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "passwordHash")
-    private String passwordHash;
+    @Column(name = "password")
+    private String password;
 
-    public User(String username, String passwordHash) {
-        this.username = username;
-        this.passwordHash = passwordHash;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "users", fetch = FetchType.LAZY)
+    @OrderBy("valid_until desc")
+    private List<Token> tokens;
 }
