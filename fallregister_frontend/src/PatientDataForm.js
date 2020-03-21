@@ -23,6 +23,21 @@ class PatientDataForm extends React.Component {
 
           >
 
+        <Grid>
+            <Grid container
+                  direction= 'row'
+                  justify= 'space-between'
+            >
+                <Grid>
+                    <FormLabel class="big">Meldeformular</FormLabel>
+                </Grid>
+                <Grid>
+                    -Vertraulich-
+                </Grid>
+            </Grid>
+            <FormLabel class= "big">Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
+        </Grid>
+
         <Grid container
               direction= 'row'
               justify= 'flex-start'
@@ -84,21 +99,7 @@ class PatientDataForm extends React.Component {
                   item
                   xs={6}
             >
-                <Grid>
-                    <Grid container
-                          direction= 'row'
-                          justify= 'space-between'
-                    >
-                        <Grid>
-                            <FormLabel class="big">Meldeformular</FormLabel>
-                        </Grid>
-                        <Grid>
-                            -Vertraulich-
-                        </Grid>
-                    </Grid>
-                    <FormLabel>Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
-                </Grid>
-               
+
                     <Grid container
                           direction= 'column'
                     >
