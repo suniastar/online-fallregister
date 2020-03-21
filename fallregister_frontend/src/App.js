@@ -11,17 +11,19 @@ function App() {
                 <Grid
                       container
                       direction='column'
-                      //justify="center"
-                     // spacing="10"
-                      //alignItems='center'
+                      justify="center"
+                      //alignItems='flex-start'
+
                       >
                     <Grid>
                         <h>Patientendaten</h>
                     </Grid>
-                    <Grid>
+                    <div style={{padding: 20}}>
+                    <Grid container spacing={10}>
                     <FormLabel for="fname">Vorname:</FormLabel>
                     <Input type="text" id="fname" name="fname"></Input>
                     </Grid>
+                    </div>
                     <Grid>
                     <FormLabel for="lname">Nachname:</FormLabel>
                     <Input type="text" id="lname" name="lname"></Input>
