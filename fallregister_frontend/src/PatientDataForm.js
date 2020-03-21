@@ -1,13 +1,20 @@
 
 import React from 'react';
 
-import {FormLabel, Input, Grid} from '@material-ui/core/';
+import {Divider, FormLabel, Input, Grid} from '@material-ui/core/';
 
 class PatientDataForm extends React.Component {
+    constructor(){
+        super();
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onSubmit(){
+        alert("Tadaaaaaaa!");
+    }
     render(){
 
  return(
-    <form action="/action_page.php">
+    <form onSubmit={this.onSubmit}>
     <Grid
           container
           direction='column'
@@ -134,10 +141,6 @@ class PatientDataForm extends React.Component {
             </Grid>
 
         </Grid>
-
-
-
-
 
 
         <Grid container
