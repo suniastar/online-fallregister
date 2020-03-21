@@ -16,7 +16,7 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode
 @Entity
-@Table(name = "diagnosis")
+@Table(name = "diagnoses")
 public class Diagnosis {
 
     @Id
@@ -29,9 +29,22 @@ public class Diagnosis {
     @Column(name = "date")
     private Date date;
 
+    @Column(name = "suspicion")
+    private boolean suspicion;
+
+    @Column(name = "clinical_diagnosis")
+    private boolean clinicalDiagnosis;
+
+    @Column(name = "death")
+    private boolean death;
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "detector_id")
     private Detector detector;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "detectionOffice_id")
+    private Detector detectionOffice;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "laboratory_id")

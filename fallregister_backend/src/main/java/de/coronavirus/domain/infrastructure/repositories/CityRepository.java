@@ -1,7 +1,6 @@
 package de.coronavirus.domain.infrastructure.repositories;
 
-import de.coronavirus.application.dtos.service.CityDTO;
-import de.coronavirus.domain.model.Accommodation;
+import de.coronavirus.application.dtos.service.CityDto;
 import de.coronavirus.domain.model.City;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -12,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface CityRepository extends JpaRepository<City,Long> {
 
-    List<CityDTO> findAllDtoBy();
-    Optional<CityDTO> findDtoById(Long id);
+    List<CityDto> findAllDtoBy();
+    Optional<CityDto> findDtoById(Long id);
 
 }

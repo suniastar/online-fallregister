@@ -1,7 +1,7 @@
 package de.coronavirus.application.dtos.service;
 
-public interface DetectorDTO extends EntityDTO {
+public interface EmailAddressDto {
 
     long getId();
-    String getName();
+    String getEmail();
 }

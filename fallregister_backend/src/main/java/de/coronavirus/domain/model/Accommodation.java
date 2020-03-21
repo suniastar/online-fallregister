@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -29,13 +30,28 @@ public class Accommodation {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "community_field")
+    private boolean communityField;
+
+    @Column(name = "in_care")
+    private boolean inCare;
+
+    @Column(name = "in_care_since")
+    private Date inCareSince;
+
+    @Column(name = "in_icu")
+    private boolean inIcu;
+
+    @Column(name = "in_icu_since")
+    private Date inIcuSince;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "phone_numbers")
     private List<PhoneNumber> phoneNumber;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
-    private Address addresses;
+    private Address address;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("email asc")

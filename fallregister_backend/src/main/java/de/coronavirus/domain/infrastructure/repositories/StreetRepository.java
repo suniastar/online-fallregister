@@ -1,6 +1,6 @@
 package de.coronavirus.domain.infrastructure.repositories;
 
-import de.coronavirus.application.dtos.service.StreetDTO;
+import de.coronavirus.application.dtos.service.StreetDto;
 import de.coronavirus.domain.model.Street;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface StreetRepository extends JpaRepository<Street, Long> {
 
-    List<StreetDTO> findAllDtoBy();
+    List<StreetDto> findAllDtoBy();
 
-    Optional<StreetDTO> findDtoById(Long id);
+    Optional<StreetDto> findDtoById(Long id);
 }
