@@ -19,31 +19,31 @@ import java.util.List;
 public interface AutocompleteApi {
 
     @GetMapping("/phone")
-    @ApiOperation(value = "Liefert eine Liste an Telefonnummern zurück die mit gegebenen Anfangsstück beginnen")
+    @ApiOperation(value = "Responds with list of phone numbers which begin with the given partial number")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "Keine passende Telefonnummer gefunden")
+            @ApiResponse(code = 404, message = "Did not find any matching phone numbers")
     })
     PhoneNumberResponse autocompletePhone(@RequestParam String partialPhone);
 
     @GetMapping("/email")
-    @ApiOperation(value =  "Liefert eine Liste an E-Mails zurück, die mit gegebenen Anfangsstück beginnen")
+    @ApiOperation(value =  "Responds with list of emails which begin with the given String")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "Keine passende E-Mail gefunden")
+            @ApiResponse(code = 404, message = "Did not find any matching email addresses")
     })
     EmailAddressResponse autocompleteEmail(@RequestParam String partialEmail);
 
 
     @GetMapping("/address")
-    @ApiOperation(value =  "Liefert eine Liste an Adressen zurück, die mit gegebenen Straßennamensstück enthalten")
+    @ApiOperation(value =  "Responds with list of Addresses whose street name begin with the given string")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "Keine passende Adresse gefunden")
+            @ApiResponse(code = 404, message = "Did not find any matching addresses")
     })
     List<AddressResponse> autocompleteAddress(@RequestParam String partialStreet);
 
     @GetMapping("/diagnosis")
-    @ApiOperation(value =  "Liefert eine Liste an Diagnosen zurück, die mit gegebenen Anfangsstück beginnen")
+    @ApiOperation(value =  "Responds with list of diagnosis results that begin with the given string")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "Keine passende Diagnose gefunden")
+            @ApiResponse(code = 404, message = "Did not find any matching diagnoses")
     })
     DiagnosisResponse autocompleteDiagnosis(@RequestParam String partialDiagnosis);
 
