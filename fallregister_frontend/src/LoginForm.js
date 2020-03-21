@@ -11,13 +11,13 @@ class CSVImportForm extends React.Component {
             <Grid container direction='column' justify="center">
 
                 <Grid>
-                <FormLabel for="fname">Vorname:</FormLabel>
+                <FormLabel for="user">Benutzername:</FormLabel>
                 <Input type="text" id="fname" name="fname"></Input>
                 </Grid>
 
                 <Grid>
-                <FormLabel for="lname">Nachname:</FormLabel>
-                <Input type="text" id="lname" name="lname"></Input>
+                <FormLabel for="password">Password:</FormLabel>
+                <Input type="password" id="lname" name="lname"></Input>
                 </Grid>
 
                 <Grid>
