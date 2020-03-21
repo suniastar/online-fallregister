@@ -1,5 +1,8 @@
 package de.coronavirus.domain.model;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -11,6 +14,8 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import java.util.List;
 
+@Data
+@EqualsAndHashCode
 @Table(name = "post_codes")
 public class PostCode {
 

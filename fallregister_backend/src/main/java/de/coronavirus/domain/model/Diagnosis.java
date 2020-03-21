@@ -1,8 +1,18 @@
 package de.coronavirus.domain.model;
 
-import javax.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.util.Date;
 
+@Data
+@EqualsAndHashCode
 @Table(name = "diagnosis")
 public class Diagnosis {
 

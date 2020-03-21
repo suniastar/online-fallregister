@@ -1,5 +1,8 @@
 package de.coronavirus.domain.model;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -13,6 +16,8 @@ import javax.persistence.Table;
 import java.util.Date;
 import java.util.List;
 
+@Data
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "infected")
 public class Infected extends Entity {
 
@@ -54,10 +59,6 @@ public class Infected extends Entity {
 
     @Column(name = "infection_source")
     private String infectionSource; // TODO maybe use a class or other data type?
-
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "infected", fetch = FetchType.LAZY)
-    @JoinColumn(name = "location_of_infection")
-    private Address locationOfInfection;
 
     // TODO range of treatment in hospital
 
