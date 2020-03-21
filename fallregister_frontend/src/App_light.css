@@ -92,7 +92,6 @@ input[type=file] {
     margin:0px;
 }
 
-
 /*
 .MuiInput-underline:before {
     border-bottom: none !important;
@@ -146,4 +145,21 @@ label{
     to {
         transform: rotate(360deg);
     }
+}
+
+.horizontalDivider{
+    margin: 10px 0px;
+    border:solid;
+    border-width: 0.5px;
+    border-color: black;
+    height:100%;
+    width:100%;
+}
+
+.verticalDivider{
+    margin: 0px 10px;
+    border:solid;
+    border-width: 0.5px;
+    border-color: black;
+    height:100%;
 }

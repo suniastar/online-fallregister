@@ -114,11 +114,7 @@ class PatientDataForm extends React.Component {
             </Grid>
             <FormLabel class= "big">Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
         </Grid>
-        <div style={{
-            border: 'solid #000',
-            height: '100%',
-            width: '100%'
-        }}></div>
+        <div class="horizontalDivider"></div>
         <Grid container
               direction= 'row'
               justify= 'flex-start'
@@ -176,10 +172,7 @@ class PatientDataForm extends React.Component {
                                 <Input type="email" id="patientEmail" name="email"></Input>
                             </Grid>
                         </Grid>
-                        <div style={{
-                            border: 'solid #000',
-                            height: '100%',
-                        }}></div>
+                        <div class="verticalDivider"></div>
                         <Grid container
                               direction='column'
                               item
@@ -218,11 +211,7 @@ class PatientDataForm extends React.Component {
 
                     </Grid>
 
-            <div style={{
-                border: 'solid #000',
-                height: '100%',
-                width: '100%'
-            }}></div>
+            <div class="horizontalDivider"></div>
                     <Grid container
                           direction='row'
                           justify='flex-start'
@@ -287,11 +276,7 @@ class PatientDataForm extends React.Component {
                             <Input type="text" id="infectionExposition" name="infectionSource"></Input>
                         </Grid>
                     </Grid>
-            <div style={{
-                border: 'solid #000',
-                height: '100%',
-                width: '100%'
-            }}></div>
+            <div class="horizontalDivider"></div>
                     <Grid container
                           direction='row'
                           justify='flex-start'
@@ -328,10 +313,7 @@ class PatientDataForm extends React.Component {
                                 <Input type="text" id="labor" name="labor"></Input>
                             </Grid>
                         </Grid>
-                        <div style={{
-                            border: 'solid #000',
-                            height: '100%',
-                        }}></div>
+                        <div class="verticalDivider"></div>
                         <Grid container
                               direction='column'
                               xs={4}
@@ -357,10 +339,7 @@ class PatientDataForm extends React.Component {
                                 <Input type="text" id="probedate" name="probedate"></Input>
                             </Grid>
                         </Grid>
-                        <div style={{
-                            border: 'solid #000',
-                            height: '100%',
-                        }}></div>
+                        <div class="verticalDivider"></div>
                         <Grid container
                               direction='column'
                               justify='flex-start'
@@ -388,19 +367,12 @@ class PatientDataForm extends React.Component {
                                 <Input type="email" id="email" name="email"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="telephonnumber">Telefonnummer:</FormLabel>
-                                <Input type="tel" id="telephonnumber" name="telephonenumber"></Input>
+                                <FormLabel for="telephonenumber">Telefonnummer:</FormLabel>
+                                <Input type="tel" id="telephonenumber" name="telephonenumber"></Input>
                             </Grid>
                         </Grid>
                     </Grid>
-            <div style={{
-                border: 'solid #000',
-                height: '100%',
-                width: '100%'
-            }}></div>
-                    <Grid>
-                    <Button type="submit" value="Submit" variant="contained" color="primary" >Daten einreichen</Button>
-                    </Grid>
+            <div class="horizontalDivider"></div>
 
                     <div class="submitButton">
                         <Button type="submit" value="Submit" variant="contained" color="primary" >Daten einreichen</Button>
