@@ -14,49 +14,43 @@ import java.util.List;
 public class CreateInfectedRequest {
 
     /* Entity */
-    @NotEmpty
     @ApiModelProperty
     List<String> phoneNumber;
 
     /* -Address */
-    @NotNull
     @ApiModelProperty
     Integer houseNumber;
 
     /* --Street */
-    @NotEmpty
     @ApiModelProperty
     String streetName;
 
     /* ---PostCode */
-    @NotNull
     @ApiModelProperty
     long postCode;
 
     /* ----City */
-    @NotEmpty
     @ApiModelProperty
     String cityName;
 
-    @NotEmpty
     @ApiModelProperty
     String country;
 
     /* Infected */
     @NotEmpty
-    @ApiModelProperty
+    @ApiModelProperty(required = true)
     String firstName;
 
     @NotEmpty
-    @ApiModelProperty
+    @ApiModelProperty(required = true)
     String lastName;
 
     @NotNull
-    @ApiModelProperty
+    @ApiModelProperty(required = true)
     String gender;
 
     @NotNull
-    @ApiModelProperty
+    @ApiModelProperty(required = true)
     Date dateOfBirth;
 
     @ApiModelProperty
@@ -68,24 +62,22 @@ public class CreateInfectedRequest {
 
     /* -Diagnosis */
     @NotEmpty
-    @ApiModelProperty
+    @ApiModelProperty(required = true)
     String diagnosisResult;
 
     @NotNull
-    @ApiModelProperty
+    @ApiModelProperty(required = true)
     Date diagnosisDate;
 
     /* --Detector */
     @NotEmpty
-    @ApiModelProperty
+    @ApiModelProperty(required = true)
     String detectorName;
 
     /* --Laboratory */
-    @NotEmpty
     @ApiModelProperty
     String laboratoryName;
 
-    @NotNull
     @ApiModelProperty
     boolean diagnosisConfirmed;
 
@@ -98,6 +90,7 @@ public class CreateInfectedRequest {
     @ApiModelProperty
     String infectionSource;
 
-    @ApiModelProperty
+    @NotNull
+    @ApiModelProperty(required = true)
     boolean intensiveCareTreatment;
 }

@@ -4,13 +4,17 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import javax.validation.constraints.NotEmpty;
+
 @Data
 @ApiModel("LoginRequest")
 public class LoginRequest {
 
-    @ApiModelProperty(position = 1, required = true)
+    @NotEmpty
+    @ApiModelProperty( required = true)
     String user;
 
-    @ApiModelProperty(position = 2, required = true)
+    @NotEmpty
+    @ApiModelProperty( required = true)
     String password;
 }

@@ -4,6 +4,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -35,16 +37,20 @@ public class UpdateInfectedRequest {
     String country;
 
     /* Infected */
-    @ApiModelProperty
+    @NotEmpty
+    @ApiModelProperty(required = true)
     String firstName;
 
-    @ApiModelProperty
+    @NotEmpty
+    @ApiModelProperty(required = true)
     String lastName;
 
-    @ApiModelProperty
+    @NotEmpty
+    @ApiModelProperty(required = true)
     String gender;
 
-    @ApiModelProperty
+    @NotNull
+    @ApiModelProperty(required = true)
     Date dateOfBirth;
 
     @ApiModelProperty
@@ -55,14 +61,17 @@ public class UpdateInfectedRequest {
     String accommodationName;
 
     /* -Diagnosis */
-    @ApiModelProperty
+    @NotEmpty
+    @ApiModelProperty(required = true)
     String diagnosisResult;
 
-    @ApiModelProperty
+    @NotNull
+    @ApiModelProperty(required = true)
     Date diagnosisDate;
 
     /* --Detector */
-    @ApiModelProperty
+    @NotEmpty
+    @ApiModelProperty(required = true)
     String detectorName;
 
     /* --Laboratory */
@@ -81,6 +90,7 @@ public class UpdateInfectedRequest {
     @ApiModelProperty
     String infectionSource;
 
-    @ApiModelProperty
+    @NotNull
+    @ApiModelProperty(required = true)
     boolean intensiveCareTreatment;
 }
