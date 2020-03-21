@@ -246,19 +246,19 @@ class PatientDataForm extends React.Component {
                                 <FormControlLabel control = {<Checkbox id="food"/>} label = "Patient/in ist im Lebensmittelbereich tätig" />
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox id="epiCommunal"/>} label = "Patient/in ist in Gemeinschaftseinrichtung tätig, z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkünfte" />
+                                <FormControlLabel control = {<Checkbox id="epiCommunal"/>} label = "Patient/in ist in Gemeinschaftseinrichtung tätig,  z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkünfte" />
                             </Grid>
 
                             <Grid>
-                                <FormControlLabel control = {<Checkbox id="accCommunal"/>} label = "Patient/in wird betreut Gemeinschaftseinrichtung tätig, z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkünfte" />
+                                <FormControlLabel control = {<Checkbox id="accCommunal"/>} label = "Patient/in wird in Gemeinschaftseinrichtung betreut, z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkünfte" />
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox id="hospital" />} label = "Patient/in ist in Krankenhaus/stationärer Pflegeeinrichtung seit" />
+                                <FormControlLabel control = {<Checkbox id="hospital" />} label = "Patient/in ist in Krankenhaus/Pflegeeinrichtung seit:" />
                                 <Input type="date" id="dateOfcare" name="dateOfcare" id="dateOfHospitalisation" ></Input>
                             </Grid>
                         </Grid>
                         <Grid xs={3}>
-                            <FormLabel for="stay">Ort der Einrichtung</FormLabel>
+                            <FormLabel for="stay">Name und Ort der Einrichtung</FormLabel>
                             <Input type="text" id="stay" name="stay" id="addressAndPlace"></Input> 
                         </Grid>
 
@@ -274,7 +274,7 @@ class PatientDataForm extends React.Component {
                             <FormLabel class="big">Angaben zur wahrscheinlichen Infektionsquelle:</FormLabel>
                         </Grid>
                         <Grid>
-                            <FormLabel for="infectionPlace">Wahrscheinlicher Infektionsort</FormLabel>
+                            <FormLabel for="infectionPlace">Wahrscheinlicher Infektionsort:</FormLabel>
                             <Input type="text" id="infectionPlace" name="infectionPlace"></Input>
                         </Grid>
                         <Grid>
