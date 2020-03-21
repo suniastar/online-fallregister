@@ -1,7 +1,7 @@
 import React from 'react';
 //import './App.css';
 import './App_light.css';
-import {Label, Input} from '@material-ui/core/';
+import {FormLabel, Input} from '@material-ui/core/';
 
 function App() {
     return (
@@ -11,13 +11,13 @@ function App() {
 
                     <h>Patientendaten</h>
                     <br></br>
-                    <label for="fname">Vorname:</label>
-                    <br></br><input type="text" id="fname" name="fname"></input>
+                    <FormLabel for="fname">Vorname:</FormLabel>
+                    <br></br><Input type="text" id="fname" name="fname"></Input>
                     <br></br>
-                    <label for="lname">Nachname:</label>
-                    <br></br><input type="text" id="lname" name="lname"></input>
+                    <FormLabel for="lname">Nachname:</FormLabel>
+                    <br></br><Input type="text" id="lname" name="lname"></Input>
                     <br></br>
-                    <label htmlFor="gender">Geschlecht:</label>
+                    <FormLabel htmlFor="gender">Geschlecht:</FormLabel>
                     <br></br>
                     <select id="gender" name="gender">
                     <option value="" disabled selected>Select your option</option>
@@ -25,100 +25,100 @@ function App() {
                     <option value="female">Weiblich</option>
                     <option value="other">Sonstiges</option>
                     </select><br></br>
-                    <label for="birthday">Geburtsdatum:</label>
-                    <br></br><input type="text" id="birthday" name="birthday"></input>
+                    <FormLabel for="birthday">Geburtsdatum:</FormLabel>
+                    <br></br><Input type="text" id="birthday" name="birthday"></Input>
                     <br></br>
-                    <label htmlFor="address">Adresse:</label>
-                    <br></br><input type="text" id="address" name="address"></input>
+                    <FormLabel htmlFor="address">Adresse:</FormLabel>
+                    <br></br><Input type="text" id="address" name="address"></Input>
                     <br></br>
-                    <label htmlFor="email">Email:</label>
-                    <br></br><input type="text" id="email" name="email"></input>
+                    <FormLabel htmlFor="email">Email:</FormLabel>
+                    <br></br><Input type="text" id="email" name="email"></Input>
                     <br></br>
-                    <label htmlFor="telephonenumber">Telefonnummer:</label>
-                    <br></br><input type="text" id="telephonenumber" name="telephonenumber"></input>
+                    <FormLabel htmlFor="telephonenumber">Telefonnummer:</FormLabel>
+                    <br></br><Input type="text" id="telephonenumber" name="telephonenumber"></Input>
                     <br></br>
-                    <label htmlFor="activity">Tätigkeit:</label>
-                    <br></br><input type="text" id="activity" name="activity"></input>
+                    <FormLabel htmlFor="activity">Tätigkeit:</FormLabel>
+                    <br></br><Input type="text" id="activity" name="activity"></Input>
                     <br></br>
-                    <label htmlFor="care">Betreuung:</label>
-                    <br></br><input type="text" id="care" name="care"></input>
+                    <FormLabel htmlFor="care">Betreuung:</FormLabel>
+                    <br></br><Input type="text" id="care" name="care"></Input>
                     <br></br>
-                    <label htmlFor="stay">Unterbringung:</label>
-                    <br></br><input type="text" id="stay" name="stay"></input>
+                    <FormLabel htmlFor="stay">Unterbringung:</FormLabel>
+                    <br></br><Input type="text" id="stay" name="stay"></Input>
                     <br></br>
-                    <label htmlFor="diagnose">Diagnose/Verdachtsdiagnose:</label>
-                    <br></br><input type="text" id="diagnose" name="diagnose"></input>
+                    <FormLabel htmlFor="diagnose">Diagnose/Verdachtsdiagnose:</FormLabel>
+                    <br></br><Input type="text" id="diagnose" name="diagnose"></Input>
                     <br></br>
-                    <label htmlFor="stay">Unterbringung:</label>
-                    <br></br><input type="text" id="stay" name="stay"></input>
+                    <FormLabel htmlFor="stay">Unterbringung:</FormLabel>
+                    <br></br><Input type="text" id="stay" name="stay"></Input>
                     <br></br>
-                    <label htmlFor="dayOfInfection">Tag der Erkrankung:</label>
-                    <br></br><input type="text" id="dayOfInfection" name="dayOfInfection"></input>
+                    <FormLabel htmlFor="dayOfInfection">Tag der Erkrankung:</FormLabel>
+                    <br></br><Input type="text" id="dayOfInfection" name="dayOfInfection"></Input>
                     <br></br>
-                    <label htmlFor="dayOfDiagnose">Tag der Diagnose:</label>
-                    <br></br><input type="text" id="dayOfDiagnose" name="dayOfDiagnose"></input>
+                    <FormLabel htmlFor="dayOfDiagnose">Tag der Diagnose:</FormLabel>
+                    <br></br><Input type="text" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
                     <br></br>
-                    <label htmlFor="dayOfDeath">Tag des Todes:</label>
-                    <br></br><input type="text" id="dayOfDeath" name="dayOfDeath"></input>
+                    <FormLabel htmlFor="dayOfDeath">Tag des Todes:</FormLabel>
+                    <br></br><Input type="text" id="dayOfDeath" name="dayOfDeath"></Input>
                     <br></br>
-                    <label htmlFor="timeslotOfInfection">Zeitraum der Infektion:</label>
-                    <br></br><input type="text" id="timeslotOfInfection" name="timeslotOfInfection"></input>
+                    <FormLabel htmlFor="timeslotOfInfection">Zeitraum der Infektion:</FormLabel>
+                    <br></br><Input type="text" id="timeslotOfInfection" name="timeslotOfInfection"></Input>
                     <br></br>
-                    <label htmlFor="infectionSource">Infektionsquelle:</label>
-                    <br></br><input type="text" id="infectionSource" name="infectionSource"></input>
+                    <FormLabel htmlFor="infectionSource">Infektionsquelle:</FormLabel>
+                    <br></br><Input type="text" id="infectionSource" name="infectionSource"></Input>
                     <br></br>
-                    <label htmlFor="infectionPlace">Infektionsort:</label>
-                    <br></br><input type="text" id="infectionPlace" name="infectionPlace"></input>
+                    <FormLabel htmlFor="infectionPlace">Infektionsort:</FormLabel>
+                    <br></br><Input type="text" id="infectionPlace" name="infectionPlace"></Input>
                     <br></br>
-                    <label htmlFor="transfer">Überweisung:</label>
-                    <br></br><input type="text" id="transfer" name="transfer"></input>
+                    <FormLabel htmlFor="transfer">Überweisung:</FormLabel>
+                    <br></br><Input type="text" id="transfer" name="transfer"></Input>
                     <br></br>
-                    <label htmlFor="admission">Aufnahme:</label>
-                    <br></br><input type="text" id="admission" name="admission"></input>
+                    <FormLabel htmlFor="admission">Aufnahme:</FormLabel>
+                    <br></br><Input type="text" id="admission" name="admission"></Input>
                     <br></br>
-                    <label htmlFor="dismissal">Entlassung:</label>
-                    <br></br><input type="text" id="dismissal" name="dismissal"></input>
+                    <FormLabel htmlFor="dismissal">Entlassung:</FormLabel>
+                    <br></br><Input type="text" id="dismissal" name="dismissal"></Input>
                     <br></br>
                     <br></br>
 
                     <h>Labor</h>
                     <br></br>
-                    <label for="fname">First name:</label>
-                    <br></br><input type="text" id="fname" name="fname"></input>
+                    <FormLabel for="fname">First name:</FormLabel>
+                    <br></br><Input type="text" id="fname" name="fname"></Input>
                     <br></br>
-                    <label for="lname">Last name:</label>
-                    <br></br><input type="text" id="lname" name="lname"></input>
+                    <FormLabel for="lname">Last name:</FormLabel>
+                    <br></br><Input type="text" id="lname" name="lname"></Input>
                     <br></br>
-                    <label for="birthday">Telefonnummer:</label>
-                    <br></br><input type="text" id="telephonenumber" name="telephonenumber"></input>
+                    <FormLabel for="birthday">Telefonnummer:</FormLabel>
+                    <br></br><Input type="text" id="telephonenumber" name="telephonenumber"></Input>
                     <br></br>
-                    <label htmlFor="birthday">Email:</label>
-                    <br></br><input type="text" id="email" name="email"></input>
+                    <FormLabel htmlFor="birthday">Email:</FormLabel>
+                    <br></br><Input type="text" id="email" name="email"></Input>
                     <br></br>
-                    <label htmlFor="birthday">Untersuchungsstelle:</label>
-                    <br></br><input type="text" id="labor" name="labor"></input>
+                    <FormLabel htmlFor="birthday">Untersuchungsstelle:</FormLabel>
+                    <br></br><Input type="text" id="labor" name="labor"></Input>
                     <br></br>
 
                     <br></br>
                     <h>Melder</h>
                     <br></br>
-                    <label htmlFor="fname">First name:</label>
-                    <br></br><input type="text" id="fname" name="fname"></input>
+                    <FormLabel htmlFor="fname">First name:</FormLabel>
+                    <br></br><Input type="text" id="fname" name="fname"></Input>
                     <br></br>
-                    <label htmlFor="lname">Last name:</label>
-                    <br></br><input type="text" id="lname" name="lname"></input>
+                    <FormLabel htmlFor="lname">Last name:</FormLabel>
+                    <br></br><Input type="text" id="lname" name="lname"></Input>
                     <br></br>
-                    <label htmlFor="birthday">Anschrift:</label>
-                    <br></br><input type="text" id="address" name="address"></input>
+                    <FormLabel htmlFor="birthday">Anschrift:</FormLabel>
+                    <br></br><Input type="text" id="address" name="address"></Input>
                     <br></br>
-                    <label htmlFor="birthday">Email:</label>
-                    <br></br><input type="text" id="email" name="email"></input>
+                    <FormLabel htmlFor="birthday">Email:</FormLabel>
+                    <br></br><Input type="text" id="email" name="email"></Input>
                     <br></br>
-                    <label htmlFor="birthday">Telefonnummer:</label>
-                    <br></br><input type="text" id="telephonnumber" name="telephonenumber"></input>
+                    <FormLabel htmlFor="birthday">Telefonnummer:</FormLabel>
+                    <br></br><Input type="text" id="telephonnumber" name="telephonenumber"></Input>
                     <br></br>
 
-                    <br></br><input type="submit" value="Submit"></input>
+                    <br></br><Input type="submit" value="Submit"></Input>
                     <br></br><br></br>
                 </form>
             </header>
