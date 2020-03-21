@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import {Button,InputLabel,FormLabel,FormControlLabel, Input, Grid, Checkbox, TextField} from '@material-ui/core/';
+import {InputLabel,FormLabel,FormControlLabel, Input, Grid, Checkbox, Button, Divider} from '@material-ui/core/';
 
 class PatientDataForm extends React.Component {
     constructor(){
@@ -114,7 +114,11 @@ class PatientDataForm extends React.Component {
             </Grid>
             <FormLabel class= "big">Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
         </Grid>
-
+        <div style={{
+            border: 'solid #000',
+            height: '100%',
+            width: '100%'
+        }}></div>
         <Grid container
               direction= 'row'
               justify= 'flex-start'
@@ -172,10 +176,14 @@ class PatientDataForm extends React.Component {
                                 <Input type="email" id="patientEmail" name="email"></Input>
                             </Grid>
                         </Grid>
+                        <div style={{
+                            border: 'solid #000',
+                            height: '100%',
+                        }}></div>
                         <Grid container
                               direction='column'
                               item
-                              xs={6}
+                              xs={5}
                         >
 
 
@@ -210,7 +218,11 @@ class PatientDataForm extends React.Component {
 
                     </Grid>
 
-
+            <div style={{
+                border: 'solid #000',
+                height: '100%',
+                width: '100%'
+            }}></div>
                     <Grid container
                           direction='row'
                           justify='flex-start'
@@ -275,7 +287,11 @@ class PatientDataForm extends React.Component {
                             <Input type="text" id="infectionExposition" name="infectionSource"></Input>
                         </Grid>
                     </Grid>
-
+            <div style={{
+                border: 'solid #000',
+                height: '100%',
+                width: '100%'
+            }}></div>
                     <Grid container
                           direction='row'
                           justify='flex-start'
@@ -305,14 +321,17 @@ class PatientDataForm extends React.Component {
                             </Grid>
                             <Grid>
                                 <FormLabel for="email">Email:</FormLabel>
-                                <Input type="date" id="email" name="email"></Input>
+                                <Input type="email" id="email" name="email"></Input>
                             </Grid>
                             <Grid>
                                 <FormLabel for="labor">Untersuchungsstelle:</FormLabel>
                                 <Input type="text" id="labor" name="labor"></Input>
                             </Grid>
                         </Grid>
-
+                        <div style={{
+                            border: 'solid #000',
+                            height: '100%',
+                        }}></div>
                         <Grid container
                               direction='column'
                               xs={4}
@@ -338,12 +357,15 @@ class PatientDataForm extends React.Component {
                                 <Input type="text" id="probedate" name="probedate"></Input>
                             </Grid>
                         </Grid>
-
+                        <div style={{
+                            border: 'solid #000',
+                            height: '100%',
+                        }}></div>
                         <Grid container
                               direction='column'
                               justify='flex-start'
                               alignItems="stretch"
-                              xs={4}
+                              xs={3}
                               item
                         >
                             <Grid>
@@ -363,7 +385,7 @@ class PatientDataForm extends React.Component {
                             </Grid>
                             <Grid>
                                 <FormLabel for="email">Email:</FormLabel>
-                                <Input type="text" id="email" name="email"></Input>
+                                <Input type="email" id="email" name="email"></Input>
                             </Grid>
                             <Grid>
                                 <FormLabel for="telephonnumber">Telefonnummer:</FormLabel>
@@ -371,10 +393,18 @@ class PatientDataForm extends React.Component {
                             </Grid>
                         </Grid>
                     </Grid>
-
+            <div style={{
+                border: 'solid #000',
+                height: '100%',
+                width: '100%'
+            }}></div>
                     <Grid>
                     <Button type="submit" value="Submit" variant="contained" color="primary" >Daten einreichen</Button>
                     </Grid>
+
+                    <div class="submitButton">
+                        <Button type="submit" value="Submit" variant="contained" color="primary" >Daten einreichen</Button>
+                    </div>
 
                 </Grid>
         </Grid>
