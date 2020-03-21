@@ -19,10 +19,13 @@ class PatientDataForm extends React.Component {
         <Grid container
               direction= 'row'
               justify= 'flex-start'
+              alignItems= "stretch"
         >
 
             <Grid container
                   direction= 'column'
+                  item
+                  xs={6}
             >
                 <Grid>
                     <h>Patientendaten </h>
@@ -71,6 +74,8 @@ class PatientDataForm extends React.Component {
             </Grid>
             <Grid container
                   direction= 'column'
+                  item
+                  xs={6}
             >
                 <Grid>
                     <Grid container
@@ -92,12 +97,12 @@ class PatientDataForm extends React.Component {
                     <Grid container
                           direction= 'column'
                     >
-                        //Verdacht, Diagnose, Tod?
+                        Verdacht, Diagnose, Tod?
                     </Grid>
                     <Grid container
                           direction= 'column'
                     >
-                        //Impfstatus?
+                        Impfstatus?
 
                     </Grid>
                 </Grid>
