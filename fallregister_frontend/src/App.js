@@ -4,6 +4,7 @@ import './App_light.css';
 import {Button} from '@material-ui/core/';
 import PatientDataForm from "./PatientDataForm.js"
 import CSVImportForm from './CSVImportForm.js';
+import LoginForm from "./LoginForm"
 
 class App extends React.Component {
     constructor(){
@@ -24,7 +25,7 @@ class App extends React.Component {
         if(this.state.buttontext === "csvimport"){
             form = <PatientDataForm />;
         }else{
-            form = <CSVImportForm />
+            form = <LoginForm />
         }
 
         return (
