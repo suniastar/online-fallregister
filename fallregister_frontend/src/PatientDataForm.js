@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import {Divider, FormLabel, Input, Grid, Box, Border} from '@material-ui/core/';
+import {Divider, FormLabel, Input, Grid} from '@material-ui/core/';
 
 class PatientDataForm extends React.Component {
     constructor(){
@@ -14,7 +14,7 @@ class PatientDataForm extends React.Component {
     render(){
 
  return(
-    <form action="/action_page.php">
+    <form onSubmit={this.onSubmit}>
     <Grid
           container
           direction='column'
@@ -79,8 +79,6 @@ class PatientDataForm extends React.Component {
                     <Input type="email" id="email" name="email"></Input>
                 </Grid>
             </Grid>
-            </Box>
-            <Box border={1} borderColor="#000">
             <Grid container
                   direction= 'column'
                   item
@@ -141,13 +139,8 @@ class PatientDataForm extends React.Component {
                     
               
             </Grid>
-            </Box>
 
         </Grid>
-
-
-
-
 
 
         <Grid container
