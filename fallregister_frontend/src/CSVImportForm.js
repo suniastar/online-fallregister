@@ -3,7 +3,7 @@ import React from 'react';
 
 import {FormLabel, Input, Grid} from '@material-ui/core/';
 
-class CVSImportForm extends React.Component {
+class CSVImportForm extends React.Component {
     render(){
 
         return(
@@ -20,8 +20,8 @@ class CVSImportForm extends React.Component {
             </Grid>
 
             <Grid>
-            <FormLabel for="lname">CVS Dokument hochladen: </FormLabel>
-            <Input type="file" id="cvsFile" name="cvsFile"></Input>
+            <FormLabel for="lname">CSV Dokument hochladen: </FormLabel>
+            <Input type="file" id="csvFile" name="csvFile"></Input>
 
             </Grid>
 
@@ -32,4 +32,4 @@ class CVSImportForm extends React.Component {
     }
 }
 
-export default CVSImportForm;
+export default CSVImportForm;

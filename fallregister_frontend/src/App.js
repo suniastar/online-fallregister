@@ -3,28 +3,28 @@ import React from 'react';
 import './App_light.css';
 import {Button} from '@material-ui/core/';
 import PatientDataForm from "./PatientDataForm.js"
-import CVSImportForm from './CVSImportForm.js';
+import CSVImportForm from './CSVImportForm.js';
 
 class App extends React.Component {
     constructor(){
         super();
-        this.state = {buttontext: "cvsimport"};
+        this.state = {buttontext: "csvimport"};
         this.onButtonClick = this.onButtonClick.bind(this);
     }
 
     onButtonClick(){
-        if(this.state.buttontext === "cvsimport"){
+        if(this.state.buttontext === "csvimport"){
             this.setState({buttontext: "manueller input"});
         }else{
-            this.setState({buttontext: "cvsimport"});
+            this.setState({buttontext: "csvimport"});
         }
     }
     render(){
         let form= <h>oh oh</h>;
-        if(this.state.buttontext === "cvsimport"){
+        if(this.state.buttontext === "csvimport"){
             form = <PatientDataForm />;
         }else{
-            form = <CVSImportForm />
+            form = <CSVImportForm />
         }
 
         return (
