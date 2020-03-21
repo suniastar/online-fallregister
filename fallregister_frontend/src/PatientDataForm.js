@@ -78,13 +78,13 @@ class PatientDataForm extends React.Component {
                           justify= 'space-between'
                     >
                         <Grid>
-                            <h>Meldeformular</h>
+                            <FormLabel style={{fontSize: "1.2em", fontWeight: "bold"}}>Meldeformular</FormLabel>
                         </Grid>
                         <Grid>
                             -Vertraulich-
                         </Grid>
                     </Grid>
-                    <h>Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</h>
+                    <FormLabel>Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
                 </Grid>
                 <Grid container
                       direction= 'row'
