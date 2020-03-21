@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface TokenRepository extends JpaRepository<Token, Long> {
 
     List<TokenDto> findAllDtoBy();
-    Optional<TokenDto> findDtoById();
+    Optional<TokenDto> findDtoById(Long id);
 }
