@@ -52,8 +52,34 @@ label{
 }
 
 .App-header {
+    background-color: #333333;
+    min-width: 100%;
+    font-size: calc(10px + 1vmin);
+    color: white;
+    display: inline-block;
+
+    overflow: auto;
+    white-space: nowrap;
+    margin:0px auto;
+}
+
+
+.App-header .MuiButton-root {
+    color: white !important;
+    padding: 12px 16px;
+}
+
+.header-container {
+}
+
+.left {
+    float: left;
+}
+
+.right {float: right}
+
+body {
     background-color: #f2f2f2;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
