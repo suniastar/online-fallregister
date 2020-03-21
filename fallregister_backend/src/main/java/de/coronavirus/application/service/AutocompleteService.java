@@ -46,7 +46,7 @@ public class AutocompleteService {
     }
     
     public List<StreetDto> findStreetsStartingWith(String partialStreet){
-        return streetRepository.findTop10ByStreetStartsWithOrderByStreetAsc(partialStreet);
+        return streetRepository.findTop10ByNameStartsWithOrderByNameAsc(partialStreet);
     }
 
     public List<PostCodeDto> findPostCodesStartingWith(String partialPostCode) {

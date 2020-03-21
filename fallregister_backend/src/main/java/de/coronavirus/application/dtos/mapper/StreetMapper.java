@@ -12,7 +12,7 @@ public class StreetMapper {
     public static StreetResponse toResponse(StreetDto streetDto) {
         StreetResponse response = new StreetResponse();
 
-        response.getStreets().add(streetDto.getName());
+        response.getStreet().add(streetDto.getName());
 
         return response;
     }
@@ -21,7 +21,7 @@ public class StreetMapper {
         StreetResponse response = new StreetResponse();
 
         for(StreetDto street : streetDtoList) {
-            response.getStreets().add(street.getName());
+            response.getStreet().add(street.getName());
         }
 
         return response;

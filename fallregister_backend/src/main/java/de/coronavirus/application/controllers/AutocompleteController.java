@@ -17,39 +17,19 @@ import java.util.List;
 @RestController
 @CrossOrigin
 public class AutocompleteController implements AutocompleteApi {
-	
-	
-	
-	private final AutocompleteService autocompleteService;
-	private final StreetMapper streetMapper;
-	private final AddressMapper addressMapper;
-	private final EmailAddressMapper emailAddressMapper;
-	private final DiagnosisMapper diagnosisMapper;
-	private final PhoneNumberMapper phoneNumberMapper;
 
-	
+	private final AutocompleteService autocompleteService;
+
     @Autowired
-    public AutocompleteController(AutocompleteService autocompleteService,
-    		StreetMapper streetMapper,
-    		AddressMapper addressMapper, 
-    		EmailAddressMapper emailAddressMapper,
-    		DiagnosisMapper diagnosisMapper,
-    		PhoneNumberMapper phoneNumberMapper) {
+    public AutocompleteController(AutocompleteService autocompleteService) {
 
         this.autocompleteService = autocompleteService;
-        this.streetMapper = streetMapper;
-        this.addressMapper = addressMapper;
-        this.emailAddressMapper = emailAddressMapper;
-        this.diagnosisMapper = diagnosisMapper;
-        this.phoneNumberMapper = phoneNumberMapper;
-
     }
 
     @Override
-    PhoneNumberResponse autocompletePhone(@PathVariable String partialPhone) {
+    public PhoneNumberResponse autocompletePhone(@PathVariable String partialPhone) {
         List<PhoneNumberDto> phoneNumbers = autocompleteService.findPhoneNumbersStartingWith(partialPhone);
         return null;
-		
 	}
 	
 	@Override
@@ -57,7 +37,6 @@ public class AutocompleteController implements AutocompleteApi {
         List<EmailAddressDto> emailAddresses = autocompleteService.findEmailAddressesStartingWith(partialEmail);
         return null;
 	}
-
 
 	@Override
     public StreetResponse autocompleteStreet(@PathVariable String partialStreet){
@@ -74,13 +53,13 @@ public class AutocompleteController implements AutocompleteApi {
     @Override
     public List<AddressResponse> autocompleteCity(String partialCity) {
         List<CityDto> cities = autocompleteService.findCitiesStartingWith(partialCity);
-        return addressMapper.CityDtoToResponseList(cities);
+        return AddressMapper.CityDtoToResponseList(cities);
     }
 
     @Override
     public List<AddressResponse> autocompleteCountry(String partialCountry) {
         List<CountryDto> countries = autocompleteService.findCountriesStartingWith(partialCountry);
-        return addressMapper.CountryDtoToResponseList(countries);
+        return AddressMapper.CountryDtoToResponseList(countries);
     }
 
 //	@Override

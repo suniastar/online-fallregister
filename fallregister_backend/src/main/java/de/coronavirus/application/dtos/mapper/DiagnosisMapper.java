@@ -2,13 +2,11 @@ package de.coronavirus.application.dtos.mapper;
 
 import de.coronavirus.application.dtos.response.DiagnosisResponse;
 import de.coronavirus.application.dtos.service.DiagnosisDto;
-import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
-public interface DiagnosisMapper {
+public class DiagnosisMapper {
 
-    DiagnosisResponse toResponse(DiagnosisDto diagnosisDto);
-    List<DiagnosisResponse> toResponseList(List<DiagnosisDto> diagnosisDtoList);
+    DiagnosisResponse toResponse(DiagnosisDto diagnosisDto) {return null;}
+    List<DiagnosisResponse> toResponseList(List<DiagnosisDto> diagnosisDtoList){return null;}
 }
