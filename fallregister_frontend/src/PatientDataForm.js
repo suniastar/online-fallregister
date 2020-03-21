@@ -1,12 +1,87 @@
 
 import React from 'react';
 
-import {InputLabel,FormLabel,FormControlLabel, Input, Grid, Checkbox, Border, Box} from '@material-ui/core/';
+import {InputLabel,FormLabel,FormControlLabel, Input, Grid, Checkbox} from '@material-ui/core/';
 
 class PatientDataForm extends React.Component {
     constructor(){
         super();
         this.onSubmit = this.onSubmit.bind(this);
+        this.input = {
+            patient: {
+                firstname: "",
+                name: "",
+                address:{
+                    street : "",
+                    housenumber: "",
+                    zipcode: 00000,
+                    city:"",
+                    country:"",
+                },
+                birthday: "",
+                sex: "",
+                phone: "",
+                email: ""
+            },
+            detector: {
+                firstname: "",
+                name: "",
+                address:{
+                    street : "",
+                    housenumber: "",
+                    zipcode: 00000,
+                    city:"",
+                    country:"",
+                },
+                phone: "",
+                email: ""
+            },
+            diagnosis:{
+                suspected: false,
+                diagnosed: false,
+                dead: false,
+                dateOfSickness: "",
+                dateOfDiagnosis: "",
+                dateOfDeath: ""
+            },
+            jobs:{
+                medical: false,
+                food: false,
+                communal: false,
+            },
+            accommodation:{
+                communal:false,
+                hospital: false,
+                dateOfHospitalisation: "",
+                icu: false,
+                dateOfIcu: ""
+            },
+            gesundheitsamt: {
+                name: "",
+                address:{
+                    street : "",
+                    housenumber: "",
+                    zipcode: 00000,
+                    city:"",
+                    country:"",
+                },
+                phone: "",
+                email: "",
+            },
+            laboratory: {
+                commission: bool,
+                name: "",
+                address:{
+                    street : "",
+                    housenumber: "",
+                    zipcode: 00000,
+                    city:"",
+                    country:"",
+                },
+                phone: "",
+                dateOfBiopsy: ""
+            }
+        }
     }
     onSubmit(){
         alert("Tadaaaaaaa!");
@@ -95,7 +170,6 @@ class PatientDataForm extends React.Component {
                                 <Input type="email" id="email" name="email"></Input>
                             </Grid>
                         </Grid>
-
                         <Grid container
                               direction='column'
                               item
@@ -204,12 +278,10 @@ class PatientDataForm extends React.Component {
                         </Grid>
                     </Grid>
 
-
                     <Grid container
                           direction='row'
                           justify='flex-start'
                           alignItems="stretch"
-
                     >
                         <Grid container
                               direction='column'
@@ -301,7 +373,11 @@ class PatientDataForm extends React.Component {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Input type="submit" value="Submit"></Input>
+
+                    <Grid>
+                    <Button type="submit" value="Submit" variant="contained" color="primary" >Daten einreichen</Button>
+                    </Grid>
+
                 </Grid>
         </Grid>
             </form>
