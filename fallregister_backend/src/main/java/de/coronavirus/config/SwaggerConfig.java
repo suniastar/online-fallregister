@@ -22,17 +22,17 @@ public class SwaggerConfig {
     private static final Set<String> PRODUCES_AND_CONSUMES = new HashSet<>(
             Collections.singletonList(MediaType.APPLICATION_JSON_VALUE));
     private static Contact CONTACT = new Contact(
-            "<NAME>",
-            "<WEBSITE>",
-            "<MAIL>");
+            "Online Fallregister",
+            "online-fallregister.de",
+            "info@online-fallregister.de");
     private static ApiInfo API_INFO = new ApiInfo(
-            "<TITLE>",
-            "<DESCRIPTION>",
-            "<VERSION>",
+            "Online Fallregister",
+            "Ein Fallregister zur schnellen Anmeldung und Übermittlung von Krankheitsfällen innerhalb Deutschlands",
+            "0.0.01",
             "tos",
             CONTACT,
-            "<LICENCE>",
-            "<LICENCE_URL>",
+            "Apache 2.0",
+            "http://www.apache.org/licenses/LICENSE-2.0",
             Collections.emptyList());
 
     @Bean
