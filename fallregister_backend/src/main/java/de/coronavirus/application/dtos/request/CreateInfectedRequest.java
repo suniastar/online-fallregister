@@ -21,25 +21,26 @@ public class CreateInfectedRequest {
     /* -Address */
     @NotNull
     @ApiModelProperty
-    Integer infectedHouseNumber;
+    Integer houseNumber;
 
     /* --Street */
     @NotEmpty
     @ApiModelProperty
-    String infectedStreetName;
+    String streetName;
 
     /* ---PostCode */
     @NotNull
     @ApiModelProperty
-    long infectedPostCode;
+    long postCode;
+
+    /* ----City */
+    @NotEmpty
+    @ApiModelProperty
+    String cityName;
 
     @NotEmpty
     @ApiModelProperty
-    String infectedCityName;
-
-    @NotEmpty
-    @ApiModelProperty
-    String infectedCounty;
+    String country;
 
     /* Infected */
     @NotEmpty

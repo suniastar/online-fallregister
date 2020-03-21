@@ -19,18 +19,22 @@ public class InfectedResponse {
 
     /* -Address */
     @ApiModelProperty
-    Integer infectedHouseNumber;
+    Integer houseNumber;
 
     /* --Street */
     @ApiModelProperty
-    String infectedStreetName;
+    String streetName;
 
     /* ---PostCode */
     @ApiModelProperty
-    long infectedPostCode;
+    long postCode;
+
+    /* ----City */
+    @ApiModelProperty
+    String cityName;
 
     @ApiModelProperty
-    String infectedCityName;
+    String country;
 
     @ApiModelProperty
     String infectedCounty;
