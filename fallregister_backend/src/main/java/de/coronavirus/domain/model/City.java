@@ -22,8 +22,4 @@ public class City {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cities", orphanRemoval = true, fetch = FetchType.LAZY)
     @OrderBy("code asc")
     private List<Long> postCodes;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cities", orphanRemoval = true, fetch = FetchType.LAZY)
-    @OrderBy("name asc")
-    private List<Street> streets;
 }

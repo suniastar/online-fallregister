@@ -19,6 +19,6 @@ public class Street {
     private String name;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "city_id")
-    private City city;
+    @JoinColumn(name = "post_code")
+    private PostCode postCode;
 }

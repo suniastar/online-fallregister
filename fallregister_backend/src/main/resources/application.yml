@@ -1,0 +1,23 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+
+---
+spring:
+  profiles: postgres
+  jackson:
+    default-property-inclusion: non_null
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  datasource:
+    initialization-mode: always
+    platform: postgres
+    url: jdbc:postgresql://${TLM_MS_DB_SERVER}:${TLM_MS_DB_PORT}/${TLM_MS_DB_NAME}
+    username: ${TLM_MS_DB_USER}
+    password: ${TLM_MS_DB_PW}

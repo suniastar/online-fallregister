@@ -1,6 +1,15 @@
 package de.coronavirus.domain.model;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
 import java.util.Date;
 import java.util.List;
 
@@ -31,6 +40,9 @@ public class Infected extends Entity {
     @JoinColumn(name = "accommodation_id")
     private Accommodation accommodation; // like hospital, care station or homeless accommodation
 
+    @Column(name = "date_of_illness")
+    private Date dateOfIllness;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "infected", fetch = FetchType.LAZY)
     @OrderBy("date asc")
     private List<Diagnosis> diagnosis;
@@ -45,7 +57,7 @@ public class Infected extends Entity {
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "infected", fetch = FetchType.LAZY)
     @JoinColumn(name = "location_of_infection")
-    private Address location_of_infection;
+    private Address locationOfInfection;
 
     // TODO range of treatment in hospital
 
