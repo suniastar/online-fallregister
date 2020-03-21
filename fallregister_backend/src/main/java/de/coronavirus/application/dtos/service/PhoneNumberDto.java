@@ -1,7 +1,7 @@
 package de.coronavirus.application.dtos.service;
 
-public interface EmailAddressDTO {
+public interface PhoneNumberDto {
 
     long getId();
-    String getEmail();
+    String getPhoneNumber();
 }

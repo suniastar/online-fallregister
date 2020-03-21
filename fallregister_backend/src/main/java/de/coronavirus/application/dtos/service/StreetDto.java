@@ -1,8 +1,8 @@
 package de.coronavirus.application.dtos.service;
 
-public interface StreetDTO {
+public interface StreetDto {
 
     long getId();
     String getName();
-    CityDTO getPostCode();
+    CityDto getPostCode();
 }

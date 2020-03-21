@@ -2,11 +2,11 @@ package de.coronavirus.application.dtos.service;
 
 import java.util.Date;
 
-public interface TokenDTO {
+public interface TokenDto {
 
     long getId();
     Date getValidUntil();
     String getValue();
-    UserDTO getUser();
+    UserDto getUser();
 
 }

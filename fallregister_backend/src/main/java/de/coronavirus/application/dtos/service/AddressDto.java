@@ -1,9 +1,9 @@
 package de.coronavirus.application.dtos.service;
 
-public interface AddressDTO {
+public interface AddressDto {
 
     long getId();
-    StreetDTO getStreet();
+    StreetDto getStreet();
     Integer getHouseNumber();
 
 }

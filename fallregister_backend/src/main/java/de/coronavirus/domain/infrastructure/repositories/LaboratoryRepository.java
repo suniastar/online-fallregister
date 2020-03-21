@@ -1,6 +1,6 @@
 package de.coronavirus.domain.infrastructure.repositories;
 
-import de.coronavirus.application.dtos.service.LaboratoryDTO;
+import de.coronavirus.application.dtos.service.LaboratoryDto;
 import de.coronavirus.domain.model.Laboratory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface LaboratoryRepository extends JpaRepository<Laboratory,Long> {
 
-    List<LaboratoryDTO> findAllDtoBy();
+    List<LaboratoryDto> findAllDtoBy();
 
-    Optional<LaboratoryDTO> findDtoById(Long id);
+    Optional<LaboratoryDto> findDtoById(Long id);
 }
