@@ -1,6 +1,5 @@
 package de.coronavirus.application.dtos.response;
 
-import de.coronavirus.domain.model.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -11,48 +10,78 @@ import java.util.List;
 @Data
 @ApiModel ("InfectedResponse")
 public class InfectedResponse {
-    @ApiModelProperty(position = 0, required = true)
+    @ApiModelProperty
     long id;
 
+    /* Entity */
+    @ApiModelProperty
+    List<String> phoneNumber;
+
+    /* -Address */
+    @ApiModelProperty
+    Integer infectedHouseNumber;
+
+    /* --Street */
+    @ApiModelProperty
+    String infectedStreetName;
+
+    /* ---PostCode */
+    @ApiModelProperty
+    long infectedPostCode;
+
+    @ApiModelProperty
+    String infectedCityName;
+
+    @ApiModelProperty
+    String infectedCounty;
+
+    /* Infected */
     @ApiModelProperty
     String firstName;
 
     @ApiModelProperty
-    private String lastName;
+    String lastName;
 
     @ApiModelProperty
-    private Infected.Gender gender;
+    String gender;
 
     @ApiModelProperty
-    private Date dateOfBirth;
+    Date dateOfBirth;
 
     @ApiModelProperty
-    private List<Job> jobs;
+    List<String> jobs;
+
+    /* -Accommodation */
+    @ApiModelProperty
+    String accommodationName;
+
+    /* -Diagnosis */
+    @ApiModelProperty
+    String diagnosisResult;
 
     @ApiModelProperty
-    private Accommodation accommodation; // like hospital, care station or homeless accommodation
+    Date diagnosisDate;
+
+    /* --Detector */
+    @ApiModelProperty
+    String detectorName;
+
+    /* --Laboratory */
+    @ApiModelProperty
+    String laboratoryName;
 
     @ApiModelProperty
-    private Diagnosis diagnosis;
+    boolean diagnosisConfirmed;
 
     @ApiModelProperty
-    private boolean diagnosisConfirmed;
+    Date dateOfIllness;
 
     @ApiModelProperty
-    private Date dateOfIllnes;
+    Date dateOfDeath;
 
     @ApiModelProperty
-    private Date dateOfDiagnosis;
+    String infectionSource;
 
     @ApiModelProperty
-    private Date dateOfDeath;
-
-    @ApiModelProperty
-    private String infectionSource;
-
-    @ApiModelProperty
-    private Address location_of_infection;
-
-    @ApiModelProperty
-    private boolean intensiveCareTreatment;
+    boolean intensiveCareTreatment;
 }
