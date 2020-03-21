@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+@Api(tags = {"auth"}, description = "Corona-Virus Backend Authorization API")
 @RequestMapping("/auth")
-@Api(value = "/auth")
 public interface AuthorizationApi {
 
     @PostMapping(value = "/login")

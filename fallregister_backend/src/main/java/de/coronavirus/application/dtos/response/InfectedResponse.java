@@ -36,9 +36,6 @@ public class InfectedResponse {
     @ApiModelProperty
     String country;
 
-    @ApiModelProperty
-    String infectedCounty;
-
     /* Infected */
     @ApiModelProperty
     String firstName;

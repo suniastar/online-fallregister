@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -14,6 +15,7 @@ import java.util.Date;
 
 @Data
 @EqualsAndHashCode
+@Entity
 @Table(name = "diagnosis")
 public class Diagnosis {
 
@@ -27,10 +29,12 @@ public class Diagnosis {
     @Column(name = "date")
     private Date date;
 
-    @Column(name = "detector")
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "detector_id")
     private Detector detector;
 
-    @Column(name = "laboratory")
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "laboratory_id")
     private Laboratory laboratory;
 
     @Column(name = "confirmed")

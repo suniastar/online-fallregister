@@ -3,17 +3,14 @@ package de.coronavirus.domain.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.FetchType;
+import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 @Data
 @EqualsAndHashCode
+@Entity
 @Table(name = "phone_numbers")
 public class PhoneNumber {
 
@@ -23,8 +20,4 @@ public class PhoneNumber {
 
     @Column(name = "phone_number")
     private String phoneNumber;
-
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "phone_numbers", fetch = FetchType.LAZY)
-    @JoinColumn(name = "entities")
-    private List<Entity> entities;
 }
