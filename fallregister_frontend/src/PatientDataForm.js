@@ -145,17 +145,35 @@ class PatientDataForm extends React.Component {
                                 <Input type="text" id="patientLastName" name="lname"></Input>
                             </Grid>
 
-                            <Grid>
-                                <FormLabel for="address">Strasse:</FormLabel>
-                                <Input type="text" id="address" name="address"></Input>
-                                <FormLabel for="address">Hausnummer:</FormLabel>
-                                <Input type="text" id="address" name="address"></Input>
+                            <Grid container
+                                  direction= "row"
+                                  item
+                            >
+                                <Grid xs={5}>
+                                    <FormLabel for="address">Strasse:</FormLabel>
+                                    <Input type="text" id="address" name="address"></Input>
+                                </Grid>
+
+                                <Grid xs={7}>
+                                    <FormLabel for="address">Hausnummer:</FormLabel>
+                                    <Input type="text" id="address" name="address"></Input>
+                                </Grid>
+
                             </Grid>
-                            <Grid>
-                                <FormLabel for="address">PLZ:</FormLabel>
-                                <Input type="text" id="address" name="address"></Input>
-                                <FormLabel for="address">Stadt:</FormLabel>
-                                <Input type="text" id="address" name="address"></Input>
+                            <Grid container
+                                  direction= "row"
+                                  item
+                            >
+                                <Grid xs={5}>
+                                    <FormLabel for="address">PLZ:</FormLabel>
+                                    <Input type="text" id="address" name="address"></Input>
+                                </Grid>
+
+                                <Grid xs={7}>
+                                    <FormLabel for="address">Stadt:</FormLabel>
+                                    <Input type="text" id="address" name="address"></Input>
+                                </Grid>
+
                             </Grid>
                             <Grid>
                                 <FormLabel for="address">Land:</FormLabel>
