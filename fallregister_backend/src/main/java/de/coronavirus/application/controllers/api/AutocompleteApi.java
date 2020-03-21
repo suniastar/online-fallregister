@@ -1,5 +1,9 @@
 package de.coronavirus.application.controllers.api;
 
+import de.coronavirus.application.dtos.response.AddressResponse;
+import de.coronavirus.application.dtos.response.DiagnosisResponse;
+import de.coronavirus.application.dtos.response.EmailAddressResponse;
+import de.coronavirus.application.dtos.response.PhoneNumberResponse;
 import de.coronavirus.domain.model.Address;
 import de.coronavirus.domain.model.Diagnosis;
 import de.coronavirus.domain.model.EmailAddress;
@@ -15,36 +19,36 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Api(tags = {"autocomplete"}, description = "Corona-Virus Autocomplete API")
-@RequestMapping("/corona")
+@RequestMapping("/autocomplete")
 public interface AutocompleteApi {
 
-    @GetMapping("phone")
+    @GetMapping("/phone")
     @ApiOperation(value = "Liefert eine Liste an Telefonnummern zurück die mit gegebenen Anfangsstück beginnen")
     @ApiResponses({
             @ApiResponse(code = 404, message = "Keine passende Telefonnummer gefunden")
     })
-    List<PhoneNumber> autocompletePhone(@RequestParam String partialPhone);
+    List<PhoneNumberResponse> autocompletePhone(@RequestParam String partialPhone);
 
-    @GetMapping("email")
+    @GetMapping("/email")
     @ApiOperation(value =  "Liefert eine Liste an E-Mails zurück, die mit gegebenen Anfangsstück beginnen")
     @ApiResponses({
             @ApiResponse(code = 404, message = "Keine passende E-Mail gefunden")
     })
-    List<EmailAddress> autocompleteEmail(@RequestParam String partialStreet);
+    List<EmailAddressResponse> autocompleteEmail(@RequestParam String partialEmail);
 
 
-    @GetMapping("address")
+    @GetMapping("/address")
     @ApiOperation(value =  "Liefert eine Liste an Adressen zurück, die mit gegebenen Straßennamensstück enthalten")
     @ApiResponses({
             @ApiResponse(code = 404, message = "Keine passende Adresse gefunden")
     })
-    List<Address> autocompleteAddress(@RequestParam String partialStreet);
+    List<AddressResponse> autocompleteAddress(@RequestParam String partialStreet);
 
-    @GetMapping("diagnosis")
+    @GetMapping("/diagnosis")
     @ApiOperation(value =  "Liefert eine Liste an Diagnosen zurück, die mit gegebenen Anfangsstück beginnen")
     @ApiResponses({
             @ApiResponse(code = 404, message = "Keine passende Diagnose gefunden")
     })
-    List<Diagnosis> autocompleteDiagnosis(@RequestParam String partialDiagnosis);
+    List<DiagnosisResponse> autocompleteDiagnosis(@RequestParam String partialDiagnosis);
 
 }
