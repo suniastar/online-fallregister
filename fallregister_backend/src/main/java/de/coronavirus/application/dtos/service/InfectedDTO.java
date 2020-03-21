@@ -2,6 +2,7 @@ package de.coronavirus.application.dtos.service;
 
 import de.coronavirus.domain.model.*;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -14,10 +15,10 @@ public interface InfectedDTO {
     Date getDateOfBirth();
     List<Job> getJobs();
     Accommodation getAccommodation();
-    List<Diagnosis> getDiagnosis();
     Date getDateOfIllnes();
+    List<Diagnosis> getDiagnosis();
     Date getDateOfDeath();
     String getInfectionSource();
-    Address getLocation_of_infection();
     boolean getIntensiveCareTreatment();
+    
 }
