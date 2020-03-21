@@ -14,7 +14,9 @@ public interface InfectedDTO extends EntityDTO {
     Date getDateOfBirth();
     List<JobDTO> getJobs();
     AccommodationDTO getAccommodation();
-    Date getDateOfIllnes();
+
+    Date getDateOfIllness();
+
     List<DiagnosisDTO> getDiagnosis();
     Date getDateOfDeath();
     String getInfectionSource();

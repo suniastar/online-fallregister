@@ -5,6 +5,8 @@ import java.util.List;
 public interface PhoneNumberDTO {
 
     long getId();
-    String getName();
+
+    String getPhoneNumber();
+
     List<EntityDTO> getEntities();
 }
