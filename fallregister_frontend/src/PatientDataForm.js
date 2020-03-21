@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import {Divider, FormLabel, Input, Grid, Button} from '@material-ui/core/';
+import {Divider, FormLabel, Input, Grid, Border, Box} from '@material-ui/core/';
 
 class PatientDataForm extends React.Component {
     constructor(){
@@ -22,6 +22,21 @@ class PatientDataForm extends React.Component {
           alignItems='flex-start'
 
           >
+
+        <Grid>
+            <Grid container
+                  direction= 'row'
+                  justify= 'space-between'
+            >
+                <Grid>
+                    <FormLabel class="big">Meldeformular</FormLabel>
+                </Grid>
+                <Grid>
+                    -Vertraulich-
+                </Grid>
+            </Grid>
+            <FormLabel class= "big">Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
+        </Grid>
 
         <Grid container
               direction= 'row'
@@ -84,21 +99,7 @@ class PatientDataForm extends React.Component {
                   item
                   xs={6}
             >
-                <Grid>
-                    <Grid container
-                          direction= 'row'
-                          justify= 'space-between'
-                    >
-                        <Grid>
-                            <FormLabel class="big">Meldeformular</FormLabel>
-                        </Grid>
-                        <Grid>
-                            -Vertraulich-
-                        </Grid>
-                    </Grid>
-                    <FormLabel>Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
-                </Grid>
-               
+
                     <Grid container
                           direction= 'column'
                     >
@@ -295,7 +296,7 @@ class PatientDataForm extends React.Component {
         </Grid>
         </Grid>
         </Grid>
-            <Button type="submit" value="Submit" variant="contained" color="primary">Daten einreichen</Button>
+        <Input type="submit" value="Submit"></Input>
         </Grid>
     </form>
  );
