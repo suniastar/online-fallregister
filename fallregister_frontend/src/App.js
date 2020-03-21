@@ -27,7 +27,7 @@ function App() {
                     <Input type="text" id="lname" name="lname"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="gender">Geschlecht:</FormLabel>
+                    <FormLabel for="gender">Geschlecht:</FormLabel>
                  
                     <select id="gender" name="gender">
                     <option value="" disabled selected>Select your option</option>
@@ -38,75 +38,75 @@ function App() {
                     </Grid>
                     <Grid>
                     <FormLabel for="birthday">Geburtsdatum:</FormLabel>
-                    <Input type="text" id="birthday" name="birthday"></Input>
+                    <Input type="date" id="birthday" name="birthday"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="address">Adresse:</FormLabel>
+                    <FormLabel for="address">Adresse:</FormLabel>
                     <Input type="text" id="address" name="address"></Input>
                     </Grid>
                     <Grid>                    
-                    <FormLabel htmlFor="email">Email:</FormLabel>
-                    <Input type="text" id="email" name="email"></Input>
+                    <FormLabel for="email">Email:</FormLabel>
+                    <Input type="email" id="email" name="email"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="telephonenumber">Telefonnummer:</FormLabel>
-                    <Input type="text" id="telephonenumber" name="telephonenumber"></Input>
+                    <FormLabel for="telephonenumber">Telefonnummer:</FormLabel>
+                    <Input type="tel" id="telephonenumber" name="telephonenumber"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="activity">Tätigkeit:</FormLabel>
+                    <FormLabel for="activity">Tätigkeit:</FormLabel>
                     <Input type="text" id="activity" name="activity"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="care">Betreuung:</FormLabel>
+                    <FormLabel for="care">Betreuung:</FormLabel>
                     <Input type="text" id="care" name="care"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="stay">Unterbringung:</FormLabel>
+                    <FormLabel for="stay">Unterbringung:</FormLabel>
                     <Input type="text" id="stay" name="stay"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="diagnose">Diagnose/Verdachtsdiagnose:</FormLabel>
+                    <FormLabel for="diagnose">Diagnose/Verdachtsdiagnose:</FormLabel>
                     <Input type="text" id="diagnose" name="diagnose"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="stay">Unterbringung:</FormLabel>
+                    <FormLabel for="stay">Unterbringung:</FormLabel>
                     <Input type="text" id="stay" name="stay"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="dayOfInfection">Tag der Erkrankung:</FormLabel>
-                    <Input type="text" id="dayOfInfection" name="dayOfInfection"></Input>
+                    <FormLabel for="dayOfInfection">Tag der Erkrankung:</FormLabel>
+                    <Input type="date" id="dayOfInfection" name="dayOfInfection"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="dayOfDiagnose">Tag der Diagnose:</FormLabel>
-                    <Input type="text" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
+                    <FormLabel for="dayOfDiagnose">Tag der Diagnose:</FormLabel>
+                    <Input type="date" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="dayOfDeath">Tag des Todes:</FormLabel>
-                    <Input type="text" id="dayOfDeath" name="dayOfDeath"></Input>
+                    <FormLabel for="dayOfDeath">Tag des Todes:</FormLabel>
+                    <Input type="date" id="dayOfDeath" name="dayOfDeath"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="timeslotOfInfection">Zeitraum der Infektion:</FormLabel>
-                    <Input type="text" id="timeslotOfInfection" name="timeslotOfInfection"></Input>
+                    <FormLabel for="timeslotOfInfection">Zeitraum der Infektion:</FormLabel>
+                    <Input type="date" id="timeslotOfInfection" name="timeslotOfInfection"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="infectionSource">Infektionsquelle:</FormLabel>
+                    <FormLabel for="infectionSource">Infektionsquelle:</FormLabel>
                     <Input type="text" id="infectionSource" name="infectionSource"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="infectionPlace">Infektionsort:</FormLabel>
+                    <FormLabel for="infectionPlace">Infektionsort:</FormLabel>
                     <Input type="text" id="infectionPlace" name="infectionPlace"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="transfer">Überweisung:</FormLabel>
+                    <FormLabel for="transfer">Überweisung:</FormLabel>
                     <Input type="text" id="transfer" name="transfer"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="admission">Aufnahme:</FormLabel>
-                    <Input type="text" id="admission" name="admission"></Input>
+                    <FormLabel for="admission">Aufnahme:</FormLabel>
+                    <Input type="date" id="admission" name="admission"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="dismissal">Entlassung:</FormLabel>
-                    <Input type="text" id="dismissal" name="dismissal"></Input>
+                    <FormLabel for="dismissal">Entlassung:</FormLabel>
+                    <Input type="date" id="dismissal" name="dismissal"></Input>
                     </Grid>
                     
 
@@ -121,39 +121,39 @@ function App() {
                     <Input type="text" id="lname" name="lname"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel for="birthday">Telefonnummer:</FormLabel>
-                    <Input type="text" id="telephonenumber" name="telephonenumber"></Input>
+                    <FormLabel for="telephonenumber">Telefonnummer:</FormLabel>
+                    <Input type="tel" id="telephonenumber" name="telephonenumber"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="birthday">Email:</FormLabel>
-                    <Input type="text" id="email" name="email"></Input>
+                    <FormLabel for="email">Email:</FormLabel>
+                    <Input type="date" id="email" name="email"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="birthday">Untersuchungsstelle:</FormLabel>
+                    <FormLabel for="labor">Untersuchungsstelle:</FormLabel>
                     <Input type="text" id="labor" name="labor"></Input>
                     </Grid>
 
                     
                     <h>Melder</h>
                     <Grid>
-                    <FormLabel htmlFor="fname">First name:</FormLabel>
+                    <FormLabel for="fname">First name:</FormLabel>
                     <Input type="text" id="fname" name="fname"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="lname">Last name:</FormLabel>
+                    <FormLabel for="lname">Last name:</FormLabel>
                     <Input type="text" id="lname" name="lname"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="birthday">Anschrift:</FormLabel>
+                    <FormLabel for="address">Anschrift:</FormLabel>
                     <Input type="text" id="address" name="address"></Input>
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="birthday">Email:</FormLabel>
+                    <FormLabel for="email">Email:</FormLabel>
                     <Input type="text" id="email" name="email"></Input>                    
                     </Grid>
                     <Grid>
-                    <FormLabel htmlFor="birthday">Telefonnummer:</FormLabel>
-                    <Input type="text" id="telephonnumber" name="telephonenumber"></Input>
+                    <FormLabel for="telephonnumber">Telefonnummer:</FormLabel>
+                    <Input type="tel" id="telephonnumber" name="telephonenumber"></Input>
                     </Grid>
                     <Input type="submit" value="Submit"></Input>
                     </Grid>
