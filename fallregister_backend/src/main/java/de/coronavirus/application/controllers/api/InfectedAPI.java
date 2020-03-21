@@ -41,6 +41,9 @@ public interface InfectedAPI {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation( value = "Creates a new infected")
+    @ApiResponses({
+            @ApiResponse(code = 400, message = "infected was not valid")
+    })
     InfectedResponse createInfectedEntry(@RequestBody CreateInfectedRequest newInfected);
 
 
@@ -51,7 +54,8 @@ public interface InfectedAPI {
     @PostMapping("/{id}")
     @ApiOperation(value = "Updates fields of existing infected")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "Infected not found")
+            @ApiResponse(code = 404, message = "infected not found"),
+            @ApiResponse(code = 400, message = "request was not valid")
     })
     InfectedResponse updateInfectedEntry(@PathVariable long id, @RequestBody UpdateInfectedRequest request);
 
@@ -63,7 +67,7 @@ public interface InfectedAPI {
     @DeleteMapping("/{id}")
     @ApiOperation(value = "Deletes an existing infected")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "Infected not found")
+            @ApiResponse(code = 404, message = "infected not found")
     })
     boolean deleteInfectedEntry(@PathVariable long id);
 
