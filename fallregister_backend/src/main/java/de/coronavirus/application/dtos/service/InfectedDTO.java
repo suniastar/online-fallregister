@@ -5,7 +5,7 @@ import de.coronavirus.domain.model.Infected;
 import java.util.Date;
 import java.util.List;
 
-public interface InfectedDTO extends EntityDTO {
+public interface InfectedDTO {
 
     long getId();
     String getFirstName();
@@ -21,5 +21,9 @@ public interface InfectedDTO extends EntityDTO {
     Date getDateOfDeath();
     String getInfectionSource();
     boolean getIntensiveCareTreatment();
+
+    List<PhoneNumberDTO> getPhoneNumber();
+    AddressDTO getAddress();
+    EmailAddressDTO getEmailAddress();
     
 }

@@ -1,7 +1,12 @@
 package de.coronavirus.application.dtos.service;
 
-public interface DetectorDTO extends EntityDTO {
+import java.util.List;
+
+public interface DetectorDTO {
 
     long getId();
     String getName();
+    List<PhoneNumberDTO> getPhoneNumber();
+    AddressDTO getAddress();
+    EmailAddressDTO getEmailAddress();
 }

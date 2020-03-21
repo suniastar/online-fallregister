@@ -1,7 +1,12 @@
 package de.coronavirus.application.dtos.service;
 
-public interface LaboratoryDTO extends EntityDTO {
+import java.util.List;
+
+public interface LaboratoryDTO {
 
     long getId();
     String getName();
+    List<PhoneNumberDTO> getPhoneNumber();
+    AddressDTO getAddress();
+    EmailAddressDTO getEmailAddress();
 }
