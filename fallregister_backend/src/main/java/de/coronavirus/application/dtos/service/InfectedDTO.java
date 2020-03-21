@@ -1,8 +1,7 @@
 package de.coronavirus.application.dtos.service;
 
-import de.coronavirus.domain.model.*;
+import de.coronavirus.domain.model.Infected;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -13,10 +12,10 @@ public interface InfectedDTO extends EntityDTO {
     String getLastName();
     Infected.Gender getGender();
     Date getDateOfBirth();
-    List<Job> getJobs();
-    Accommodation getAccommodation();
+    List<JobDTO> getJobs();
+    AccommodationDTO getAccommodation();
     Date getDateOfIllnes();
-    List<Diagnosis> getDiagnosis();
+    List<DiagnosisDTO> getDiagnosis();
     Date getDateOfDeath();
     String getInfectionSource();
     boolean getIntensiveCareTreatment();
