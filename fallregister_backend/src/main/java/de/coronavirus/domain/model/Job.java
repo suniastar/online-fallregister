@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.util.List;
@@ -24,5 +25,6 @@ public class Job extends Entity {
     private String name;
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "jobs", fetch = FetchType.LAZY)
+    @JoinColumn(name = "infected_id")
     private List<Infected> infected;
 }
