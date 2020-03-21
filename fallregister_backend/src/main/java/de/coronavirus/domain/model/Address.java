@@ -1,5 +1,7 @@
 package de.coronavirus.domain.model;
 
+import lombok.Data;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -10,6 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.List;
 
+@Data
 @Table(name = "addresses")
 public class Address {
 
