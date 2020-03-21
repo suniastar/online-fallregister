@@ -88,6 +88,10 @@ input[type=submit] {
     margin:24px  0px;
 }
 
+input[type=file] {
+    margin:0px;
+}
+
 
 /*
 .MuiInput-underline:before {

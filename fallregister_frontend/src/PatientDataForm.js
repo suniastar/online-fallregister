@@ -1,20 +1,48 @@
+
 import React from 'react';
 
 import {InputLabel,FormLabel,FormControlLabel, Input, Grid, Checkbox} from '@material-ui/core/';
 
 class PatientDataForm extends React.Component {
-    render() {
+    constructor(){
+        super();
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onSubmit(){
+        alert("Tadaaaaaaa!");
+    }
+    render(){
 
-        return (
-            <form action="/action_page.php">
-                <Grid
-                    container
-                    direction='column'
-                    justify="center"
-                    alignItems='flex-start'
+ return(
+    <form onSubmit={this.onSubmit}>
+    <Grid
+          container
+          direction='column'
+          justify="center"
+          alignItems='flex-start'
 
                 >
 
+        <Grid>
+            <Grid container
+                  direction= 'row'
+                  justify= 'space-between'
+            >
+                <Grid>
+                    <FormLabel class="big">Meldeformular</FormLabel>
+                </Grid>
+                <Grid>
+                    -Vertraulich-
+                </Grid>
+            </Grid>
+            <FormLabel class= "big">Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
+        </Grid>
+
+        <Grid container
+              direction= 'row'
+              justify= 'flex-start'
+              alignItems= "stretch"
+        >
                     <Grid container
                           direction='row'
                           justify='flex-start'
@@ -72,20 +100,7 @@ class PatientDataForm extends React.Component {
                               item
                               xs={6}
                         >
-                            <Grid>
-                                <Grid container
-                                      direction='row'
-                                      justify='space-between'
-                                >
-                                    <Grid>
-                                        <FormLabel class="big">Meldeformular</FormLabel>
-                                    </Grid>
-                                    <Grid>
-                                        -Vertraulich-
-                                    </Grid>
-                                </Grid>
-                                <FormLabel>Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
-                            </Grid>
+
 
                             <Grid container
                                   direction='column'
@@ -258,6 +273,7 @@ class PatientDataForm extends React.Component {
                     </Grid>
                     <Input type="submit" value="Submit"></Input>
                 </Grid>
+        </Grid>
             </form>
         );
     }
