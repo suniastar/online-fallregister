@@ -111,37 +111,49 @@ function App() {
 
                     <h>Labor</h>
                     
+                    <Grid>
                     <FormLabel for="fname">First name:</FormLabel>
                     <Input type="text" id="fname" name="fname"></Input>
-                    
+                    </Grid>
+                    <Grid>
                     <FormLabel for="lname">Last name:</FormLabel>
                     <Input type="text" id="lname" name="lname"></Input>
-                    
+                    </Grid>
+                    <Grid>
                     <FormLabel for="birthday">Telefonnummer:</FormLabel>
                     <Input type="text" id="telephonenumber" name="telephonenumber"></Input>
-                    
+                    </Grid>
+                    <Grid>
                     <FormLabel htmlFor="birthday">Email:</FormLabel>
                     <Input type="text" id="email" name="email"></Input>
-                    
+                    </Grid>
+                    <Grid>
                     <FormLabel htmlFor="birthday">Untersuchungsstelle:</FormLabel>
                     <Input type="text" id="labor" name="labor"></Input>
-                    
+                    </Grid>
 
                     
                     <h>Melder</h>
-                    
+                    <Grid>
                     <FormLabel htmlFor="fname">First name:</FormLabel>
                     <Input type="text" id="fname" name="fname"></Input>
-                    
+                    </Grid>
+                    <Grid>
                     <FormLabel htmlFor="lname">Last name:</FormLabel>
                     <Input type="text" id="lname" name="lname"></Input>
-                    
+                    </Grid>
+                    <Grid>
                     <FormLabel htmlFor="birthday">Anschrift:</FormLabel>
                     <Input type="text" id="address" name="address"></Input>
+                    </Grid>
+                    <Grid>
                     <FormLabel htmlFor="birthday">Email:</FormLabel>
                     <Input type="text" id="email" name="email"></Input>                    
+                    </Grid>
+                    <Grid>
                     <FormLabel htmlFor="birthday">Telefonnummer:</FormLabel>
                     <Input type="text" id="telephonnumber" name="telephonenumber"></Input>
+                    </Grid>
                     <Input type="submit" value="Submit"></Input>
                     </Grid>
                 </form>
