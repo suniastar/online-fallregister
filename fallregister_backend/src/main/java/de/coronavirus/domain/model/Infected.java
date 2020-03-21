@@ -3,17 +3,7 @@ package de.coronavirus.domain.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -39,9 +29,20 @@ public class Infected {
     @Column(name = "date_of_birth")
     private Date dateOfBirth;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "jobs")
-    private List<Job> jobs;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "phone_numbers")
+    private List<PhoneNumber> phoneNumber;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id")
+    private Address address;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OrderBy("email asc")
+    private List<EmailAddress> emailAddresses;
+
+    @Column(name = "jobs")
+    private Job job;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "accommodation_id")
@@ -52,7 +53,7 @@ public class Infected {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("date asc")
-    private List<Diagnosis> diagnosis;
+    private List<Diagnosis> diagnoses;
 
     @Column(name = "date_of_death")
     private Date dateOfDeath;

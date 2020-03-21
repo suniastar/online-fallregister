@@ -29,17 +29,14 @@ public class Job {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "phone_numbers")
-    private List<PhoneNumber> phoneNumber;
+    @Column(name = "medicalField")
+    private boolean medicalField;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
-    private Address address;
+    @Column(name = "foodField")
+    private boolean foodFiled;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @OrderBy("email asc")
-    private List<EmailAddress> emailAddresses;
+    @Column(name = "CommunityField")
+    private boolean communityField;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "infected_id")
