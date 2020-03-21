@@ -9,6 +9,6 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface EmailAddressMapper {
 
-    EmailAddressResponse toResponse(EmailAddressDto emailAddressDTO);
+    EmailAddressResponse toResponse(EmailAddressDto emailAddressDto);
     List<EmailAddressResponse> toResponseList(List<EmailAddressDto> emailAddressDtoList);
 }

@@ -9,6 +9,6 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface DiagnosisMapper {
 
-    DiagnosisResponse toResponse(DiagnosisDto diagnosisDTO);
-    List<DiagnosisResponse> toResponseList(List<DiagnosisDto> diagnosisDTOList);
+    DiagnosisResponse toResponse(DiagnosisDto diagnosisDto);
+    List<DiagnosisResponse> toResponseList(List<DiagnosisDto> diagnosisDtoList);
 }
