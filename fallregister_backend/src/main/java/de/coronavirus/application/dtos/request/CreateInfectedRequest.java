@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
-@ApiModel("CreateInfectedRequest")
+@ApiModel("Create Infected Entry")
 public class CreateInfectedRequest {
 
     /* Entity */

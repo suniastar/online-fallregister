@@ -3,7 +3,7 @@ package de.coronavirus.application.dtos.response;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel("TokenResponse")
+@ApiModel("Token")
 public class TokenResponse {
 
     @ApiModelProperty(position = 1)
