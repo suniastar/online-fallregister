@@ -29,17 +29,13 @@ public class Detector {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @OrderBy("name asc")
-    private List<Diagnosis> diagnoses;
-
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "phone_numbers")
-    private List<PhoneNumber> phoneNumber;
+    private List<PhoneNumber> phoneNumbers;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
-    private Address addresses;
+    private Address address;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("email asc")
