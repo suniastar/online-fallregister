@@ -119,13 +119,14 @@ label{
 }
 
 .submitButton {
+    margin-top: 48px;
 }
 
 .big{
     font-size: 1.2em;
     font-weight: bold;
     line-height: 2em;
-}
+}WS
 .MuiFormLabel-root {
     color: black !important;
 }

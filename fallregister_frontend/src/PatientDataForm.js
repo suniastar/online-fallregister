@@ -307,7 +307,7 @@ class PatientDataForm extends React.Component {
                             </Grid>
                             <Grid>
                                 <FormLabel for="email">Email:</FormLabel>
-                                <Input type="date" id="email" name="email"></Input>
+                                <Input type="email" id="email" name="email"></Input>
                             </Grid>
                             <Grid>
                                 <FormLabel for="labor">Untersuchungsstelle:</FormLabel>
@@ -365,7 +365,7 @@ class PatientDataForm extends React.Component {
                             </Grid>
                             <Grid>
                                 <FormLabel for="email">Email:</FormLabel>
-                                <Input type="text" id="email" name="email"></Input>
+                                <Input type="email" id="email" name="email"></Input>
                             </Grid>
                             <Grid>
                                 <FormLabel for="telephonnumber">Telefonnummer:</FormLabel>
