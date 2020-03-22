@@ -1,11 +1,10 @@
 package de.coronavirus.application.dtos.response;
 
-import de.coronavirus.domain.model.Diagnosis;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Column;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 @ApiModel ("Infected")
@@ -21,7 +20,7 @@ public class InfectedResponse {
     List<String> emailAddresses;
 
     @ApiModelProperty
-    List<Diagnosis> diagnoses;
+    List<String> diagnoses;
 
     /* -Address */
     @ApiModelProperty
@@ -80,17 +79,27 @@ public class InfectedResponse {
     @ApiModelProperty
     boolean intensiveCareTreatment;
 
-    public List<Diagnosis> getDiagnoses() {
+    public InfectedResponse() {
+        this.phoneNumbers = new LinkedList<>();
+        this.emailAddresses = new LinkedList<>();
+        this.diagnoses = new LinkedList<>();
+    }
+
+    public List<String> getDiagnoses() {
         return diagnoses;
     }
 
-    public void setDiagnoses(List<Diagnosis> diagnoses) {
+    public void setDiagnoses(List<String> diagnoses) {
         this.diagnoses = diagnoses;
     }
 
-    public List<String> getEmailAddresses() {return emailAddresses; }
+    public List<String> getEmailAddresses() {
+        return emailAddresses;
+    }
 
-    public void setEmailAddresses(List<String> emailAddresses) { this.emailAddresses = emailAddresses; }
+    public void setEmailAddresses(List<String> emailAddresses) {
+        this.emailAddresses = emailAddresses;
+    }
 
     public long getId() {
         return id;

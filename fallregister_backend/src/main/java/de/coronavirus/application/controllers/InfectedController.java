@@ -43,7 +43,7 @@ public class InfectedController implements InfectedApi {
     }
 
     @Override
-    public InfectedResponse updateInfectedEntry(@Valid @PathVariable long id, @RequestBody UpdateInfectedRequest request) {
+    public InfectedResponse updateInfectedEntry(@PathVariable long id, @Valid @RequestBody UpdateInfectedRequest request) {
         return InfectedMapper.toResponse(infectedService.updateInfected(request, id));
     }
 

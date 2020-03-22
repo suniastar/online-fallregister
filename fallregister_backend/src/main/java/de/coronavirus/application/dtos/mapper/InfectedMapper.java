@@ -5,9 +5,7 @@ import de.coronavirus.application.dtos.service.DiagnosisDto;
 import de.coronavirus.application.dtos.service.EmailAddressDto;
 import de.coronavirus.application.dtos.service.InfectedDto;
 import de.coronavirus.application.dtos.service.PhoneNumberDto;
-import de.coronavirus.domain.model.Diagnosis;
 
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,21 +30,7 @@ public class InfectedMapper {
         }
         if(infectedDto.getDiagnoses() != null) {
             for (DiagnosisDto diagnosisDto : infectedDto.getDiagnoses()) {
-                Diagnosis diagnosis = new Diagnosis();
-
-                diagnosis.setDate(diagnosisDto.getDate());
-                diagnosis.setDiagnosticResult(diagnosisDto.getDiagnosticResult());
-                diagnosis.setClinicalDiagnosis(diagnosisDto.isClinicalDiagnosis());
-                diagnosis.setConfirmed(diagnosisDto.isConfirmed());
-                diagnosis.setDetectionOffice(diagnosisDto.getDetectionOffice());
-                diagnosis.setId(diagnosisDto.getId());
-                diagnosis.setDetector(diagnosisDto.getDetector());
-                diagnosis.setInfected(diagnosisDto.getInfected());
-                diagnosis.setLaboratory(diagnosisDto.getLaboratory());
-                diagnosis.setSuspicion(diagnosisDto.isSuspicion());
-                diagnosis.setDead(diagnosisDto.isDead());
-
-                infectedResponse.getDiagnoses().add(diagnosis);
+                infectedResponse.getDiagnoses().add(diagnosisDto.getDiagnosticResult());
             }
         }
 
