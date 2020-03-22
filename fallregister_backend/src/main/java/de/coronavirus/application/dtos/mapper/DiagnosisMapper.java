@@ -9,18 +9,6 @@ import java.util.List;
 public class DiagnosisMapper {
 
     public static DiagnosisResponse toResponse(DiagnosisDto diagnosisDto) {
-        return diagnosisDtoToResponse(diagnosisDto);
-    }
-
-    public static List<DiagnosisResponse> toResponseList(List<DiagnosisDto> diagnosisDtoList){
-        List<DiagnosisResponse> diagnosisResponseList = new ArrayList<>();
-        for(DiagnosisDto diagnosisDto : diagnosisDtoList){
-            diagnosisResponseList.add(diagnosisDtoToResponse(diagnosisDto));
-        }
-        return diagnosisResponseList;
-    }
-
-    private static DiagnosisResponse diagnosisDtoToResponse(DiagnosisDto diagnosisDto){
         DiagnosisResponse diagnosisResponse = new DiagnosisResponse();
         diagnosisResponse.setDiagnosticResult(diagnosisDto.getDiagnosticResult());
         diagnosisResponse.setDate(diagnosisDto.getDate());
@@ -30,5 +18,13 @@ public class DiagnosisMapper {
         diagnosisResponse.setClinicalDiagnosis(diagnosisDto.isClinicalDiagnosis());
         diagnosisResponse.setDead(diagnosisDto.isDead());
         return diagnosisResponse;
+    }
+
+    public static List<DiagnosisResponse> toResponseList(List<DiagnosisDto> diagnosisDtoList){
+        List<DiagnosisResponse> diagnosisResponseList = new ArrayList<>();
+        for(DiagnosisDto diagnosisDto : diagnosisDtoList){
+            diagnosisResponseList.add(toResponse(diagnosisDto));
+        }
+        return diagnosisResponseList;
     }
 }
