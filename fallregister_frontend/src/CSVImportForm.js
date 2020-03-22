@@ -15,7 +15,7 @@ class CSVImportForm extends React.Component {
             </Grid>
 
             <Grid>
-                <input type="file" id="csvFile" name="csvFile"></input>
+                <input required type="file" id="csvFile" name="csvFile"></input>
             </Grid>
                 <Button type="submit" value="Submit" variant="contained" color="primary" m={2}>Dokument hochladen</Button>
             </Grid>
