@@ -161,7 +161,7 @@ public class InfectedService {
         final Infected infected = new Infected();
         infected.setFirstName(request.getPatientFirstName());
         infected.setLastName(request.getPatientLastName());
-        infected.setGender(Infected.Gender.valueOf(request.getPatientSex()));
+        infected.setGender(Infected.Gender.valueOf(request.getPatientSex().toUpperCase()));
         infected.setDateOfBirth(request.getPatientBirthday());
         if (infectedPhoneNumber != null) infected.getPhoneNumbers().add(infectedPhoneNumber);
         infected.setAddress(infectedAddress);
@@ -207,7 +207,7 @@ public class InfectedService {
             });
 
             if (cityName != null) {
-                final City city = cityRepository.findByCountryAndName(country.getId(), cityName).orElseGet(() -> {
+                final City city = cityRepository.findByCountryAndName(country, cityName).orElseGet(() -> {
                     final City c = new City();
                     c.setCountry(country);
                     c.setName(cityName);
@@ -217,7 +217,7 @@ public class InfectedService {
                 });
 
                 if (postCodeId != 0) {
-                    final PostCode postCode = postCodeRepository.findByCityAndCode(city.getId(), postCodeId).orElseGet(() -> {
+                    final PostCode postCode = postCodeRepository.findByCityAndCode(city, postCodeId).orElseGet(() -> {
                         final PostCode c = new PostCode();
                         c.setCity(city);
                         c.setCode(postCodeId);
@@ -227,7 +227,7 @@ public class InfectedService {
                     });
 
                     if (streetName != null) {
-                        final Street street = streetRepository.findByPostCodeAndName(postCode.getCode(), streetName).orElseGet(() -> {
+                        final Street street = streetRepository.findByPostCodeAndName(postCode, streetName).orElseGet(() -> {
                             final Street s = new Street();
                             s.setPostCode(postCode);
                             s.setName(streetName);
@@ -236,7 +236,7 @@ public class InfectedService {
                             return s;
                         });
 
-                        address = addressRepository.findByStreetAndHouseNumber(street.getId(), number).orElseGet(() -> {
+                        address = addressRepository.findByStreetAndHouseNumber(street, number).orElseGet(() -> {
                             final Address a = new Address();
                             a.setHouseNumber(number);
                             a.setStreet(street);
@@ -290,7 +290,7 @@ public class InfectedService {
     private Detector createOrReadDetector(String name, Address address, PhoneNumber phoneNumber, EmailAddress emailAddress) {
         if (name == null || address == null) return null;
 
-        final Detector detector = detectorRepository.findByNameAndAddress(name, address.getId()).orElseGet(() -> {
+        final Detector detector = detectorRepository.findByNameAndAddress(name, address).orElseGet(() -> {
             final Detector d = new Detector();
             d.setAddress(address);
             d.setName(name);
@@ -318,8 +318,8 @@ public class InfectedService {
             return l;
         });
 
-        if (phoneNumber != null && !laboratory.getPhoneNumber().contains(phoneNumber)) {
-            laboratory.getPhoneNumber().add(phoneNumber);
+        if (phoneNumber != null && !laboratory.getPhoneNumbers().contains(phoneNumber)) {
+            laboratory.getPhoneNumbers().add(phoneNumber);
         }
 
         if (emailAddress != null && !laboratory.getEmailAddresses().contains(emailAddress)) {

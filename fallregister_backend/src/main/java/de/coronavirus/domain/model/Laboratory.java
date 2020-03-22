@@ -4,6 +4,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -20,15 +22,16 @@ import java.util.Objects;
 public class Laboratory {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Column(name = "name")
     public String name;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "phone_numbers")
-    private List<PhoneNumber> phoneNumber;
+    private List<PhoneNumber> phoneNumbers;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
@@ -43,16 +46,16 @@ public class Laboratory {
     private List<Diagnosis> diagnoses;
 
     public Laboratory() {
-        this.phoneNumber = new LinkedList<>();
+        this.phoneNumbers = new LinkedList<>();
         this.emailAddresses = new LinkedList<>();
         this.diagnoses = new LinkedList<>();
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -64,12 +67,12 @@ public class Laboratory {
         this.name = name;
     }
 
-    public List<PhoneNumber> getPhoneNumber() {
-        return phoneNumber;
+    public List<PhoneNumber> getPhoneNumbers() {
+        return phoneNumbers;
     }
 
-    public void setPhoneNumber(List<PhoneNumber> phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumbers(List<PhoneNumber> phoneNumber) {
+        this.phoneNumbers = phoneNumber;
     }
 
     public Address getAddress() {
@@ -105,7 +108,7 @@ public class Laboratory {
 
         if (id != that.id) return false;
         if (!Objects.equals(name, that.name)) return false;
-        if (!Objects.equals(phoneNumber, that.phoneNumber)) return false;
+        if (!Objects.equals(phoneNumbers, that.phoneNumbers)) return false;
         if (!Objects.equals(address, that.address)) return false;
         if (!Objects.equals(emailAddresses, that.emailAddresses)) return false;
         return Objects.equals(diagnoses, that.diagnoses);
@@ -115,7 +118,7 @@ public class Laboratory {
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (phoneNumbers != null ? phoneNumbers.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (emailAddresses != null ? emailAddresses.hashCode() : 0);
         result = 31 * result + (diagnoses != null ? diagnoses.hashCode() : 0);
@@ -127,7 +130,7 @@ public class Laboratory {
         return "Laboratory{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", phoneNumber=" + phoneNumber +
+                ", phoneNumber=" + phoneNumbers +
                 ", address=" + address +
                 ", emailAddresses=" + emailAddresses +
                 ", diagnoses=" + diagnoses +

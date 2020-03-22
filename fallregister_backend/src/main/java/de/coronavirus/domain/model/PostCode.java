@@ -19,7 +19,7 @@ public class PostCode {
 
     @Id
     @Column(name = "code")
-    private long code;
+    private Long code;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "city_id")
@@ -33,11 +33,11 @@ public class PostCode {
         this.streets = new LinkedList<>();
     }
 
-    public long getCode() {
+    public Long getCode() {
         return code;
     }
 
-    public void setCode(long code) {
+    public void setCode(Long code) {
         this.code = code;
     }
 
