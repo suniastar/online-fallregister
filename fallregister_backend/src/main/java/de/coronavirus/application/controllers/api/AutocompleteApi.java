@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Api(tags = {"autocomplete"}, description = "Corona-Virus Autocomplete API")
@@ -23,41 +24,41 @@ public interface AutocompleteApi {
     @ApiResponses({
             @ApiResponse(code = 404, message = "Did not find any matching names")
     })
-    ACDiagnosisNameResponse autocompleteDiagnosisName(@RequestParam String partialDiagnosisName);
+    ACDiagnosisNameResponse autocompleteDiagnosisName(@Valid @RequestParam String partialDiagnosisName);
 
     @GetMapping("/laboratoryname")
     @ApiOperation(value =  "Responds with list of laboratory names whose name begin with the given string")
     @ApiResponses({
             @ApiResponse(code = 404, message = "Did not find any matching names")
     })
-    ACLaboratoryNameResponse autocompleteLaboratoryName(@RequestParam String partialLaboratoryName);
+    ACLaboratoryNameResponse autocompleteLaboratoryName(@Valid @RequestParam String partialLaboratoryName);
 
     @GetMapping("/street")
     @ApiOperation(value =  "Responds with list of streets whose name begin with the given string")
     @ApiResponses({
             @ApiResponse(code = 404, message = "Did not find any matching streets")
     })
-    ACStreetNameResponse autocompleteStreet(@RequestParam String partialStreet);
+    ACStreetNameResponse autocompleteStreet(@Valid @RequestParam String partialStreet);
 
     @GetMapping("/postCode")
     @ApiOperation(value =  "Responds with list of streets whose name begin with the given string")
     @ApiResponses({
             @ApiResponse(code = 404, message = "Did not find any matching streets")
     })
-    List<ACAddressResponse> autocompletePostalCode(@RequestParam String partialStreet);
+    List<ACAddressResponse> autocompletePostalCode(@Valid @RequestParam String partialStreet);
 
     @GetMapping("/city")
     @ApiOperation(value =  "Responds with list of streets whose name begin with the given string")
     @ApiResponses({
             @ApiResponse(code = 404, message = "Did not find any matching streets")
     })
-    List<ACAddressResponse> autocompleteCity(@RequestParam String partialCity);
+    List<ACAddressResponse> autocompleteCity(@Valid @RequestParam String partialCity);
 
     @GetMapping("/country")
     @ApiOperation(value =  "Responds with list of streets whose name begin with the given string")
     @ApiResponses({
             @ApiResponse(code = 404, message = "Did not find any matching streets")
     })
-    List<ACAddressResponse> autocompleteCountry(@RequestParam String partialCountry);
+    List<ACAddressResponse> autocompleteCountry(@Valid @RequestParam String partialCountry);
 
 }
