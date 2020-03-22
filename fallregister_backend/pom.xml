@@ -9,7 +9,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Online-Fallregister Backend</name>
+    <names>Online-Fallregister Backend</names>
     <description>Microservice for the Online-Fallregister application</description>
 
     <parent>

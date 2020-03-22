@@ -14,4 +14,5 @@ public interface DiagnosisRepository extends JpaRepository<Diagnosis, Long> {
     List<DiagnosisDto> findAllDtoBy();
 
     Optional<DiagnosisDto> findDtoById(Long id);
+    List<DiagnosisDto> findTop10ByDiagnosticResultStartsWith(String partial);
 }

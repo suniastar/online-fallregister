@@ -14,4 +14,5 @@ public interface LaboratoryRepository extends JpaRepository<Laboratory,Long> {
     List<LaboratoryDto> findAllDtoBy();
 
     Optional<LaboratoryDto> findDtoById(Long id);
+    List<LaboratoryDto> findTop10ByNameStartsWith(String partial);
 }
