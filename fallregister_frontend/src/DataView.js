@@ -3,7 +3,7 @@ import React from 'react';
 
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@material-ui/core/';
 
-class CSVImportForm extends React.Component {
+class DataView extends React.Component {
 
     render() {
         function createData(id, firstName, lastName, dateOfBirth, gender, suspected, diagnosis,
@@ -28,7 +28,22 @@ class CSVImportForm extends React.Component {
             createData(3, "Paula", "Mustermann", "06.07.1998", "weiblich",
                 "Nein", "Ja", "Nein", "-", "20.03.2020",
                 "21.03.2020", "Ja", "Nein", "Nein", "Nein", "-",
-                "-", "Pflegeheim Muster", "zu Hause", "Max Mustermann")
+                "-", "Pflegeheim Muster", "zu Hause", "Max Mustermann"),
+
+            createData(4, "Maximilian", "Mannmuster", "18.10.1959", "männlich",
+                "Nein", "Ja", "Ja", "22.03.2020", "05.03.2020",
+                "14.03.2020", "Nein", "Nein", "Nein", "Ja", "14.03.2020",
+                "16.03.2020", "Pflegeheim Muster", "Pflegeheim Muster", "Paula Mustermann"),
+
+            createData(5, "Franziska", "Fraumuster", "18.10.1970", "weiblich",
+                "Ja", "Nein", "Nein", "-", "09.03.2020",
+                "-", "Nein", "Ja", "Nein", "Nein", "-",
+                "-", "Supermarkt Muster", "unbekannt", "unbekannt"),
+
+            createData(6, "Maja", "Muster", "15.01.1981", "weiblich",
+                "Nein", "Ja", "Nein", "-", "07.03.2020",
+                "11.03.2020", "Nein", "Nein", "Nein", "Nein", "-",
+                "-", "-", "unbekannt", "unbekannt")
         ];
 
         return(
@@ -96,5 +111,5 @@ class CSVImportForm extends React.Component {
         }
 }
 
-export default CSVImportForm;
+export default DataView;
 
