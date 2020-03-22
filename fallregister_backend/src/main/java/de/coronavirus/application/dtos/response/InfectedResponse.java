@@ -16,6 +16,9 @@ public class InfectedResponse {
     @ApiModelProperty
     List<String> phoneNumbers;
 
+    @ApiModelProperty
+    List<String> emailAddresses;
+
     /* -Address */
     @ApiModelProperty
     String houseNumber;
@@ -177,7 +180,6 @@ public class InfectedResponse {
         this.jobInFoodField = jobInFoodField;
     }
 
-
     public boolean isJobInCommunityField(){
         return this.jobInCommunityField;
     }
@@ -185,7 +187,6 @@ public class InfectedResponse {
     public void setJobInCommunityField(boolean jobInCommunityField){
         this.jobInCommunityField = jobInCommunityField;
     }
-
 
     public String getAccommodationName() {
         return accommodationName;

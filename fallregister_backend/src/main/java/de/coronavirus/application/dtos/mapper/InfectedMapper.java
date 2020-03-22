@@ -9,25 +9,13 @@ import java.util.List;
 
 public class InfectedMapper {
 
-    public static InfectedResponse toResponse(InfectedDto infectedDto){
-        return infectedDtoToResponse(infectedDto);
-    }
-
-    public static List<InfectedResponse> toResponseList(List<InfectedDto> infectedDtoList){
-        List<InfectedResponse> infectedResponseList = new ArrayList<InfectedResponse>();
-        for(InfectedDto infectedDto : infectedDtoList){
-            infectedResponseList.add(infectedDtoToResponse(infectedDto));
-        }
-        return infectedResponseList;
-    }
-
-    private static InfectedResponse infectedDtoToResponse(InfectedDto infectedDto){
+    public static InfectedResponse toResponse(InfectedDto infectedDto) {
         InfectedResponse infectedResponse = new InfectedResponse();
         infectedResponse.setFirstName(infectedDto.getFirstName());
         infectedResponse.setLastName(infectedDto.getLastName());
         infectedResponse.setGender(infectedDto.getGender().toString());
         infectedResponse.setDateOfBirth(infectedDto.getDateOfBirth());
-        for(PhoneNumberDto phoneNumberDto : infectedDto.getPhoneNumbers()) {
+        for (PhoneNumberDto phoneNumberDto : infectedDto.getPhoneNumbers()) {
             infectedResponse.getPhoneNumbers().add(phoneNumberDto.getNumber());
         }
         infectedResponse.setHouseNumber(infectedDto.getAddress().getHouseNumber());
@@ -41,4 +29,13 @@ public class InfectedMapper {
         infectedResponse.setIntensiveCareTreatment(infectedDto.getIntensiveCareTreatment());
         return infectedResponse;
     }
+
+    public static List<InfectedResponse> toResponseList(List<InfectedDto> infectedDtoList) {
+        List<InfectedResponse> infectedResponseList = new ArrayList<>();
+        for (InfectedDto infectedDto : infectedDtoList) {
+            infectedResponseList.add(toResponse(infectedDto));
+        }
+        return infectedResponseList;
+    }
+
 }

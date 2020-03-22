@@ -9,14 +9,14 @@ public class EmailAddressMapper {
 
     public static EmailAddressResponse toResponse(EmailAddressDto emailAddressDto){
         EmailAddressResponse emailAddressResponse = new EmailAddressResponse();
-        emailAddressResponse.getEmailAddress().add(emailAddressDto.getEmail());
+        emailAddressResponse.getEmailAddresses().add(emailAddressDto.getEmail());
         return emailAddressResponse;
     }
 
     public static EmailAddressResponse toResponseList(List<EmailAddressDto> emailAddressDtoList){
         EmailAddressResponse emailAddressResponse = new EmailAddressResponse();
         for(EmailAddressDto emailAddressDto : emailAddressDtoList) {
-            emailAddressResponse.getEmailAddress().add(emailAddressDto.getEmail());
+            emailAddressResponse.getEmailAddresses().add(emailAddressDto.getEmail());
         }
         return emailAddressResponse;
     }
