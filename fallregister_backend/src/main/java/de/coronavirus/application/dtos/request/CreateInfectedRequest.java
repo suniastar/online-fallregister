@@ -17,7 +17,7 @@ public class CreateInfectedRequest {
 
     /* -Address */
     @ApiModelProperty
-    Integer houseNumber;
+    String houseNumber;
 
     /* --Street */
     @ApiModelProperty
@@ -97,14 +97,6 @@ public class CreateInfectedRequest {
     @NotNull
     @ApiModelProperty(required = true)
     boolean intensiveCareTreatment;
-
-    public Integer getHouseNumber() {
-        return houseNumber;
-    }
-
-    public void setHouseNumber(Integer houseNumber) {
-        this.houseNumber = houseNumber;
-    }
 
     public String getStreetName() {
         return streetName;
@@ -280,5 +272,13 @@ public class CreateInfectedRequest {
 
     public void setJobInCommunityField(boolean jobInCommunityField) {
         this.jobInCommunityField = jobInCommunityField;
+    }
+
+    public String getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 }

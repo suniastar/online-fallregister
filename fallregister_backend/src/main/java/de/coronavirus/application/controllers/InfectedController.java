@@ -20,32 +20,30 @@ import java.util.List;
 public class InfectedController implements InfectedApi {
 
     private final InfectedService infectedService;
-    private final InfectedMapper infectedMapper;
 
     @Autowired
-    public InfectedController(InfectedService infectedService, InfectedMapper infectedMapper) {
+    public InfectedController(InfectedService infectedService) {
         this.infectedService = infectedService;
-        this.infectedMapper = infectedMapper;
     }
 
     @Override
     public List<InfectedResponse> getAllInfectedEntries() {
-        return infectedMapper.toResponseList(infectedService.findAll());
+        return InfectedMapper.toResponseList(infectedService.findAll());
     }
 
     @Override
     public InfectedResponse getInfectedEntry(@PathVariable long id) {
-        return infectedMapper.toResponse(infectedService.findInfected(id));
+        return InfectedMapper.toResponse(infectedService.findInfected(id));
     }
 
     @Override
     public InfectedResponse createInfectedEntry(@RequestBody CreateInfectedRequest newInfected) {
-        return infectedMapper.toResponse(infectedService.createInfected(newInfected));
+        return InfectedMapper.toResponse(infectedService.createInfected(newInfected));
     }
 
     @Override
     public InfectedResponse updateInfectedEntry(@PathVariable long id, @RequestBody UpdateInfectedRequest request) {
-        return infectedMapper.toResponse(infectedService.updateInfected(request, id));
+        return InfectedMapper.toResponse(infectedService.updateInfected(request, id));
     }
 
     @Override
