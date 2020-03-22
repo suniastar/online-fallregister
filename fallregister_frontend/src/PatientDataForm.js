@@ -114,7 +114,7 @@ class PatientDataForm extends React.Component {
                     -Vertraulich-
                 </Grid>
             </Grid>
-            <FormLabel class= "big">Meldepflichtige Krankheit gemäß §§6,8,9 IfSG</FormLabel>
+            <FormLabel class= "big">Meldepflichtige Krankheit gemäß §§6,8,9 IfSG (Spezialfall Corona)</FormLabel>
         </Grid>
         <div class="horizontalDivider"></div>
         <Grid container
@@ -138,12 +138,12 @@ class PatientDataForm extends React.Component {
                             </Grid>
 
                             <Grid>
-                                <FormLabel for="fname">Vorname:</FormLabel>
+                                <FormLabel for="fname">Vorname: </FormLabel>
                                 <Input required type="text" id="patientFirstName" name="fname" ref="myFirstname"></Input>
                             </Grid>
 
                             <Grid>
-                                <FormLabel for="lname">Nachname:</FormLabel>
+                                <FormLabel for="lname">Nachname: </FormLabel>
                                 <Input required type="text" id="patientLastName" name="lname"></Input>
                             </Grid>
 
@@ -152,12 +152,12 @@ class PatientDataForm extends React.Component {
                                   item
                             >
                                 <Grid xs={5}>
-                                    <FormLabel for="address">Strasse:</FormLabel>
+                                    <FormLabel for="address">Strasse: </FormLabel>
                                     <Input type="text" id="patientStreet" name="address"></Input>
                                 </Grid>
 
                                 <Grid xs={7}>
-                                    <FormLabel for="address">Hausnummer:</FormLabel>
+                                    <FormLabel for="address">Hausnummer: </FormLabel>
                                     <Input type="text" id="patientHouse" name="address"></Input>
                                 </Grid>
 
@@ -167,42 +167,42 @@ class PatientDataForm extends React.Component {
                                   item
                             >
                                 <Grid xs={5}>
-                                    <FormLabel for="address">PLZ:</FormLabel>
+                                    <FormLabel for="address">PLZ: </FormLabel>
                                     <Input type="text" id="patientZip" name="address"></Input>
                                 </Grid>
 
                                 <Grid xs={7}>
-                                    <FormLabel for="address">Stadt:</FormLabel>
+                                    <FormLabel for="address">Stadt: </FormLabel>
                                     <Input type="text" id="patientCity" name="address"></Input>
                                 </Grid>
 
                             </Grid>
                             <Grid>
-                                <FormLabel for="address">Land:</FormLabel>
+                                <FormLabel for="address">Land: </FormLabel>
                                 <Input type="text" id="patientCountry" name="address"></Input>
                             </Grid>
 
 
 
                             <Grid>
-                                <FormLabel for="birthday">Geburtsdatum:</FormLabel>
+                                <FormLabel for="birthday">Geburtsdatum: </FormLabel>
                                 <Input required type="date" id="patientBirthday" name="birthday"></Input>
                             </Grid>
 
                             <Grid>
-                                <FormLabel for="gender">Geschlecht:</FormLabel>
+                                <FormLabel for="gender">Geschlecht: </FormLabel>
                                 <FormControlLabel control = {<Checkbox id="sexFemale"/>} label = "weiblich" />
                                 <FormControlLabel control = {<Checkbox id="sexMale"/>} label = "männlich" />
                                 <FormControlLabel control = {<Checkbox id="sexDivers"/>} label = "divers" />
                             </Grid>
 
                             <Grid>
-                                <FormLabel for="telephonenumber">Telefonnummer:</FormLabel>
+                                <FormLabel for="telephonenumber">Telefonnummer: </FormLabel>
                                 <Input type="tel" id="patientPhone" name="telephonenumber"></Input>
                             </Grid>
 
                             <Grid>
-                                <FormLabel for="email">Email:</FormLabel>
+                                <FormLabel for="email">Email: </FormLabel>
                                 <Input type="email" id="patientEmail" name="email"></Input>
                             </Grid>
                         </Grid>
@@ -227,15 +227,15 @@ class PatientDataForm extends React.Component {
                                     <FormControlLabel control = {<Checkbox id="death" />} label = "Tod" />
                                 </Grid>
                                 <Grid>
-                                    <FormLabel for="fname">Todesdatum:</FormLabel>
+                                    <FormLabel for="fname">Todesdatum: </FormLabel>
                                     <Input type="date" id="dayOfDeath" name="dayOfDeath"></Input>
                                 </Grid>
                                 <Grid>
-                                    <FormLabel for="dayOfInfection">Erkrankungsbeginn:</FormLabel>
+                                    <FormLabel for="dayOfInfection">Erkrankungsbeginn: </FormLabel>
                                     <Input type="date" id="dayOfInfection" name="dayOfInfection"></Input>
                                 </Grid>
                                 <Grid>
-                                    <FormLabel for="dayOfDiagnose">Diagnosedatum:</FormLabel>
+                                    <FormLabel for="dayOfDiagnose">Diagnosedatum: </FormLabel>
                                     <Input type="date" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
                                 </Grid>
                             </Grid>
@@ -260,31 +260,31 @@ class PatientDataForm extends React.Component {
                               xs={9}
                         >
                             <Grid>
-                                <FormLabel class="big">Epidemiologische Situation:</FormLabel>
+                                <FormLabel class="big">Epidemiologische Situation: </FormLabel>
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox id="medical" />} label = "Patient/in ist im medizinischen Bereich tätig" />
+                                <FormControlLabel control = {<Checkbox id="medical" />} label = "Patient/in ist im medizinischen Bereich taetig" />
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox id="food"/>} label = "Patient/in ist im Lebensmittelbereich tätig" />
+                                <FormControlLabel control = {<Checkbox id="food"/>} label = "Patient/in ist im Lebensmittelbereich taetig" />
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox id="epiCommunal"/>} label = "Patient/in ist in Gemeinschaftseinrichtung tätig,  z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkünfte" />
+                                <FormControlLabel control = {<Checkbox id="epiCommunal"/>} label = "Patient/in ist in Gemeinschaftseinrichtung taetig,  z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkuenfte" />
                             </Grid>
 
                             <Grid>
-                                <FormControlLabel control = {<Checkbox id="accCommunal"/>} label = "Patient/in wird in Gemeinschaftseinrichtung betreut, z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkünfte" />
+                                <FormControlLabel control = {<Checkbox id="accCommunal"/>} label = "Patient/in wird in Gemeinschaftseinrichtung betreut, z.B. Schule, Kinderkrippe, Heim, sonst. Massenunterkuenfte" />
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox id="hospital" />} label = "Patient/in ist in Krankenhaus/Pflegeeinrichtung seit:" />
+                                <FormControlLabel control = {<Checkbox id="hospital" />} label = "Patient/in ist in Krankenhaus/Pflegeeinrichtung seit: " />
                                 <Input type="date" id="dateOfcare" name="dateOfcare" id="dateOfHospitalisation" ></Input>
                             </Grid>
                             <Grid>
-                                <FormControlLabel control = {<Checkbox id = "intensiveCare" />} label = "Patient/in ist auf der Intensivstation seit:"/>
+                                <FormControlLabel control = {<Checkbox id = "intensiveCare" />} label = "Patient/in ist auf der Intensivstation seit: "/>
                                 <Input type="date" id="dateOfIntensiveCare"></Input>
                             </Grid>
                             <Grid>
-                            <FormLabel for="stay">Name und Ort der Einrichtung</FormLabel>
+                            <FormLabel for="stay">Name und Ort der Einrichtung: </FormLabel>
                             <Input type="text" id="stay" name="stay" id="addressAndPlace"></Input>
                             </Grid>
                         </Grid>
@@ -298,19 +298,19 @@ class PatientDataForm extends React.Component {
 
                     >
                         <Grid>
-                            <FormLabel class="big">Angaben zur wahrscheinlichen Infektionsquelle:</FormLabel>
+                            <FormLabel class="big">Angaben zur wahrscheinlichen Infektionsquelle: </FormLabel>
                         </Grid>
                         <Grid>
-                            <FormLabel for="infectionPlace">Wahrscheinlicher Infektionsort:</FormLabel>
+                            <FormLabel for="infectionPlace">Wahrscheinlicher Infektionsort: </FormLabel>
                             <Input type="text" id="infectionPlace" name="infectionPlace"></Input>
                         </Grid>
                         <Grid>
-                            <FormLabel for="infectionSource">Wahrscheinlicher Infektionsquelle:</FormLabel>
+                            <FormLabel for="infectionSource">Wahrscheinlicher Infektionsquelle: </FormLabel>
                             <Input type="text" id="infectionSource" name="infectionSource"></Input>
                         </Grid>
                         <Grid>
                             <FormControlLabel control = {<Checkbox id="epidemi"/>} label = "Meldung ist Teil einer Erkrankungshäufung:" />
-                            <FormLabel for="infectionSource"> Ausbruchsort, vermutete Exposition, etc.:</FormLabel>
+                            <FormLabel for="infectionSource"> Ausbruchsort, vermutete Exposition, etc.: </FormLabel>
                             <Input type="text" id="infectionExposition" name="epidemiSource"></Input>
                         </Grid>
                     </Grid>
@@ -328,38 +328,38 @@ class PatientDataForm extends React.Component {
                               item
                         >
                             <Grid>
-                                <FormLabel class="big">Unverzueglich zu melden an:</FormLabel>
+                                <FormLabel class="big">Unverzueglich zu melden an: </FormLabel>
                             </Grid>
                             <Grid>
-                                <FormLabel for="fname">Gesundheitsamt:</FormLabel>
+                                <FormLabel for="fname">Gesundheitsamt: </FormLabel>
                                 <Input required type="text" id="gName" name="fname"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="address">Strasse:</FormLabel>
+                                <FormLabel for="address">Strasse: </FormLabel>
                                 <Input type="text" id="gStreet" name="address"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="address">Hausnummer:</FormLabel>
+                                <FormLabel for="address">Hausnummer: </FormLabel>
                                 <Input type="text" id="gHousenumber" name="address"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="address">PLZ:</FormLabel>
+                                <FormLabel for="address">PLZ: </FormLabel>
                                 <Input type="text" id="gZip" name="address"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="address">Stadt:</FormLabel>
+                                <FormLabel for="address">Stadt: </FormLabel>
                                 <Input type="text" id="gCity" name="address"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="telephonenumber">Telefonnummer:</FormLabel>
+                                <FormLabel for="telephonenumber">Telefonnummer: </FormLabel>
                                 <Input type="tel" id="gPhone" name="telephonenumber"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="email">Email:</FormLabel>
+                                <FormLabel for="email">Email: </FormLabel>
                                 <Input type="email" id="gMail" name="email"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="labor">Untersuchungsstelle:</FormLabel>
+                                <FormLabel for="labor">Untersuchungsstelle: </FormLabel>
                                 <Input type="text" id="gStelle" name="labor"></Input>
                             </Grid>
                         </Grid>
@@ -373,19 +373,19 @@ class PatientDataForm extends React.Component {
                                 <FormControlLabel control = {<Checkbox id="commission"/>} label = "Es wurde ein Labor/eine Untersuchungsstelle mit der Erregerdiagnostik beauftragt." />
                             </Grid>
                             <Grid>
-                                <FormLabel for="labname"> Labor Name:</FormLabel>
+                                <FormLabel for="labname"> Labor Name: </FormLabel>
                                 <Input type="text" id="labname" name="labname"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="lablocation"> Labor Ort:</FormLabel>
+                                <FormLabel for="lablocation"> Labor Ort: </FormLabel>
                                 <Input type="text" id="lablocation" name="lablocation"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="labphone"> Labor Telefonnummer:</FormLabel>
+                                <FormLabel for="labphone"> Labor Telefonnummer: </FormLabel>
                                 <Input type="text" id="labphone" name="labphone"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="probedate"> Probenentnahme am:</FormLabel>
+                                <FormLabel for="probedate"> Probenentnahme am: </FormLabel>
                                 <Input type="text" id="probedate" name="probedate"></Input>
                             </Grid>
                         </Grid>
@@ -401,35 +401,35 @@ class PatientDataForm extends React.Component {
                                 <FormLabel class="big">Melder</FormLabel>
                             </Grid>
                             <Grid>
-                                <FormLabel for="fname">Vorname:</FormLabel>
+                                <FormLabel for="fname">Vorname: </FormLabel>
                                 <Input type="text" id="mFname" name="fname"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="lname">Nachname:</FormLabel>
+                                <FormLabel for="lname">Nachname: </FormLabel>
                                 <Input type="text" id="mName" name="lname"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="address">Strasse:</FormLabel>
+                                <FormLabel for="address">Strasse: </FormLabel>
                                 <Input type="text" id="mStreet" name="address"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="address">Hausnummer:</FormLabel>
+                                <FormLabel for="address">Hausnummer: </FormLabel>
                                 <Input type="text" id="mHousenumber" name="address"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="address">PLZ:</FormLabel>
+                                <FormLabel for="address">PLZ: </FormLabel>
                                 <Input type="text" id="mZip" name="address"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="address">Stadt:</FormLabel>
+                                <FormLabel for="address">Stadt: </FormLabel>
                                 <Input type="text" id="mCity" name="address"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="email">Email:</FormLabel>
+                                <FormLabel for="email">Email: </FormLabel>
                                 <Input type="email" id="mMail" name="email"></Input>
                             </Grid>
                             <Grid>
-                                <FormLabel for="telephonenumber">Telefonnummer:</FormLabel>
+                                <FormLabel for="telephonenumber">Telefonnummer: </FormLabel>
                                 <Input type="tel" id="mPhone" name="telephonenumber"></Input>
                             </Grid>
                         </Grid>
