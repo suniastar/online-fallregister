@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.coronavirus</groupId>
-    <artifactId>online-fallregister</artifactId>
+    <artifactId>online-melderegister</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <names>Online-Fallregister Backend</names>
-    <description>Microservice for the Online-Fallregister application</description>
+    <name>Online-Melderegister Backend</name>
+    <description>Microservice for the Online-Melderegister application</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
