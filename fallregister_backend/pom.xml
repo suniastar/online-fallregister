@@ -131,6 +131,13 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- csv import -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-csv</artifactId>
+            <version>2.5.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
