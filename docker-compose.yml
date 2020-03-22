@@ -1,0 +1,25 @@
+version: '3'
+services:
+  backend:
+    build: ./fallregister_backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      - 'API_PORT=8080'
+      - 'DB_TYPE=postgres'
+      - 'DB_SERVER=ff-system-postgres'
+      - 'DB_PORT=5432'
+      - 'DB_NAME=ff-system'
+      - 'DB_USER=backend'
+      - 'DB_PASSWORD=<CHANGEME>'
+  postgres:
+    image: postgres:latest
+    container_name: ff-system-postgres
+    environment:
+      - 'POSTGRES_DB=ff-system'
+      - 'POSTGRES_USER=backend'
+      - 'POSTGRES_PASSWORD=<CHANGEME>'
+    expose:
+      - '5432'
