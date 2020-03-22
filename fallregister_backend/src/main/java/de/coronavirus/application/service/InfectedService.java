@@ -178,7 +178,7 @@ public class InfectedService {
 
         Address address = null;
 
-        if (notEmpty(countryName)) {
+        if (!isEmpty(countryName)) {
             final Country country = countryRepository.findByName(countryName).orElseGet(() -> {
                 final Country c = new Country();
                 c.setName(countryName);
@@ -186,7 +186,7 @@ public class InfectedService {
                 return c;
             });
 
-            if (notEmpty(cityName)) {
+            if (!isEmpty(cityName)) {
                 final City city = cityRepository.findByCountryAndName(country, cityName).orElseGet(() -> {
                     final City c = new City();
                     c.setCountry(country);
@@ -206,7 +206,7 @@ public class InfectedService {
                         return c;
                     });
 
-                    if (notEmpty(streetName)) {
+                    if (!isEmpty(streetName)) {
                         final Street street = streetRepository.findByPostCodeAndName(postCode, streetName).orElseGet(() -> {
                             final Street s = new Street();
                             s.setPostCode(postCode);
@@ -240,7 +240,7 @@ public class InfectedService {
                                                     Date inIcuSince,
                                                     PhoneNumber phoneNumber,
                                                     EmailAddress emailAddress) {
-        if (notEmpty(name)) return null;
+        if (isEmpty(name)) return null;
 
         final Accommodation accommodation = accommodationRepository.findByName(name).orElseGet(() -> {
             Accommodation a = new Accommodation();
@@ -268,7 +268,7 @@ public class InfectedService {
     }
 
     private Detector createOrReadDetector(String name, Address address, PhoneNumber phoneNumber, EmailAddress emailAddress) {
-        if (notEmpty(name) || address == null) return null;
+        if (isEmpty(name) || address == null) return null;
 
         final Detector detector = detectorRepository.findByNameAndAddress(name, address).orElseGet(() -> {
             final Detector d = new Detector();
@@ -289,7 +289,7 @@ public class InfectedService {
     }
 
     private Laboratory createOrReadLaboratory(String name, Address address, PhoneNumber phoneNumber, EmailAddress emailAddress) {
-        if (notEmpty(name)) return null;
+        if (isEmpty(name)) return null;
 
         final Laboratory laboratory = laboratoryRepository.findByName(name).orElseGet(() -> {
             final Laboratory l = new Laboratory();
@@ -311,7 +311,7 @@ public class InfectedService {
     }
 
     private PhoneNumber createOrReadPhoneNumber(String phoneNumber) {
-        if (notEmpty(phoneNumber)) return null;
+        if (isEmpty(phoneNumber)) return null;
         return phoneNumberRepository.findByNumber(phoneNumber).orElseGet(() -> {
             final PhoneNumber n = new PhoneNumber();
             n.setNumber(phoneNumber);
@@ -321,7 +321,7 @@ public class InfectedService {
     }
 
     private EmailAddress createOrReadEmailAddress(String emailAddress) {
-        if (notEmpty(emailAddress)) return null;
+        if (isEmpty(emailAddress)) return null;
         return emailAddressRepository.findByEmail(emailAddress).orElseGet(() -> {
             final EmailAddress e = new EmailAddress();
             e.setEmail(emailAddress);
@@ -330,8 +330,8 @@ public class InfectedService {
         });
     }
 
-    private boolean notEmpty(String string) {
-        return string != null && !string.isBlank();
+    private boolean isEmpty(String string) {
+        return string == null || string.isBlank();
     }
 
     private String removeSpaces(final String string) {
