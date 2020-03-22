@@ -91,6 +91,15 @@ class App extends React.Component {
             form =             <form onSubmit={this.onLogin}>
             <Grid container direction='column' justify="center">
                 <Grid>
+                <FormLabel for="user">Nutze einen beliebigen Benutzernamen und Password zum einloggen.</FormLabel>
+                </Grid>
+                <Grid>
+                <FormLabel for="user">Diese werden nicht gespeichert.</FormLabel>
+                </Grid>
+                <Grid>
+                    <div class="horizontalDivider"></div>
+                </Grid>
+                <Grid>
                 <FormLabel for="user">Benutzername:</FormLabel>
                 <Input required type="text" id="user" name="fname"></Input>
                 </Grid>
