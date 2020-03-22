@@ -31,8 +31,8 @@ public class Diagnosis {
     @Column(name = "clinical_diagnosis")
     private boolean clinicalDiagnosis;
 
-    @Column(name = "death")
-    private boolean death;
+    @Column(name = "dead")
+    private boolean dead;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "detector_id")
@@ -93,14 +93,6 @@ public class Diagnosis {
         this.clinicalDiagnosis = clinicalDiagnosis;
     }
 
-    public boolean isDeath() {
-        return death;
-    }
-
-    public void setDeath(boolean death) {
-        this.death = death;
-    }
-
     public Detector getDetector() {
         return detector;
     }
@@ -151,7 +143,7 @@ public class Diagnosis {
         if (id != diagnosis.id) return false;
         if (suspicion != diagnosis.suspicion) return false;
         if (clinicalDiagnosis != diagnosis.clinicalDiagnosis) return false;
-        if (death != diagnosis.death) return false;
+        if (dead != diagnosis.dead) return false;
         if (confirmed != diagnosis.confirmed) return false;
         if (!Objects.equals(diagnosticResult, diagnosis.diagnosticResult)) return false;
         if (!Objects.equals(date, diagnosis.date)) return false;
@@ -168,7 +160,7 @@ public class Diagnosis {
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (suspicion ? 1 : 0);
         result = 31 * result + (clinicalDiagnosis ? 1 : 0);
-        result = 31 * result + (death ? 1 : 0);
+        result = 31 * result + (dead ? 1 : 0);
         result = 31 * result + (detector != null ? detector.hashCode() : 0);
         result = 31 * result + (detectionOffice != null ? detectionOffice.hashCode() : 0);
         result = 31 * result + (laboratory != null ? laboratory.hashCode() : 0);
@@ -185,7 +177,7 @@ public class Diagnosis {
                 ", date=" + date +
                 ", suspicion=" + suspicion +
                 ", clinicalDiagnosis=" + clinicalDiagnosis +
-                ", death=" + death +
+                ", death=" + dead +
                 ", detector=" + detector +
                 ", detectionOffice=" + detectionOffice +
                 ", laboratory=" + laboratory +

@@ -7,6 +7,17 @@ import java.util.List;
 
 public class EmailAddressMapper {
 
-    EmailAddressResponse toResponse(EmailAddressDto emailAddressDto){return null;}
-    List<EmailAddressResponse> toResponseList(List<EmailAddressDto> emailAddressDtoList){return null;}
+    public static EmailAddressResponse toResponse(EmailAddressDto emailAddressDto){
+        EmailAddressResponse emailAddressResponse = new EmailAddressResponse();
+        emailAddressResponse.getEmailAddresses().add(emailAddressDto.getEmail());
+        return emailAddressResponse;
+    }
+
+    public static EmailAddressResponse toResponseList(List<EmailAddressDto> emailAddressDtoList){
+        EmailAddressResponse emailAddressResponse = new EmailAddressResponse();
+        for(EmailAddressDto emailAddressDto : emailAddressDtoList) {
+            emailAddressResponse.getEmailAddresses().add(emailAddressDto.getEmail());
+        }
+        return emailAddressResponse;
+    }
 }

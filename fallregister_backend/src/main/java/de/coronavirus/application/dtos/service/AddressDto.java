@@ -4,6 +4,6 @@ public interface AddressDto {
 
     long getId();
     StreetDto getStreet();
-    Integer getHouseNumber();
+    String getHouseNumber();
 
 }

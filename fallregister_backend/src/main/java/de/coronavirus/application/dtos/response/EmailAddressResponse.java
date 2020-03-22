@@ -9,13 +9,13 @@ import java.util.List;
 public class EmailAddressResponse {
 
     @ApiModelProperty(position = 1)
-    List<String> emailAddress;
+    List<String> emailAddresses;
 
-    public List<String> getEmailAddress() {
-        return emailAddress;
+    public List<String> getEmailAddresses() {
+        return emailAddresses;
     }
 
-    public void setEmailAddress(List<String> emailAddress) {
-        this.emailAddress = emailAddress;
+    public void setEmailAddresses(List<String> emailAddresses) {
+        this.emailAddresses = emailAddresses;
     }
 }

@@ -4,5 +4,5 @@ public interface StreetDto {
 
     long getId();
     String getName();
-    CityDto getPostCode();
+    PostCodeDto getPostCode();
 }

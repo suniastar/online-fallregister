@@ -9,13 +9,13 @@ import java.util.List;
 public class PhoneNumberResponse {
 
     @ApiModelProperty(position = 1)
-    List<String> phoneNumber;
+    List<String> numbers;
 
-    public List<String> getPhoneNumber() {
-        return phoneNumber;
+    public List<String> getNumbers() {
+        return numbers;
     }
 
-    public void setPhoneNumber(List<String> phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setNumbers(List<String> numbers) {
+        this.numbers = numbers;
     }
 }
