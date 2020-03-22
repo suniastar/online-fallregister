@@ -41,15 +41,40 @@ class App extends React.Component {
     }
     verifySession(){
         const { cookies } = this.props;
-        return cookies.get("token");
+        return cookies.get("faketoken");
     }
-    onLogin(){
+    onLogin(event){
+        event.preventDefault();
         const { cookies } = this.props;
-        return cookies.set("token");
-    }
+        cookies.set("faketoken", "fake");
+        fetch('http://localhost:8080/auth/login', {
+            method: 'POST',
+            headers: {
+               'Accept': 'application/json',
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify({
+               user: document.getElementById("user").value,
+               password: document.getElementById("password").value
+           })
+           })
+           .then(res => res.json())
+           .then(
+             (result) => {
+                     cookies.set("token", result.token)
+                     
+                     console.log(result)
+                
+   
+             },
+             (error) => {
+               console.log(error)
+             }
+           )
+          }
     onLogout(){
         const { cookies } = this.props;
-        return cookies.remove("token");
+        return cookies.remove("faketoken");
     }
 
     render(){
@@ -67,12 +92,12 @@ class App extends React.Component {
             <Grid container direction='column' justify="center">
                 <Grid>
                 <FormLabel for="user">Benutzername:</FormLabel>
-                <Input required type="text" id="fname" name="fname"></Input>
+                <Input required type="text" id="user" name="fname"></Input>
                 </Grid>
 
                 <Grid>
                 <FormLabel for="password">Password:</FormLabel>
-                <Input required type="password" id="lname" name="lname"></Input>
+                <Input required type="password" id="password" name="lname"></Input>
                 </Grid>
 
                 <Grid>
