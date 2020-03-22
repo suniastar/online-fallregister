@@ -44,7 +44,7 @@ class DataView extends React.Component {
         this.state = {buttontext: "sample",
         srows: rows,
         rrows:[]};
-        fetch('http://localhost:8080/infected')
+        fetch('https://apimelderegister.fenste.de/infected')
         .then(res => res.json())
         .then(
           (data) => {

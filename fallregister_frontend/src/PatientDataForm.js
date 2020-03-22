@@ -69,7 +69,7 @@ class PatientDataForm extends React.Component {
             laboratoryPhone: document.getElementById("labphone").value,
             laboratoryDateOfBiopsy: document.getElementById("probedate").value
         }
-        fetch('http://localhost:8080/infected', {
+        fetch('https://apimelderegister.fenste.de/infected', {
          method: 'POST',
          headers: {
             'Accept': 'application/json',

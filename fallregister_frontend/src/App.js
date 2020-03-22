@@ -47,7 +47,7 @@ class App extends React.Component {
         event.preventDefault();
         const { cookies } = this.props;
         cookies.set("faketoken", "fake");
-        fetch('http://localhost:8080/auth/login', {
+        fetch('https://apimelderegister.fenste.de/auth/login', {
             method: 'POST',
             headers: {
                'Accept': 'application/json',
