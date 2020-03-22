@@ -7,6 +7,7 @@ import de.coronavirus.domain.infrastructure.repositories.TokenRepository;
 import de.coronavirus.domain.infrastructure.repositories.UserRepository;
 import de.coronavirus.domain.model.Token;
 import de.coronavirus.domain.model.User;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -46,10 +47,13 @@ public class AuthorizationService {
     public TokenDto login(final LoginRequest request) {
         log.info("Login by {}", request.getUser());
 
+        // hash password
+        final String hash = DigestUtils.sha256Hex(request.getPassword());
+
         // find user
         final Optional<User> userOptional = userRepository.findByNameAndPassword(
                 request.getUser(),
-                request.getPassword());
+                hash);
         final User user = userOptional.orElseThrow(badCredentialsException());
 
         // add token
