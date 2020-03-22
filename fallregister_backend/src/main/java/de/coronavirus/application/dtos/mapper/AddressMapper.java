@@ -1,6 +1,6 @@
 package de.coronavirus.application.dtos.mapper;
 
-import de.coronavirus.application.dtos.response.AddressResponse;
+import de.coronavirus.application.dtos.response.autocomplete.ACAddressResponse;
 import de.coronavirus.application.dtos.service.CityDto;
 import de.coronavirus.application.dtos.service.CountryDto;
 import de.coronavirus.application.dtos.service.PostCodeDto;
@@ -12,8 +12,8 @@ public class AddressMapper {
 
     private AddressMapper() {}
 
-    public static AddressResponse toResponse(PostCodeDto postCodeDto) {
-        AddressResponse response = new AddressResponse();
+    public static ACAddressResponse toResponse(PostCodeDto postCodeDto) {
+        ACAddressResponse response = new ACAddressResponse();
 
         response.setPostCode(postCodeDto.getCode());
         response.setCityName(postCodeDto.getCity().getName());
@@ -21,24 +21,24 @@ public class AddressMapper {
 
         return response;
     }
-    public static AddressResponse toResponse(CityDto cityDto){
-        AddressResponse response = new AddressResponse();
+    public static ACAddressResponse toResponse(CityDto cityDto){
+        ACAddressResponse response = new ACAddressResponse();
 
         response.setCityName(cityDto.getName());
         response.setCountryName(cityDto.getCountry().getName());
 
         return response;
     }
-    public static AddressResponse toResponse(CountryDto countryDto) {
-        AddressResponse response = new AddressResponse();
+    public static ACAddressResponse toResponse(CountryDto countryDto) {
+        ACAddressResponse response = new ACAddressResponse();
 
         response.setCountryName(countryDto.getName());
 
         return response;
     }
 
-    public static List<AddressResponse> PostCodeDtoToResponseList(List<PostCodeDto> postCodeDtoList) {
-        List<AddressResponse> responseList = new ArrayList<>();
+    public static List<ACAddressResponse> PostCodeDtoToResponseList(List<PostCodeDto> postCodeDtoList) {
+        List<ACAddressResponse> responseList = new ArrayList<>();
 
         for(PostCodeDto postCodeDto : postCodeDtoList) {
             responseList.add(toResponse(postCodeDto));
@@ -47,8 +47,8 @@ public class AddressMapper {
         return responseList;
     }
 
-    public static List<AddressResponse> CityDtoToResponseList(List<CityDto> cityDtoList) {
-        List<AddressResponse> responseList = new ArrayList<>();
+    public static List<ACAddressResponse> CityDtoToResponseList(List<CityDto> cityDtoList) {
+        List<ACAddressResponse> responseList = new ArrayList<>();
 
         for(CityDto cityDto : cityDtoList){
             responseList.add(toResponse(cityDto));
@@ -57,8 +57,8 @@ public class AddressMapper {
         return responseList;
     }
 
-    public static List<AddressResponse> CountryDtoToResponseList(List<CountryDto> countryDtoList) {
-        List<AddressResponse> responseList = new ArrayList<>();
+    public static List<ACAddressResponse> CountryDtoToResponseList(List<CountryDto> countryDtoList) {
+        List<ACAddressResponse> responseList = new ArrayList<>();
 
         for(CountryDto countryDto : countryDtoList) {
             responseList.add(toResponse(countryDto));

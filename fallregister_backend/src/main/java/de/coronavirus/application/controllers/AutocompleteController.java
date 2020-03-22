@@ -2,7 +2,7 @@ package de.coronavirus.application.controllers;
 
 import de.coronavirus.application.controllers.api.AutocompleteApi;
 import de.coronavirus.application.dtos.mapper.*;
-import de.coronavirus.application.dtos.response.*;
+import de.coronavirus.application.dtos.response.autocomplete.*;
 import de.coronavirus.application.dtos.service.*;
 import de.coronavirus.application.service.AutocompleteService;
 
@@ -27,46 +27,39 @@ public class AutocompleteController implements AutocompleteApi {
     }
 
     @Override
-    public PhoneNumberResponse autocompletePhone(@PathVariable String partialPhone) {
-        List<PhoneNumberDto> phoneNumbers = autocompleteService.findPhoneNumbersStartingWith(partialPhone);
-        return null;
-	}
-	
-	@Override
-    public EmailAddressResponse autocompleteEmail(@PathVariable String partialEmail) {
-        List<EmailAddressDto> emailAddresses = autocompleteService.findEmailAddressesStartingWith(partialEmail);
-        return null;
-	}
+    public ACDiagnosisNameResponse autocompleteDiagnosisName(String partialDiagnosisName) {
+        List<DiagnosisDto> diagnosisDtos = autocompleteService.findDiagnosisNamesStartingWith(partialDiagnosisName);
+        return DiagnosisMapper.toNameResponse(diagnosisDtos);
+    }
 
-	@Override
-    public StreetResponse autocompleteStreet(@PathVariable String partialStreet){
+    @Override
+    public ACLaboratoryNameResponse autocompleteLaboratoryName(String partialLaboratoryName) {
+        List<LaboratoryDto> laboratoryDtos = autocompleteService.findLaboratoryNamesStartingWith(partialLaboratoryName);
+        return LaboratoryMapper.toNameResponse(laboratoryDtos);
+    }
+
+    @Override
+    public ACStreetNameResponse autocompleteStreet(@PathVariable String partialStreet){
 		List<StreetDto> streets = autocompleteService.findStreetsStartingWith(partialStreet);
 		return StreetMapper.toResponse(streets);
 	}
 
     @Override
-    public List<AddressResponse> autocompletePostalCode(String partialPostCode) {
+    public List<ACAddressResponse> autocompletePostalCode(String partialPostCode) {
         List<PostCodeDto> postCodes = autocompleteService.findPostCodesStartingWith(partialPostCode);
         return AddressMapper.PostCodeDtoToResponseList(postCodes);
     }
 
     @Override
-    public List<AddressResponse> autocompleteCity(String partialCity) {
+    public List<ACAddressResponse> autocompleteCity(String partialCity) {
         List<CityDto> cities = autocompleteService.findCitiesStartingWith(partialCity);
         return AddressMapper.CityDtoToResponseList(cities);
     }
 
     @Override
-    public List<AddressResponse> autocompleteCountry(String partialCountry) {
+    public List<ACAddressResponse> autocompleteCountry(String partialCountry) {
         List<CountryDto> countries = autocompleteService.findCountriesStartingWith(partialCountry);
         return AddressMapper.CountryDtoToResponseList(countries);
     }
-
-//	@Override
-//    DiagnosisResponse autocompleteDiagnosis(@PathVariable String partialDiagnosis) {
-//        List<DiagnosisDto> diagnosis = autocompleteService.findDiagnosisStartingWith(partialDiagnosis);
-//        return null;
-//	}
-
 
 }
