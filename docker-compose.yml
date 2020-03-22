@@ -1,25 +1,31 @@
 version: '3'
 services:
+  postgres:
+    image: postgres:latest
+    container_name: sample-postgres
+    environment:
+      - 'POSTGRES_DB=register'
+      - 'POSTGRES_USER=backend'
+      - 'POSTGRES_PASSWORD=SUPERSAFEPASSWORD'
+    expose:
+      - '5432'
+    volumes:
+      - './postgres-data:/var/lib/postgresql:rw'
   backend:
     build: ./fallregister_backend
-    ports:
-      - "8080:8080"
-    depends_on:
-      - postgres
+    container_name: sample-backend
     environment:
       - 'API_PORT=8080'
       - 'DB_TYPE=postgres'
-      - 'DB_SERVER=ff-system-postgres'
+      - 'DB_SERVER=sample-postgres'
       - 'DB_PORT=5432'
-      - 'DB_NAME=ff-system'
+      - 'DB_NAME=register'
       - 'DB_USER=backend'
-      - 'DB_PASSWORD=<CHANGEME>'
-  postgres:
-    image: postgres:latest
-    container_name: ff-system-postgres
-    environment:
-      - 'POSTGRES_DB=ff-system'
-      - 'POSTGRES_USER=backend'
-      - 'POSTGRES_PASSWORD=<CHANGEME>'
+      - 'DB_PASSWORD=SUPERSAFEPASSWORD'
     expose:
-      - '5432'
+      - '8080'
+  frontend:
+    build: ./fallregister_frontend
+    container_name: sample-frontend
+    expose:
+      - '80'
