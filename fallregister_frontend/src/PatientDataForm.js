@@ -65,7 +65,6 @@ class PatientDataForm extends React.Component {
             laboratoryLocation: document.getElementById("lablocation").value,
             laboratoryPhone: document.getElementById("labphone").value,
             laboratoryDateOfBiopsy: document.getElementById("probedate").value
-            }
         }
         fetch('http://localhost:8080/infected', {
          method: 'POST',
