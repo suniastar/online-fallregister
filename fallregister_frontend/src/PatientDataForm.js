@@ -461,7 +461,7 @@ class PatientDataForm extends React.Component {
                                     <FormLabel htmlFor="probedate"> Probenentnahme am: </FormLabel>
                                 </Grid>
                                 <Grid>
-                                    <Input type="text" id="probedate" name="probedate"></Input>
+                                    <Input type="date" id="probedate" name="probedate"></Input>
                                 </Grid>
                             </Grid>
                             <div class="verticalDivider"></div>
