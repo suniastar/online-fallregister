@@ -137,12 +137,12 @@ class PatientDataForm extends React.Component {
 
                             <Grid>
                                 <FormLabel for="fname">Vorname:</FormLabel>
-                                <Input type="text" id="patientFirstName" name="fname" ref="myFirstname"></Input>
+                                <Input required type="text" id="patientFirstName" name="fname" ref="myFirstname"></Input>
                             </Grid>
 
                             <Grid>
                                 <FormLabel for="lname">Nachname:</FormLabel>
-                                <Input type="text" id="patientLastName" name="lname"></Input>
+                                <Input required type="text" id="patientLastName" name="lname"></Input>
                             </Grid>
 
                             <Grid container
@@ -184,7 +184,7 @@ class PatientDataForm extends React.Component {
 
                             <Grid>
                                 <FormLabel for="birthday">Geburtsdatum:</FormLabel>
-                                <Input type="date" id="patientBirthday" name="birthday"></Input>
+                                <Input required type="date" id="patientBirthday" name="birthday"></Input>
                             </Grid>
 
                             <Grid>
@@ -326,7 +326,7 @@ class PatientDataForm extends React.Component {
                             </Grid>
                             <Grid>
                                 <FormLabel for="fname">Gesundheitsamt:</FormLabel>
-                                <Input type="text" id="fname" name="fname"></Input>
+                                <Input required type="text" id="fname" name="fname"></Input>
                             </Grid>
                             <Grid>
                                 <FormLabel for="address">Strasse:</FormLabel>
