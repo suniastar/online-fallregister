@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.List;
 
-@ApiModel("EmailAddress")
+@ApiModel("Email Address")
 public class EmailAddressResponse {
 
     @ApiModelProperty(position = 1)

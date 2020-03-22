@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
 import java.util.List;
 
-@ApiModel ("InfectedResponse")
+@ApiModel ("Infected")
 public class InfectedResponse {
     @ApiModelProperty
     long id;

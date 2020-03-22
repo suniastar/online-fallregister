@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 
-@ApiModel("TokenResponse")
+@ApiModel("Token")
 public class TokenResponse {
 
     @ApiModelProperty
