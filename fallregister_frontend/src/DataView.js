@@ -1,8 +1,7 @@
 
 import React from 'react';
 
-import {FormLabel, Input, Grid, Button, makeStyles, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@material-ui/core/';
-import MaterialTable from 'material-table';
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@material-ui/core/';
 
 class CSVImportForm extends React.Component {
 
