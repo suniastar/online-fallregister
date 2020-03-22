@@ -33,6 +33,7 @@ class PatientDataForm extends React.Component {
             detectorAddressCity:document.getElementById("mCity").value,
             detectorPhone: document.getElementById("mPhone").value,
             detectorEmail: document.getElementById("mMail").value,
+            diagnosisName: "COVID19",
             diagnosisSuspected: document.getElementById("suspected").checked,
             diagnosisDiagnosed: document.getElementById("diagnosed").checked,
             diagnosisDead: document.getElementById("death").checked,
