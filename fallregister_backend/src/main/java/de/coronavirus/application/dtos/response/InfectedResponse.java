@@ -1,5 +1,6 @@
 package de.coronavirus.application.dtos.response;
 
+import de.coronavirus.domain.model.Diagnosis;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -18,6 +19,9 @@ public class InfectedResponse {
 
     @ApiModelProperty
     List<String> emailAddresses;
+
+    @ApiModelProperty
+    List<Diagnosis> diagnoses;
 
     /* -Address */
     @ApiModelProperty
@@ -75,6 +79,18 @@ public class InfectedResponse {
 
     @ApiModelProperty
     boolean intensiveCareTreatment;
+
+    public List<Diagnosis> getDiagnoses() {
+        return diagnoses;
+    }
+
+    public void setDiagnoses(List<Diagnosis> diagnoses) {
+        this.diagnoses = diagnoses;
+    }
+
+    public List<String> getEmailAddresses() {return emailAddresses; }
+
+    public void setEmailAddresses(List<String> emailAddresses) { this.emailAddresses = emailAddresses; }
 
     public long getId() {
         return id;
