@@ -88,7 +88,7 @@ class PatientDataForm extends React.Component {
                 dateOfBiopsy: document.getElementById("probedate").value
             }
         }
-        fetch('localhost:8080/endpoint/', {
+        fetch('http://localhost:8080/infected', {
          method: 'POST',
          headers: {
             'Accept': 'application/json',
@@ -99,7 +99,12 @@ class PatientDataForm extends React.Component {
         .then(res => res.json())
         .then(
           (result) => {
-            alert("Erfolgreich gespeichert")
+              if(result.status === "201"){
+                alert("Erfolgreich gespeichert")
+              }else{
+                  alert(result.status)
+              } 
+            
           },
           // Note: it's important to handle errors here
           // instead of a catch() block so that we don't swallow
