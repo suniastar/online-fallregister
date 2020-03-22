@@ -1,53 +1,93 @@
 
 import React from 'react';
 
-import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@material-ui/core/';
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button, Paper} from '@material-ui/core/';
 
-class DataView extends React.Component {
+class DataView extends React.Component {  
 
-    render() {
-        function createData(id, firstName, lastName, dateOfBirth, gender, suspected, diagnosis,
-                            death, dateOfDeath, dateOfSick, dateOfDiagnosis, medicalField, foodField,
-                            workCare, inCare, inHospitalSince, inIntensiveCareSince, nameAndPlace, placeOfInfection, sourceOfInfection) {
-            return {id, firstName, lastName, dateOfBirth, gender, suspected, diagnosis,
-                death, dateOfDeath, dateOfSick, dateOfDiagnosis, medicalField, foodField,
-                workCare, inCare, inHospitalSince, inIntensiveCareSince, nameAndPlace, placeOfInfection, sourceOfInfection};
-        }
+    constructor(){
+        super();
 
+        this.goToReal = this.goToReal.bind(this);
+        this.goToSample = this.goToSample.bind(this);
         const rows = [
-            createData(1, "Max", "Mustermann", "01.01.1999", "männlich",
+            this.createData(1, "Max", "Mustermann", "01.01.1999", "männlich",
                 "Nein", "Ja", "Nein", "-", "15.03.2020",
                 "20.03.2020", "Nein", "Nein", "Nein", "Nein", "-",
                 "-", "-", "unbekannt", "unbekannt"),
 
-            createData(2, "Maria", "Musterfrau", "06.09.1970", "weiblich",
+                this.createData(2, "Maria", "Musterfrau", "06.09.1970", "weiblich",
                 "Nein", "Ja", "Nein", "-", "8.03.2020",
                 "16.03.2020", "Nein", "Nein", "Nein", "Nein", "17.03.2020",
                 "19.03.2020", "-", "unbekannt", "unbekannt"),
 
-            createData(3, "Paula", "Mustermann", "06.07.1998", "weiblich",
+                this.createData(3, "Paula", "Mustermann", "06.07.1998", "weiblich",
                 "Nein", "Ja", "Nein", "-", "20.03.2020",
                 "21.03.2020", "Ja", "Nein", "Nein", "Nein", "-",
                 "-", "Pflegeheim Muster", "zu Hause", "Max Mustermann"),
 
-            createData(4, "Maximilian", "Mannmuster", "18.10.1959", "männlich",
+                this.createData(4, "Maximilian", "Mannmuster", "18.10.1959", "männlich",
                 "Nein", "Ja", "Ja", "22.03.2020", "05.03.2020",
                 "14.03.2020", "Nein", "Nein", "Nein", "Ja", "14.03.2020",
                 "16.03.2020", "Pflegeheim Muster", "Pflegeheim Muster", "Paula Mustermann"),
 
-            createData(5, "Franziska", "Fraumuster", "18.10.1970", "weiblich",
+                this.createData(5, "Franziska", "Fraumuster", "18.10.1970", "weiblich",
                 "Ja", "Nein", "Nein", "-", "09.03.2020",
                 "-", "Nein", "Ja", "Nein", "Nein", "-",
                 "-", "Supermarkt Muster", "unbekannt", "unbekannt"),
 
-            createData(6, "Maja", "Muster", "15.01.1981", "weiblich",
+                this.createData(6, "Maja", "Muster", "15.01.1981", "weiblich",
                 "Nein", "Ja", "Nein", "-", "07.03.2020",
                 "11.03.2020", "Nein", "Nein", "Nein", "Nein", "-",
                 "-", "-", "unbekannt", "unbekannt")
         ];
+        this.state = {buttontext: "sample",
+        srows: rows,
+        rrows:[]};
+        fetch('http://localhost:8080/infected')
+        .then(res => res.json())
+        .then(
+          (data) => {
+              const rows = data.map((curr,ind) => this.createData(ind,curr.firstName,curr.lastName, curr.dateOfBirth, curr.gender,"","","","","","","","","","","","","","","","","","","","","","",""))
+  
+              if(rows){
+                this.setState({rrows: rows})
+              }else{
+                this.setState({rrows:   [this.createData(6, "Maja", "Muster", "15.01.1981", "weiblich",
+                "Nein", "Ja", "Nein", "-", "07.03.2020",
+                "11.03.2020", "Nein", "Nein", "Nein", "Nein", "-",
+                "-", "-", "unbekannt", "unbekannt")]})
+              }
+              
 
+          },
+        )
+    }
+
+    goToSample(){
+        this.setState({buttontext: "sample"});
+    }
+
+    goToReal(){
+        this.setState({buttontext: "real"});
+    }
+    createData(id, firstName, lastName, dateOfBirth, gender, suspected, diagnosis,
+        death, dateOfDeath, dateOfSick, dateOfDiagnosis, medicalField, foodField,
+        workCare, inCare, inHospitalSince, inIntensiveCareSince, nameAndPlace, placeOfInfection, sourceOfInfection) {
+return {id, firstName, lastName, dateOfBirth, gender, suspected, diagnosis,
+death, dateOfDeath, dateOfSick, dateOfDiagnosis, medicalField, foodField,
+workCare, inCare, inHospitalSince, inIntensiveCareSince, nameAndPlace, placeOfInfection, sourceOfInfection};
+}
+
+    render() {   
+        const myrows = this.state.buttontext === "sample" ? this.state.srows : this.state.rrows;
+        console.log(myrows)
         return(
             <form action="/action_page.php">
+                 <Button onClick={this.goToReal} color="primary"
+                            variant={this.state.buttontext === "real" ? "contained" : ""}>"echte" Daten</Button>
+                <Button onClick={this.goToSample} color="primary"
+                            variant={this.state.buttontext === "sample" ? "contained" : ""}>sample Daten</Button>
                 <TableContainer component={Paper}>
                     <Table size="small" aria-label="a dense table">
                         <TableHead>
@@ -76,7 +116,7 @@ class DataView extends React.Component {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {rows.map(row => (
+                            {myrows.map(row => (
                                 <TableRow key={row.id}>
                                     <TableCell component="th" scope="row">
                                         {row.id}

@@ -11,9 +11,10 @@ class PatientDataForm extends React.Component {
 
     onSubmit(event) {
         event.preventDefault();
-        let sex = document.getElementById("sexMale").checked ? "male" : "";
+        let sex = document.getElementById("sexMale").checked ? "male" : undefined;
         sex = document.getElementById("sexFemale").checked ? "female" : sex;
-        sex = document.getElementById("sexDivers").checked ? "divers" : sex;
+        sex = document.getElementById("sexDivers").checked ? "diverse" : sex;
+        if(sex){
         const json = {
             patientFirstName: document.getElementById("patientFirstName").value,
             patientLastName: document.getElementById("patientLastName").value,
@@ -79,8 +80,8 @@ class PatientDataForm extends React.Component {
         .then(res => res.json())
         .then(
           (result) => {
-              if(result.status === "201"){
-                console.log("Erfolgreich gespeichert")
+              if(result.status === 201){
+                alert("Erfolgreich gespeichert");
               }else{
                 console.log(result.status)
               }
@@ -90,7 +91,10 @@ class PatientDataForm extends React.Component {
             console.log("fehler" + error)
           }
         )
-        alert("Erfolgreich gespeichert");
+        
+        } else{
+            alert("Bitte Geschlecht angeben")
+        }
     }
 
     render() {
@@ -276,7 +280,7 @@ class PatientDataForm extends React.Component {
                                     <FormLabel htmlFor="dayOfDiagnose">Diagnosedatum: </FormLabel>
                                 </Grid>
                                 <Grid>
-                                    <Input type="date" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
+                                    <Input required type="date" id="dayOfDiagnose" name="dayOfDiagnose"></Input>
                                 </Grid>
                             </Grid>
 
@@ -478,13 +482,13 @@ class PatientDataForm extends React.Component {
                                     <FormLabel htmlFor="fname">Vorname: </FormLabel>
                                 </Grid>
                                 <Grid>
-                                    <Input type="text" id="mFname" name="fname"></Input>
+                                    <Input required type="text" id="mFname" name="fname"></Input>
                                 </Grid>
                                 <Grid>
                                     <FormLabel htmlFor="lname">Nachname: </FormLabel>
                                 </Grid>
                                 <Grid>
-                                    <Input type="text" id="mName" name="lname"></Input>
+                                    <Input required type="text" id="mName" name="lname"></Input>
                                 </Grid>
                                 <Grid>
                                     <FormLabel htmlFor="address">Strasse: </FormLabel>
