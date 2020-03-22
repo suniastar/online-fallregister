@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,6 +26,10 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("valid_until desc")
     private List<Token> tokens;
+
+    public User() {
+        tokens = new LinkedList<>();
+    }
 
     public String getName() {
         return name;
@@ -48,6 +53,19 @@ public class User {
 
     public void setTokens(List<Token> tokens) {
         this.tokens = tokens;
+    }
+
+    public Token addToken() {
+        Token token = new Token();
+
+        token.setUser(this);
+        tokens.add(token);
+
+        return token;
+    }
+
+    public void deleteToken(Token token) {
+        tokens.remove(token);
     }
 
     @Override
