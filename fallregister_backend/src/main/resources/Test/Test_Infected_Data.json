@@ -1,0 +1,913 @@
+{
+	"cols": [
+		"firstName",
+		"lastName",
+		"gender",
+		"dateOfBirth",
+		"dateOfIllness",
+		"dateOfDeath",
+		"infectionSource"
+	],
+	"data": [
+		[
+			"Beau",
+			"Mcbride",
+			"DIVERSE",
+			"14,04,1862",
+			"14,08,2020",
+			"19,09,2019",
+			"nec metus facilisis"
+		],
+		[
+			"Tasha",
+			"Collier",
+			"MALE",
+			"29,06,1870",
+			"17,03,2020",
+			"15,09,2019",
+			"Vivamus molestie dapibus"
+		],
+		[
+			"Libby",
+			"Williamson",
+			"FEMALE",
+			"23,02,2193",
+			"26,11,2019",
+			"10,10,2019",
+			"Sed congue, elit sed consequat auctor,"
+		],
+		[
+			"Lars",
+			"Massey",
+			"FEMALE",
+			"26,11,1982",
+			"08,02,2021",
+			"28,09,2019",
+			"tortor. Nunc"
+		],
+		[
+			"Ryan",
+			"Bright",
+			"MALE",
+			"09,12,2051",
+			"11,11,2019",
+			"22,05,2020",
+			"urna. Nunc quis arcu vel"
+		],
+		[
+			"Reese",
+			"Haley",
+			"DIVERSE",
+			"23,05,2010",
+			"14,03,2020",
+			"30,06,2019",
+			"varius. Nam porttitor scelerisque neque. Nullam nisl."
+		],
+		[
+			"Macon",
+			"Oconnor",
+			"MALE",
+			"23,05,2159",
+			"17,02,2020",
+			"08,11,2020",
+			"ultricies dignissim lacus. Aliquam rutrum lorem"
+		],
+		[
+			"Beck",
+			"Johns",
+			"MALE",
+			"28,01,2199",
+			"23,03,2020",
+			"12,01,2021",
+			"vestibulum nec,"
+		],
+		[
+			"Imogene",
+			"Kinney",
+			"DIVERSE",
+			"12,01,1824",
+			"03,01,2021",
+			"27,04,2019",
+			"Nullam vitae diam. Proin dolor. Nulla"
+		],
+		[
+			"Indigo",
+			"Williamson",
+			"FEMALE",
+			"12,10,2000",
+			"09,01,2020",
+			"19,02,2020",
+			"Sed id risus quis diam luctus lobortis. Class"
+		],
+		[
+			"Bo",
+			"Ewing",
+			"DIVERSE",
+			"22,09,2116",
+			"29,10,2019",
+			"10,01,2020",
+			"Etiam bibendum fermentum metus."
+		],
+		[
+			"Lev",
+			"Wright",
+			"DIVERSE",
+			"15,12,2216",
+			"27,12,2020",
+			"28,12,2019",
+			"Fusce fermentum fermentum arcu. Vestibulum ante"
+		],
+		[
+			"Daryl",
+			"Fry",
+			"DIVERSE",
+			"12,04,2186",
+			"29,09,2019",
+			"31,05,2020",
+			"arcu ac orci. Ut"
+		],
+		[
+			"Chanda",
+			"Duncan",
+			"FEMALE",
+			"11,07,2196",
+			"13,10,2020",
+			"25,04,2019",
+			"Proin ultrices."
+		],
+		[
+			"Aspen",
+			"Gordon",
+			"DIVERSE",
+			"07,02,1915",
+			"23,03,2020",
+			"10,02,2021",
+			"In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus."
+		],
+		[
+			"Ann",
+			"Pacheco",
+			"DIVERSE",
+			"06,03,1955",
+			"28,03,2019",
+			"30,05,2020",
+			"laoreet ipsum. Curabitur consequat, lectus"
+		],
+		[
+			"Orla",
+			"Robertson",
+			"MALE",
+			"28,02,2217",
+			"24,03,2020",
+			"23,01,2021",
+			"gravida sagittis. Duis gravida. Praesent eu"
+		],
+		[
+			"Harper",
+			"Hickman",
+			"MALE",
+			"09,06,2034",
+			"08,12,2020",
+			"25,09,2020",
+			"cursus in, hendrerit consectetuer, cursus et, magna. Praesent"
+		],
+		[
+			"Honorato",
+			"Walsh",
+			"MALE",
+			"13,08,2160",
+			"12,01,2020",
+			"17,09,2020",
+			"lectus pede et risus. Quisque libero lacus, varius"
+		],
+		[
+			"Chase",
+			"Randolph",
+			"MALE",
+			"25,02,1986",
+			"21,10,2019",
+			"05,09,2020",
+			"natoque penatibus"
+		],
+		[
+			"Illiana",
+			"Cherry",
+			"DIVERSE",
+			"29,10,2154",
+			"24,09,2019",
+			"06,12,2019",
+			"Cras sed"
+		],
+		[
+			"Hoyt",
+			"Padilla",
+			"DIVERSE",
+			"01,08,1871",
+			"11,05,2020",
+			"23,04,2019",
+			"Fusce"
+		],
+		[
+			"Kato",
+			"Bray",
+			"FEMALE",
+			"08,12,1965",
+			"15,01,2021",
+			"29,07,2020",
+			"auctor odio a purus. Duis elementum, dui quis"
+		],
+		[
+			"Jerome",
+			"Talley",
+			"FEMALE",
+			"25,02,2017",
+			"28,01,2020",
+			"10,10,2020",
+			"tincidunt adipiscing."
+		],
+		[
+			"Ignacia",
+			"Knowles",
+			"MALE",
+			"21,09,2191",
+			"27,06,2020",
+			"28,03,2020",
+			"massa rutrum magna. Cras convallis"
+		],
+		[
+			"Camille",
+			"Kirkland",
+			"DIVERSE",
+			"02,12,1972",
+			"05,04,2020",
+			"19,05,2019",
+			"suscipit,"
+		],
+		[
+			"Hilda",
+			"George",
+			"DIVERSE",
+			"27,12,1933",
+			"21,05,2020",
+			"25,07,2019",
+			"Morbi non sapien molestie orci"
+		],
+		[
+			"Rhonda",
+			"Ruiz",
+			"FEMALE",
+			"23,12,2009",
+			"12,06,2019",
+			"04,04,2019",
+			"Class aptent taciti sociosqu ad litora torquent"
+		],
+		[
+			"Michelle",
+			"Burks",
+			"FEMALE",
+			"20,01,1915",
+			"16,08,2020",
+			"03,11,2019",
+			"Fusce fermentum fermentum arcu. Vestibulum"
+		],
+		[
+			"Nathaniel",
+			"Berry",
+			"DIVERSE",
+			"23,02,2022",
+			"21,10,2019",
+			"10,12,2019",
+			"Aenean gravida nunc sed pede."
+		],
+		[
+			"Vanna",
+			"Petersen",
+			"FEMALE",
+			"25,05,2055",
+			"19,04,2020",
+			"04,03,2021",
+			"nunc. Quisque ornare tortor at risus."
+		],
+		[
+			"Burke",
+			"Dillon",
+			"MALE",
+			"22,08,2006",
+			"30,01,2020",
+			"12,12,2019",
+			"eu, ligula. Aenean euismod"
+		],
+		[
+			"Jamal",
+			"Mccoy",
+			"DIVERSE",
+			"14,01,1944",
+			"15,07,2019",
+			"29,08,2019",
+			"id risus quis diam luctus lobortis. Class aptent taciti"
+		],
+		[
+			"Genevieve",
+			"Guerrero",
+			"DIVERSE",
+			"19,02,1888",
+			"23,07,2020",
+			"13,06,2019",
+			"tempus, lorem"
+		],
+		[
+			"Anastasia",
+			"Townsend",
+			"DIVERSE",
+			"16,09,2199",
+			"10,08,2020",
+			"04,05,2019",
+			"facilisis, magna tellus faucibus leo,"
+		],
+		[
+			"Lenore",
+			"Erickson",
+			"MALE",
+			"16,03,2145",
+			"16,02,2020",
+			"05,07,2019",
+			"Vivamus"
+		],
+		[
+			"Veda",
+			"Jimenez",
+			"DIVERSE",
+			"21,05,2185",
+			"04,06,2020",
+			"20,08,2020",
+			"hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit"
+		],
+		[
+			"Tashya",
+			"Rivera",
+			"FEMALE",
+			"14,02,2018",
+			"02,03,2020",
+			"27,08,2019",
+			"Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere"
+		],
+		[
+			"Harlan",
+			"Mccarthy",
+			"DIVERSE",
+			"28,05,2186",
+			"23,03,2019",
+			"24,08,2019",
+			"dignissim. Maecenas ornare egestas"
+		],
+		[
+			"Adena",
+			"Kent",
+			"DIVERSE",
+			"19,04,2101",
+			"31,03,2019",
+			"16,04,2020",
+			"pharetra. Quisque ac libero nec ligula consectetuer"
+		],
+		[
+			"Timon",
+			"Wilson",
+			"MALE",
+			"30,05,1997",
+			"06,10,2019",
+			"12,09,2020",
+			"nonummy. Fusce fermentum fermentum arcu."
+		],
+		[
+			"Neil",
+			"Chavez",
+			"DIVERSE",
+			"06,04,2205",
+			"21,08,2019",
+			"06,06,2020",
+			"est."
+		],
+		[
+			"Cathleen",
+			"Mccullough",
+			"MALE",
+			"05,06,1851",
+			"03,10,2020",
+			"05,07,2020",
+			"nec quam."
+		],
+		[
+			"Rajah",
+			"Gross",
+			"FEMALE",
+			"04,08,1968",
+			"10,06,2020",
+			"05,05,2020",
+			"auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus."
+		],
+		[
+			"Honorato",
+			"White",
+			"MALE",
+			"04,11,2058",
+			"13,02,2020",
+			"05,10,2019",
+			"tristique pellentesque, tellus sem mollis dui, in sodales"
+		],
+		[
+			"Allistair",
+			"Valencia",
+			"DIVERSE",
+			"19,05,2099",
+			"28,05,2020",
+			"07,10,2019",
+			"turpis. Nulla aliquet. Proin"
+		],
+		[
+			"Anne",
+			"Mcconnell",
+			"MALE",
+			"10,04,2087",
+			"15,11,2019",
+			"09,06,2019",
+			"dignissim pharetra. Nam ac nulla."
+		],
+		[
+			"Garrett",
+			"Mercer",
+			"MALE",
+			"25,11,1851",
+			"25,11,2019",
+			"08,08,2019",
+			"nulla. In tincidunt congue turpis. In condimentum. Donec"
+		],
+		[
+			"Bevis",
+			"Randolph",
+			"DIVERSE",
+			"22,11,2092",
+			"10,04,2019",
+			"14,01,2020",
+			"nulla. Integer"
+		],
+		[
+			"Hedda",
+			"Camacho",
+			"MALE",
+			"10,01,2067",
+			"01,08,2020",
+			"20,09,2020",
+			"gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante"
+		],
+		[
+			"Kai",
+			"Tyson",
+			"DIVERSE",
+			"28,01,2192",
+			"01,06,2020",
+			"16,12,2020",
+			"vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum."
+		],
+		[
+			"Ainsley",
+			"Velazquez",
+			"FEMALE",
+			"21,10,2067",
+			"23,04,2020",
+			"20,05,2019",
+			"molestie orci tincidunt adipiscing. Mauris"
+		],
+		[
+			"Axel",
+			"Coleman",
+			"MALE",
+			"24,08,1963",
+			"27,11,2020",
+			"29,07,2020",
+			"egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae,"
+		],
+		[
+			"Wing",
+			"England",
+			"FEMALE",
+			"22,07,1932",
+			"08,03,2020",
+			"15,04,2020",
+			"ornare, lectus ante dictum mi,"
+		],
+		[
+			"Travis",
+			"Phillips",
+			"MALE",
+			"18,01,2167",
+			"13,06,2020",
+			"09,02,2020",
+			"interdum enim non nisi. Aenean eget"
+		],
+		[
+			"Francis",
+			"Bright",
+			"MALE",
+			"22,07,1911",
+			"30,09,2019",
+			"16,09,2019",
+			"in"
+		],
+		[
+			"Uriel",
+			"Singleton",
+			"MALE",
+			"25,12,2105",
+			"28,11,2019",
+			"14,11,2019",
+			"sed, hendrerit a, arcu. Sed et"
+		],
+		[
+			"Ashton",
+			"Short",
+			"FEMALE",
+			"27,03,2054",
+			"27,01,2020",
+			"19,05,2020",
+			"penatibus et magnis"
+		],
+		[
+			"Buffy",
+			"Wood",
+			"MALE",
+			"11,08,2094",
+			"25,03,2020",
+			"05,12,2019",
+			"vitae diam. Proin dolor. Nulla semper tellus id nunc interdum"
+		],
+		[
+			"Kato",
+			"Fuller",
+			"FEMALE",
+			"05,02,2169",
+			"30,03,2019",
+			"10,12,2019",
+			"dolor. Quisque tincidunt pede ac"
+		],
+		[
+			"George",
+			"Gonzalez",
+			"FEMALE",
+			"14,10,2110",
+			"21,09,2019",
+			"05,05,2020",
+			"arcu. Vivamus sit amet risus. Donec egestas. Aliquam"
+		],
+		[
+			"Neil",
+			"Camacho",
+			"FEMALE",
+			"08,03,1892",
+			"17,11,2020",
+			"01,06,2020",
+			"rutrum. Fusce dolor quam, elementum at, egestas a,"
+		],
+		[
+			"Montana",
+			"Thomas",
+			"FEMALE",
+			"15,02,2178",
+			"01,01,2021",
+			"26,01,2021",
+			"dis parturient montes, nascetur ridiculus mus. Proin"
+		],
+		[
+			"Sheila",
+			"Morales",
+			"MALE",
+			"24,09,2027",
+			"03,03,2021",
+			"22,08,2020",
+			"vehicula aliquet libero. Integer in magna. Phasellus"
+		],
+		[
+			"McKenzie",
+			"Carver",
+			"DIVERSE",
+			"15,10,1958",
+			"28,10,2019",
+			"26,11,2020",
+			"dictum augue malesuada malesuada."
+		],
+		[
+			"Aristotle",
+			"Mcclure",
+			"FEMALE",
+			"19,04,1890",
+			"14,01,2020",
+			"06,11,2020",
+			"cursus, diam at pretium aliquet, metus urna convallis erat,"
+		],
+		[
+			"Arden",
+			"Brewer",
+			"DIVERSE",
+			"24,09,1911",
+			"30,06,2019",
+			"26,01,2020",
+			"lacus. Cras interdum. Nunc sollicitudin"
+		],
+		[
+			"Channing",
+			"Tillman",
+			"DIVERSE",
+			"30,03,2137",
+			"18,11,2020",
+			"27,07,2019",
+			"felis. Nulla tempor augue ac ipsum. Phasellus"
+		],
+		[
+			"Quamar",
+			"Rose",
+			"MALE",
+			"29,06,1906",
+			"06,01,2021",
+			"26,12,2020",
+			"odio semper cursus. Integer mollis. Integer"
+		],
+		[
+			"Kaye",
+			"Ferrell",
+			"MALE",
+			"25,04,2028",
+			"24,02,2021",
+			"06,12,2019",
+			"tempor augue"
+		],
+		[
+			"Cade",
+			"Cervantes",
+			"DIVERSE",
+			"07,03,1939",
+			"04,03,2020",
+			"10,10,2020",
+			"Aliquam tincidunt,"
+		],
+		[
+			"Ingrid",
+			"Cantu",
+			"MALE",
+			"31,01,1829",
+			"06,12,2019",
+			"25,03,2019",
+			"eu"
+		],
+		[
+			"Nehru",
+			"Carr",
+			"MALE",
+			"16,12,2160",
+			"20,05,2020",
+			"26,11,2020",
+			"pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl"
+		],
+		[
+			"Kylan",
+			"Fischer",
+			"DIVERSE",
+			"09,11,1900",
+			"16,01,2021",
+			"12,01,2020",
+			"risus varius orci, in consequat enim diam"
+		],
+		[
+			"Elliott",
+			"Mendez",
+			"DIVERSE",
+			"05,11,2189",
+			"10,03,2021",
+			"07,02,2020",
+			"Duis ac arcu. Nunc mauris. Morbi non sapien molestie"
+		],
+		[
+			"Bruno",
+			"Wagner",
+			"MALE",
+			"10,11,2147",
+			"10,07,2020",
+			"24,10,2019",
+			"sodales at, velit. Pellentesque ultricies"
+		],
+		[
+			"Rebecca",
+			"Dale",
+			"FEMALE",
+			"08,05,2128",
+			"13,09,2019",
+			"06,11,2019",
+			"lacus. Cras interdum."
+		],
+		[
+			"Reese",
+			"Lott",
+			"DIVERSE",
+			"09,06,1852",
+			"14,10,2020",
+			"23,01,2020",
+			"eu tempor erat neque non"
+		],
+		[
+			"Odessa",
+			"Dillon",
+			"DIVERSE",
+			"02,11,1823",
+			"20,07,2019",
+			"01,01,2021",
+			"vitae, posuere at, velit. Cras lorem lorem, luctus ut, pellentesque"
+		],
+		[
+			"Rahim",
+			"Page",
+			"DIVERSE",
+			"20,07,2186",
+			"11,08,2019",
+			"28,11,2020",
+			"eros nec"
+		],
+		[
+			"Chelsea",
+			"Rose",
+			"DIVERSE",
+			"06,07,2159",
+			"26,12,2020",
+			"26,12,2020",
+			"Donec elementum, lorem ut aliquam"
+		],
+		[
+			"Cameron",
+			"Odonnell",
+			"FEMALE",
+			"20,07,2148",
+			"01,04,2020",
+			"08,01,2021",
+			"nonummy. Fusce fermentum"
+		],
+		[
+			"Austin",
+			"Stafford",
+			"DIVERSE",
+			"21,11,1976",
+			"17,03,2020",
+			"16,02,2021",
+			"in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula"
+		],
+		[
+			"Charles",
+			"Langley",
+			"DIVERSE",
+			"02,08,2087",
+			"29,03,2019",
+			"14,05,2020",
+			"egestas blandit. Nam nulla magna, malesuada vel, convallis in, cursus"
+		],
+		[
+			"Cole",
+			"Silva",
+			"MALE",
+			"21,01,1992",
+			"10,08,2020",
+			"10,12,2020",
+			"Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer"
+		],
+		[
+			"Dolan",
+			"Rush",
+			"MALE",
+			"25,10,2013",
+			"24,10,2019",
+			"25,05,2019",
+			"Proin eget odio. Aliquam vulputate ullamcorper"
+		],
+		[
+			"Natalie",
+			"Hardy",
+			"DIVERSE",
+			"11,08,2212",
+			"17,10,2020",
+			"09,01,2020",
+			"lorem, luctus ut, pellentesque eget,"
+		],
+		[
+			"Hunter",
+			"Flynn",
+			"MALE",
+			"21,10,1927",
+			"28,12,2020",
+			"01,01,2021",
+			"et ipsum cursus vestibulum. Mauris magna. Duis"
+		],
+		[
+			"Ruth",
+			"Lawrence",
+			"MALE",
+			"30,08,2115",
+			"01,08,2019",
+			"14,11,2019",
+			"vitae velit egestas lacinia. Sed congue, elit sed consequat"
+		],
+		[
+			"Sade",
+			"Parks",
+			"FEMALE",
+			"23,09,2012",
+			"03,10,2020",
+			"06,12,2020",
+			"leo. Morbi neque"
+		],
+		[
+			"Todd",
+			"Turner",
+			"DIVERSE",
+			"14,07,2141",
+			"29,12,2019",
+			"15,07,2020",
+			"et"
+		],
+		[
+			"Haviva",
+			"Pearson",
+			"MALE",
+			"02,09,1832",
+			"16,12,2020",
+			"12,01,2020",
+			"nibh vulputate mauris sagittis placerat. Cras"
+		],
+		[
+			"Remedios",
+			"Kidd",
+			"MALE",
+			"24,05,2213",
+			"18,04,2019",
+			"24,05,2019",
+			"ultricies adipiscing, enim mi tempor lorem, eget"
+		],
+		[
+			"Byron",
+			"Mccall",
+			"MALE",
+			"23,03,1984",
+			"15,03,2020",
+			"22,05,2020",
+			"mattis. Integer eu lacus. Quisque imperdiet, erat"
+		],
+		[
+			"Jordan",
+			"Roberson",
+			"DIVERSE",
+			"20,01,2148",
+			"28,11,2020",
+			"27,04,2020",
+			"elit. Aliquam auctor, velit"
+		],
+		[
+			"Rama",
+			"Cobb",
+			"FEMALE",
+			"02,10,1913",
+			"28,10,2019",
+			"15,09,2020",
+			"sem mollis dui, in"
+		],
+		[
+			"Jerome",
+			"Mendoza",
+			"DIVERSE",
+			"18,11,2096",
+			"13,01,2020",
+			"12,06,2019",
+			"Nulla"
+		],
+		[
+			"Ainsley",
+			"Gibson",
+			"FEMALE",
+			"10,03,2064",
+			"16,10,2019",
+			"25,01,2020",
+			"faucibus orci luctus et ultrices posuere cubilia"
+		],
+		[
+			"Amery",
+			"Frank",
+			"FEMALE",
+			"03,11,2056",
+			"07,11,2019",
+			"07,01,2020",
+			"odio. Phasellus at augue id"
+		],
+		[
+			"Ursula",
+			"England",
+			"FEMALE",
+			"10,06,2182",
+			"24,04,2019",
+			"09,06,2020",
+			"Quisque fringilla euismod"
+		]
+	]
+}
