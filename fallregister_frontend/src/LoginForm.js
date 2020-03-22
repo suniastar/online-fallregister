@@ -3,7 +3,19 @@ import React from 'react';
 
 import {FormLabel, Input, Grid, Button} from '@material-ui/core/';
 
-class CSVImportForm extends React.Component {
+
+class LoginForm extends React.Component {
+
+
+    constructor(props){
+        super(props);
+        this.onSubmit = this.onSubmit.bind(this)
+        this.props = props;
+    }
+
+    onSubmit(){
+        this.props.callback("test")
+    }
     render(){
 
         return(
@@ -30,4 +42,4 @@ class CSVImportForm extends React.Component {
     }
 }
 
-export default CSVImportForm;
+export default LoginForm;

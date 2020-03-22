@@ -5,14 +5,26 @@ import {Button} from '@material-ui/core/';
 import PatientDataForm from "./PatientDataForm.js"
 import CSVImportForm from './CSVImportForm.js';
 import LoginForm from "./LoginForm"
+import {  withCookies, Cookies  } from 'react-cookie';
+import { instanceOf } from 'prop-types';
+
+import {FormLabel, Input, Grid} from '@material-ui/core/';
+
 
 class App extends React.Component {
-    constructor(){
-        super();
+    static propTypes = {
+        cookies: instanceOf(Cookies).isRequired
+      };
+
+    constructor(props){
+        super(props);
         this.state = {buttontext: "manual"};
         this.goToManual = this.goToManual.bind(this);
         this.goToCsvImport = this.goToCsvImport.bind(this);
         this.goToView = this.goToView.bind(this);
+        this.verifySession = this.verifySession.bind(this);
+        this.onLogin = this.onLogin.bind(this);
+        this.onLogout = this.onLogout.bind(this);
     }
 
     goToManual(){
@@ -26,34 +38,68 @@ class App extends React.Component {
     goToView(){
         this.setState({buttontext: "view"});
     }
+    verifySession(){
+        const { cookies } = this.props;
+        return cookies.get("token");
+    }
+    onLogin(){
+        const { cookies } = this.props;
+        return cookies.set("token");
+    }
+    onLogout(){
+        const { cookies } = this.props;
+        return cookies.remove("token");
+    }
 
     render(){
         let form= <h>oh oh</h>;
-        if(this.state.buttontext === "manual"){
-            form = <PatientDataForm />;
-        }else if(this.state.buttontext === "csvimport"){
-            form = <CSVImportForm />;
+        if(/*true|| */ this.verifySession()){
+            if(this.state.buttontext === "manual"){
+                form = <PatientDataForm />;
+            }else if(this.state.buttontext === "csvimport"){
+                form = <CSVImportForm cookie={this.cookie} />;
+            }else{
+                
+            }
         }else{
-            form = <LoginForm />
+            form =             <form onSubmit={this.onLogin}>
+            <Grid container direction='column' justify="center">
+                <Grid>
+                <FormLabel for="user">Benutzername:</FormLabel>
+                <Input required type="text" id="fname" name="fname"></Input>
+                </Grid>
+
+                <Grid>
+                <FormLabel for="password">Password:</FormLabel>
+                <Input required type="password" id="lname" name="lname"></Input>
+                </Grid>
+
+                <Grid>
+                    <Button type="submit" value="Submit" variant="contained" color="primary" m={2}>Login</Button>
+                </Grid>
+
+            </Grid>
+            </form>
         }
+
 
         return (
             <div id="App">
                 <header className="App-header">
                     <div class='alignleft'>
                         <Button onClick={this.goToManual} color="primary"
-                            variant={this.state.buttontext == "manual" ? "contained" : ""}>Manueller Input</Button>
+                            variant={this.state.buttontext === "manual" ? "contained" : ""}>Manueller Input</Button>
                     </div>
                     <div class='alignleft'>
                     <Button onClick={this.goToCsvImport} color="primary"
-                        variant={this.state.buttontext == "csvimport" ? "contained" : ""}>CSV Import</Button>
+                        variant={this.state.buttontext === "csvimport" ? "contained" : ""}>CSV Import</Button>
                     </div>
                     <div class='alignleft'>
                     <Button onClick={this.goToView} color="primary"
-                        variant={this.state.buttontext == "view" ? "contained" : ""}>Datenansicht</Button>
+                        variant={this.state.buttontext === "view" ? "contained" : ""}>Datenansicht</Button>
                     </div>
                     <div class='alignright'>
-                        <Button onClick={this.Logout}>Logout</Button>
+                        <Button onClick={this.onLogout}>Logout</Button>
                     </div>
                 </header>
                 <div class='App-main'>
@@ -65,4 +111,4 @@ class App extends React.Component {
     
 }
 
-export default App;
+export default withCookies(App);
