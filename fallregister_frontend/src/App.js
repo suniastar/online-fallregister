@@ -10,6 +10,7 @@ import { instanceOf } from 'prop-types';
 
 import {FormLabel, Input, Grid} from '@material-ui/core/';
 
+import DataView from "./DataView"
 
 class App extends React.Component {
     static propTypes = {
@@ -54,13 +55,13 @@ class App extends React.Component {
     render(){
         let form= <h>oh oh</h>;
         if(/*true|| */ this.verifySession()){
-            if(this.state.buttontext === "manual"){
-                form = <PatientDataForm />;
-            }else if(this.state.buttontext === "csvimport"){
-                form = <CSVImportForm cookie={this.cookie} />;
-            }else{
-                
-            }
+        if(this.state.buttontext === "manual"){
+            form = <PatientDataForm />;
+        }else if(this.state.buttontext === "csvimport") {
+            form = <CSVImportForm/>;
+        }else if(this.state.buttontext === "view") {
+            form = <DataView/>;
+        }
         }else{
             form =             <form onSubmit={this.onLogin}>
             <Grid container direction='column' justify="center">
