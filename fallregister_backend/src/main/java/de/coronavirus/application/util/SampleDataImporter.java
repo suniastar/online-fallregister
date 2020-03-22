@@ -1,5 +1,8 @@
 package de.coronavirus.application.util;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.stream.JsonReader;
 import de.coronavirus.domain.infrastructure.repositories.AccommodationRepository;
 import de.coronavirus.domain.infrastructure.repositories.AddressRepository;
 import de.coronavirus.domain.infrastructure.repositories.CityRepository;
@@ -14,9 +17,16 @@ import de.coronavirus.domain.infrastructure.repositories.PostCodeRepository;
 import de.coronavirus.domain.infrastructure.repositories.StreetRepository;
 import de.coronavirus.domain.infrastructure.repositories.TokenRepository;
 import de.coronavirus.domain.infrastructure.repositories.UserRepository;
+import de.coronavirus.domain.model.Infected;
 import de.coronavirus.domain.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 @Component
 public class SampleDataImporter {
@@ -35,6 +45,8 @@ public class SampleDataImporter {
     private final StreetRepository streetRepository;
     private final TokenRepository tokenRepository;
     private final UserRepository userRepository;
+
+    private static Path resources;
 
     @Autowired
     public SampleDataImporter(final AccommodationRepository accommodationRepository,
@@ -101,4 +113,53 @@ public class SampleDataImporter {
         user2.addToken();
         userRepository.flush();
     }
+
+    public static List<Infected> getInfectedFromTestData() throws IOException {
+        ComplexJsonDataUnwrapper unwrapper = new ComplexJsonDataUnwrapper();
+        BufferedReader bufferedReader = Files.newBufferedReader(getTestResourcesDirectory().resolve("Test_Infected_Data.json"));
+        JsonReader jsonReader = new JsonReader(bufferedReader);
+        // get Keys
+        List<String> keys = unwrapper.readValuesFromFirstArrayInObject(jsonReader);
+        // get Values
+        bufferedReader = Files.newBufferedReader(getTestResourcesDirectory().resolve("Test_Infected_Data.json"));
+        jsonReader = new JsonReader(bufferedReader);
+        List<List<String>> values = unwrapper.readArrayValuesOutFromSecondArray(jsonReader);
+        // reconstruct them
+        List<ComplexJsonDataUnwrapper.KeyValue> keyValues = unwrapper.reconstructSimpleJsonKeyValue(keys, values);
+        // create Infected from reconstructed list
+        List<Infected> infecteds = JsonTestDataToModelConverter.stringsToInfected(keyValues);
+        return infecteds;
+    }
+
+    private static Path getTestResourcesDirectory() {
+        if (resources == null) {
+            // Paths.get("") = ...online-fallregister/fallregister_backend
+            resources = Paths.get("").resolve("src").resolve("main").resolve("resources").resolve("Test");
+            // Path ressources = src/main/Test/
+        }
+        return resources;
+    }
+
+//    private List<Infected> addRandomAmountOfPhoneNumbers(List<Infected> infecteds) {
+//
+//    }
+//
+//    private List<Infected> addRandomAmountOfEmailAdresses(List<Infected> infecteds){
+//
+//    }
+
+    public static <T> List<List<T>> getRandomPartitionOfList (List<T> list, int amountUpperLimit){
+        List<List<T>> partitions = new LinkedList<List<T>>();
+        Iterator<T> listIterator = list.iterator();
+        while(listIterator.hasNext()){
+            int random = Generator.generateRandomIntBetween(1, amountUpperLimit);
+            List<T> part = new ArrayList<T>(amountUpperLimit);
+            for(int i = 0; i < random && listIterator.hasNext(); i++){
+                part.add(listIterator.next());
+            }
+            partitions.add(part);
+        }
+        return partitions;
+    }
+
 }

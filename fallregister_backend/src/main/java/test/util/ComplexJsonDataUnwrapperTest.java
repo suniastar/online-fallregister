@@ -115,9 +115,9 @@ class ComplexJsonDataUnwrapperTest {
     @Test
     void readArrayValuesOutFromSecondArray() {
         try (StringReader stringReader = new StringReader(readArrayValuesOutFromSecondArrayString())){
-            List<String> actual = unwrapper.readValuesFromFirstArrayInObject(new JsonReader(stringReader));
+            List<List<String>> actual = unwrapper.readArrayValuesOutFromSecondArray(new JsonReader(stringReader));
             List<String> expected = readArrayValuesOutFromSecondArrayToList();
-            assertTrue(actual.containsAll(expected));
+            assertTrue(actual.get(0).containsAll(expected));
         } catch (IOException e) {
             e.printStackTrace();
             fail();
