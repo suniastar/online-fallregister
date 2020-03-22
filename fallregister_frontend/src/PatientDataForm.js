@@ -88,7 +88,26 @@ class PatientDataForm extends React.Component {
                 dateOfBiopsy: document.getElementById("probedate").value
             }
         }
-        console.log( json)
+        fetch('localhost:8080/endpoint/', {
+         method: 'POST',
+         headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(json)
+        })
+        .then(res => res.json())
+        .then(
+          (result) => {
+            alert("Erfolgreich gespeichert")
+          },
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          (error) => {
+            alert("fehler" + error)
+          }
+        )
     }
     render(){
 
