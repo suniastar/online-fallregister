@@ -15,7 +15,7 @@ import java.util.List;
 
 @Api(tags = {"infected"}, description = "Corona-Virus Infected API")
 @RequestMapping("/infected")
-public interface InfectedAPI {
+public interface InfectedApi {
 
 
     /* * * * * * * * * * * * * *
@@ -69,6 +69,6 @@ public interface InfectedAPI {
     @ApiResponses({
             @ApiResponse(code = 404, message = "infected not found")
     })
-    boolean deleteInfectedEntry(@PathVariable long id);
+    void deleteInfectedEntry(@PathVariable long id);
 
 }

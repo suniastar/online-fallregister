@@ -13,11 +13,11 @@ public class CreateInfectedRequest {
 
     /* Entity */
     @ApiModelProperty
-    List<String> phoneNumber;
+    List<String> phoneNumbers;
 
     /* -Address */
     @ApiModelProperty
-    Integer houseNumber;
+    String houseNumber;
 
     /* --Street */
     @ApiModelProperty
@@ -52,7 +52,13 @@ public class CreateInfectedRequest {
     Date dateOfBirth;
 
     @ApiModelProperty
-    List<String> jobs;
+    boolean jobInMedicalField;
+
+    @ApiModelProperty
+    boolean jobInFoodField;
+
+    @ApiModelProperty
+    boolean jobInCommunityField;
 
     /* -Accommodation */
     @ApiModelProperty
@@ -65,7 +71,7 @@ public class CreateInfectedRequest {
 
     @NotNull
     @ApiModelProperty(required = true)
-    Date diagnosisDate;
+    Date date;
 
     /* --Detector */
     @NotEmpty
@@ -91,22 +97,6 @@ public class CreateInfectedRequest {
     @NotNull
     @ApiModelProperty(required = true)
     boolean intensiveCareTreatment;
-
-    public List<String> getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(List<String> phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Integer getHouseNumber() {
-        return houseNumber;
-    }
-
-    public void setHouseNumber(Integer houseNumber) {
-        this.houseNumber = houseNumber;
-    }
 
     public String getStreetName() {
         return streetName;
@@ -172,14 +162,6 @@ public class CreateInfectedRequest {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public List<String> getJobs() {
-        return jobs;
-    }
-
-    public void setJobs(List<String> jobs) {
-        this.jobs = jobs;
-    }
-
     public String getAccommodationName() {
         return accommodationName;
     }
@@ -196,12 +178,12 @@ public class CreateInfectedRequest {
         this.diagnosisResult = diagnosisResult;
     }
 
-    public Date getDiagnosisDate() {
-        return diagnosisDate;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDiagnosisDate(Date diagnosisDate) {
-        this.diagnosisDate = diagnosisDate;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getDetectorName() {
@@ -258,5 +240,45 @@ public class CreateInfectedRequest {
 
     public void setIntensiveCareTreatment(boolean intensiveCareTreatment) {
         this.intensiveCareTreatment = intensiveCareTreatment;
+    }
+
+    public List<String> getPhoneNumbers() {
+        return phoneNumbers;
+    }
+
+    public void setPhoneNumbers(List<String> phoneNumbers) {
+        this.phoneNumbers = phoneNumbers;
+    }
+
+    public boolean isJobInMedicalField() {
+        return jobInMedicalField;
+    }
+
+    public void setJobInMedicalField(boolean jobInMedicalField) {
+        this.jobInMedicalField = jobInMedicalField;
+    }
+
+    public boolean isJobInFoodField() {
+        return jobInFoodField;
+    }
+
+    public void setJobInFoodField(boolean jobInFoodField) {
+        this.jobInFoodField = jobInFoodField;
+    }
+
+    public boolean isJobInCommunityField() {
+        return jobInCommunityField;
+    }
+
+    public void setJobInCommunityField(boolean jobInCommunityField) {
+        this.jobInCommunityField = jobInCommunityField;
+    }
+
+    public String getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 }

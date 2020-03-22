@@ -1,10 +1,15 @@
 package de.coronavirus.application.controllers;
 
-import de.coronavirus.application.controllers.api.InfectedAPI;
+import de.coronavirus.application.controllers.api.InfectedApi;
+import de.coronavirus.application.dtos.mapper.InfectedMapper;
 import de.coronavirus.application.dtos.request.CreateInfectedRequest;
 import de.coronavirus.application.dtos.request.UpdateInfectedRequest;
 import de.coronavirus.application.dtos.response.InfectedResponse;
+import de.coronavirus.application.service.InfectedService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -12,30 +17,38 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-public class InfectedController implements InfectedAPI {
+public class InfectedController implements InfectedApi {
+
+    private final InfectedService infectedService;
+
+    @Autowired
+    public InfectedController(InfectedService infectedService) {
+        this.infectedService = infectedService;
+    }
+
     @Override
     public List<InfectedResponse> getAllInfectedEntries() {
-        return null;
+        return InfectedMapper.toResponseList(infectedService.findAll());
     }
 
     @Override
-    public InfectedResponse getInfectedEntry(long id) {
-        return null;
+    public InfectedResponse getInfectedEntry(@PathVariable long id) {
+        return InfectedMapper.toResponse(infectedService.findInfected(id));
     }
 
     @Override
-    public InfectedResponse createInfectedEntry(CreateInfectedRequest newInfected) {
-        return null;
+    public InfectedResponse createInfectedEntry(@RequestBody CreateInfectedRequest newInfected) {
+        return InfectedMapper.toResponse(infectedService.createInfected(newInfected));
     }
 
     @Override
-    public InfectedResponse updateInfectedEntry(long id, UpdateInfectedRequest request) {
-        return null;
+    public InfectedResponse updateInfectedEntry(@PathVariable long id, @RequestBody UpdateInfectedRequest request) {
+        return InfectedMapper.toResponse(infectedService.updateInfected(request, id));
     }
 
     @Override
-    public boolean deleteInfectedEntry(long id) {
-        return false;
+    public void deleteInfectedEntry(@PathVariable long id) {
+        infectedService.delete(id);
     }
 
 }
