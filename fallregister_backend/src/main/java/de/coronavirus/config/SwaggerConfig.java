@@ -22,12 +22,12 @@ public class SwaggerConfig {
     private static final Set<String> PRODUCES_AND_CONSUMES = new HashSet<>(
             Collections.singletonList(MediaType.APPLICATION_JSON_VALUE));
     private static Contact CONTACT = new Contact(
-            "Online Fallregister",
-            "online-fallregister.de",
+            "Online Melderegister",
+            "online-melderegister.de",
             "info@online-fallregister.de");
     private static ApiInfo API_INFO = new ApiInfo(
-            "Online Fallregister",
-            "Ein Fallregister zur schnellen Anmeldung und Übermittlung von Krankheitsfällen innerhalb Deutschlands",
+            "Online Melderegister",
+            "Ein Melderegister zur schnellen Anmeldung und Übermittlung von Krankheitsfällen innerhalb Deutschlands",
             "0.0.01",
             "tos",
             CONTACT,

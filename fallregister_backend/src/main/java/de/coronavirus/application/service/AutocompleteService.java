@@ -17,9 +17,8 @@ public class AutocompleteService {
 	private final CityRepository cityRepository;
 	private final PostCodeRepository postCodeRepository;
 	private final StreetRepository streetRepository;
-	private final EmailAddressRepository emailAddressRepository;
-	private final PhoneNumberRepository phoneNumberRepository;
 	private final DiagnosisRepository diagnosisRepository;
+	private final LaboratoryRepository laboratoryRepository;
 
 
     @Autowired
@@ -27,22 +26,16 @@ public class AutocompleteService {
             CityRepository cityRepository,
     		PostCodeRepository postCodeRepository,
     		StreetRepository streetRepository,
-    		EmailAddressRepository emailAddressRepository, 
-    		PhoneNumberRepository phoneNumberRepository,
-    		DiagnosisRepository diagnosisRepository) {
+    		DiagnosisRepository diagnosisRepository,
+           LaboratoryRepository laboratoryRepository) {
 
         this.countryRepository = countryRepository;
     	this.cityRepository = cityRepository;
     	this.postCodeRepository = postCodeRepository;
     	this.streetRepository = streetRepository;
-    	this.emailAddressRepository = emailAddressRepository;
-    	this.phoneNumberRepository = phoneNumberRepository;
     	this.diagnosisRepository = diagnosisRepository;
+    	this.laboratoryRepository = laboratoryRepository;
 
-    }
-    
-    public List<PhoneNumberDto> findPhoneNumbersStartingWith(String partialNumber){
-    	return phoneNumberRepository.findTop10DtoByNumberStartsWithOrderByNumberAsc(partialNumber);
     }
     
     public List<StreetDto> findStreetsStartingWith(String partialStreet){
@@ -60,13 +53,13 @@ public class AutocompleteService {
     public List<CountryDto> findCountriesStartingWith(String partialCountry){
         return countryRepository.findTop10ByNameStartsWith(partialCountry);
     }
-    
-    public List<EmailAddressDto> findEmailAddressesStartingWith(String partialEmailAddress){
-    	return null;
+
+    public List<LaboratoryDto> findLaboratoryNamesStartingWith(String partialLaboratory) {
+        return laboratoryRepository.findTop10ByNameStartsWith(partialLaboratory);
     }
     
-    public List<DiagnosisDto> findDiagnosisStartingWith(String partialDiagnosis){
-    	return null;
+    public List<DiagnosisDto> findDiagnosisNamesStartingWith(String partialDiagnosis) {
+    	return diagnosisRepository.findTop10ByDiagnosticResultStartsWith(partialDiagnosis);
     }
 
     

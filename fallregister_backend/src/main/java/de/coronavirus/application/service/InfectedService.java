@@ -1,38 +1,27 @@
 package de.coronavirus.application.service;
 
-import de.coronavirus.application.dtos.mapper.InfectedMapper;
-import de.coronavirus.application.dtos.mapper.ToModelConverter;
 import de.coronavirus.application.dtos.request.CreateInfectedRequest;
 import de.coronavirus.application.dtos.request.UpdateInfectedRequest;
 import de.coronavirus.application.dtos.service.InfectedDto;
-import de.coronavirus.domain.model.Diagnosis;
-import de.coronavirus.domain.model.Infected;
-import de.coronavirus.domain.infrastructure.repositories.InfectedRepository;
-import de.coronavirus.domain.model.Accommodation;
 import de.coronavirus.domain.exception.NotFoundException;
-import de.coronavirus.domain.model.PhoneNumber;
+import de.coronavirus.domain.infrastructure.repositories.*;
+import de.coronavirus.domain.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
 public class InfectedService {
 
     private final InfectedRepository infectedRepository;
-    private final InfectedMapper infectedMapper;
 
     @Autowired
-    public InfectedService(InfectedRepository infectedRepository, InfectedMapper infectedMapper) {
+    public InfectedService(InfectedRepository infectedRepository) {
         this.infectedRepository = infectedRepository;
-        this.infectedMapper = infectedMapper;
     }
 
     public List<InfectedDto> findAll() {
@@ -43,27 +32,42 @@ public class InfectedService {
         return infectedRepository.findDtoById(id).orElseThrow(() -> new NotFoundException("Error: Infected Person not found!", "The infected Person could not been found!"));
     }
 
-    public List<InfectedDto> saveAndFlush(InfectedDto ... infectedDTOS) {
-        List<InfectedDto> resultInfected = new LinkedList<InfectedDto>();
-        for(InfectedDto thisInfectedDto : infectedDTOS) {
-            resultInfected.add(infectedRepository.saveAndFlush(thisInfectedDto));
-        }
-        return resultInfected;
-    }
-
     public InfectedDto createInfected(CreateInfectedRequest createRequest) {
         Infected infected = new Infected();
-        Infected.Gender genderOfInfected =  ToModelConverter.stringToGender(createRequest.getGender());
-        infected.setGender(genderOfInfected);
+        infected.setGender(Infected.Gender.valueOf(createRequest.getGender()));
         infected.setFirstName(createRequest.getFirstName());
         infected.setLastName(createRequest.getLastName());
         infected.setDateOfBirth(createRequest.getDateOfBirth());
-        //TODO set job booleans for infected
 
         if(createRequest.getPhoneNumbers() != null && !createRequest.getPhoneNumbers().isEmpty()) {
-            List<PhoneNumber> numbers = ToModelConverter.stringsToPhoneNumber(createRequest.getPhoneNumbers());
-            infected.setPhoneNumbers(numbers);
+            List<PhoneNumber> phoneNumbers = new ArrayList<>();
+            for(String number : createRequest.getPhoneNumbers()){
+                PhoneNumber phoneNumber = new PhoneNumber();
+                phoneNumber.setNumber(number);
+                phoneNumbers.add(phoneNumber);
+            }
+            infected.setPhoneNumbers(phoneNumbers);
         }
+
+        Country country = new Country();
+        country.setName(createRequest.getCountry());
+        City city = new City();
+        city.setName(createRequest.getCityName());
+        city.setCountry(country);
+        PostCode postCode = new PostCode();
+        postCode.setCode(createRequest.getPostCode());
+        postCode.setCity(city);
+        Street street = new Street();
+        street.setName(createRequest.getStreetName());
+        street.setPostCode(postCode);
+        Address address = new Address();
+        address.setStreet(street);
+        address.setHouseNumber(createRequest.getHouseNumber());
+        infected.setAddress(address);
+
+        infected.setJobInMedicalField(createRequest.isJobInMedicalField());
+        infected.setJobInFoodFiled(createRequest.isJobInFoodField());
+        infected.setJobInCommunityField(createRequest.isJobInCommunityField());
 
         if(createRequest.getAccommodationName() != null && !createRequest.getAccommodationName().isEmpty()) {
             Accommodation accommodation = new Accommodation();
@@ -71,9 +75,11 @@ public class InfectedService {
             infected.setAccommodation(accommodation);
         }
 
-        // TODO: Model wants list of diagnoses but request delivers only one String
-        List<Diagnosis> diagnoses = new ArrayList<Diagnosis>();
-        diagnoses.add(createRequest.getDiagnosisResult());
+        List<Diagnosis> diagnoses = new ArrayList<>();
+        Diagnosis diagnosis = new Diagnosis();
+        diagnosis.setDiagnosticResult(createRequest.getDiagnosisResult());
+        diagnosis.setDate(createRequest.getDate());
+        diagnoses.add(diagnosis);
         infected.setDiagnoses(diagnoses);
 
         if(createRequest.getDateOfIllness() != null) {
@@ -97,7 +103,6 @@ public class InfectedService {
     }
 
     public void delete(long id) {
-        // ToDo: Throw Exception if the infected with this id is not found in the database
         infectedRepository.deleteById(id);
     }
 }

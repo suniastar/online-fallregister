@@ -1,15 +1,25 @@
 spring:
-  jackson:
-    default-property-inclusion: non_null
-
----
-spring:
-  profiles: postgres
+  profiles:
+    - default
+    - test
+    - postgres
   jackson:
     default-property-inclusion: non_null
   jpa:
+    open-in-view: true
+server:
+  port: ${API_PORT}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+---
+spring:
+  profiles: postgres
+  jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate:
         jdbc:
@@ -18,6 +28,6 @@ spring:
   datasource:
     initialization-mode: always
     platform: postgres
-    url: jdbc:postgresql://${TLM_MS_DB_SERVER}:${TLM_MS_DB_PORT}/${TLM_MS_DB_NAME}
-    username: ${TLM_MS_DB_USER}
-    password: ${TLM_MS_DB_PW}
+    url: jdbc:postgresql://${DB_SERVER}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}

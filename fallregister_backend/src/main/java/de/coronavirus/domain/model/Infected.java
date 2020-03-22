@@ -121,14 +121,6 @@ public class Infected {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public List<PhoneNumber> getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(List<PhoneNumber> phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     public Address getAddress() {
         return address;
     }
@@ -217,6 +209,14 @@ public class Infected {
         this.intensiveCareTreatment = intensiveCareTreatment;
     }
 
+    public List<PhoneNumber> getPhoneNumbers() {
+        return phoneNumbers;
+    }
+
+    public void setPhoneNumbers(List<PhoneNumber> phoneNumbers) {
+        this.phoneNumbers = phoneNumbers;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -233,7 +233,7 @@ public class Infected {
         if (!Objects.equals(lastName, infected.lastName)) return false;
         if (gender != infected.gender) return false;
         if (!Objects.equals(dateOfBirth, infected.dateOfBirth)) return false;
-        if (!Objects.equals(phoneNumber, infected.phoneNumber)) return false;
+        if (!Objects.equals(phoneNumbers, infected.phoneNumbers)) return false;
         if (!Objects.equals(address, infected.address)) return false;
         if (!Objects.equals(emailAddresses, infected.emailAddresses)) return false;
         if (!Objects.equals(accommodation, infected.accommodation)) return false;
@@ -250,7 +250,7 @@ public class Infected {
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         result = 31 * result + (gender != null ? gender.hashCode() : 0);
         result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
-        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (phoneNumbers != null ? phoneNumbers.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (emailAddresses != null ? emailAddresses.hashCode() : 0);
         result = 31 * result + (jobInMedicalField ? 1 : 0);
@@ -273,7 +273,7 @@ public class Infected {
                 ", lastName='" + lastName + '\'' +
                 ", gender=" + gender +
                 ", dateOfBirth=" + dateOfBirth +
-                ", phoneNumber=" + phoneNumber +
+                ", phoneNumber=" + phoneNumbers +
                 ", address=" + address +
                 ", emailAddresses=" + emailAddresses +
                 ", jobInMedicalField=" + jobInMedicalField +

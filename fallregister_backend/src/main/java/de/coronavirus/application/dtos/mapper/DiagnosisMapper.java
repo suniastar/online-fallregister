@@ -1,30 +1,24 @@
 package de.coronavirus.application.dtos.mapper;
 
-import de.coronavirus.application.dtos.response.DiagnosisResponse;
+import de.coronavirus.application.dtos.response.autocomplete.ACDiagnosisNameResponse;
 import de.coronavirus.application.dtos.service.DiagnosisDto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DiagnosisMapper {
 
-    public static DiagnosisResponse toResponse(DiagnosisDto diagnosisDto) {
-        DiagnosisResponse diagnosisResponse = new DiagnosisResponse();
-        diagnosisResponse.setDiagnosticResult(diagnosisDto.getDiagnosticResult());
-        diagnosisResponse.setDate(diagnosisDto.getDate());
-        diagnosisResponse.setLaboratoryName(diagnosisDto.getLaboratory().getName());
-        diagnosisResponse.setConfirmed(diagnosisDto.isConfirmed());
-        diagnosisResponse.setSuspicion(diagnosisDto.isSuspicion());
-        diagnosisResponse.setClinicalDiagnosis(diagnosisDto.isClinicalDiagnosis());
-        diagnosisResponse.setDead(diagnosisDto.isDead());
-        return diagnosisResponse;
+    public static ACDiagnosisNameResponse toNameResponse(DiagnosisDto diagnosisDto) {
+        ACDiagnosisNameResponse diagnosisNameResponse = new ACDiagnosisNameResponse();
+        diagnosisNameResponse.getNames().add(diagnosisDto.getDiagnosticResult());
+        return diagnosisNameResponse;
     }
 
-    public static List<DiagnosisResponse> toResponseList(List<DiagnosisDto> diagnosisDtoList){
-        List<DiagnosisResponse> diagnosisResponseList = new ArrayList<>();
+    public static ACDiagnosisNameResponse toNameResponse(List<DiagnosisDto> diagnosisDtoList) {
+        ACDiagnosisNameResponse diagnosisNameResponse = new ACDiagnosisNameResponse();
         for(DiagnosisDto diagnosisDto : diagnosisDtoList){
-            diagnosisResponseList.add(toResponse(diagnosisDto));
+            diagnosisNameResponse.getNames().add(diagnosisDto.getDiagnosticResult());
         }
-        return diagnosisResponseList;
+        return diagnosisNameResponse;
     }
+
 }
