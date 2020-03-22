@@ -19,7 +19,7 @@ public class Address {
     private long id;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "street_id")
     private Street street;
 
     @Column(name = "house_number")

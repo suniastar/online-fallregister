@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -27,6 +28,10 @@ public class PostCode {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @OrderBy("name asc")
     private List<Street> streets;
+
+    public PostCode() {
+        this.streets = new LinkedList<>();
+    }
 
     public long getCode() {
         return code;

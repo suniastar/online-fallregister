@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,6 +29,10 @@ public class Country {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("name asc")
     private List<City> cities;
+
+    public Country() {
+        this.cities = new LinkedList<>();
+    }
 
     public long getId() {
         return id;

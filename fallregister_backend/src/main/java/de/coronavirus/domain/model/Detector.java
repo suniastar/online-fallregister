@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -36,6 +37,11 @@ public class Detector {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("email asc")
     private List<EmailAddress> emailAddresses;
+
+    public Detector() {
+        this.phoneNumbers = new LinkedList<>();
+        this.emailAddresses = new LinkedList<>();
+    }
 
     public long getId() {
         return id;

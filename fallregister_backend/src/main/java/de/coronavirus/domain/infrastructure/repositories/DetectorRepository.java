@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface DetectorRepository extends JpaRepository<Detector,Long> {
+public interface DetectorRepository extends JpaRepository<Detector, Long> {
+
+    Optional<Detector> findByNameAndAddress(String name, long id);
 
     List<DetectorDto> findAllDtoBy();
 

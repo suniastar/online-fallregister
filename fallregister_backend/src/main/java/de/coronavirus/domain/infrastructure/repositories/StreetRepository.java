@@ -11,8 +11,11 @@ import java.util.Optional;
 @Repository
 public interface StreetRepository extends JpaRepository<Street, Long> {
 
+    Optional<Street> findByPostCodeAndName(long id, String name);
+
     List<StreetDto> findAllDtoBy();
 
     Optional<StreetDto> findDtoById(Long id);
+
     List<StreetDto> findTop10ByNameStartsWithOrderByNameAsc(String partial);
 }

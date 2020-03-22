@@ -9,8 +9,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AddressRepository extends JpaRepository<Address,Long> {
+public interface AddressRepository extends JpaRepository<Address, Long> {
+
+    Optional<Address> findByStreetAndHouseNumber(long id, String number);
 
     List<AddressDto> findAllDtoBy();
+
     Optional<AddressDto> findDtoById(Long Id);
 }

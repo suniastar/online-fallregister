@@ -11,8 +11,11 @@ import java.util.Optional;
 @Repository
 public interface CountryRepository extends JpaRepository<Country, Long> {
 
+    Optional<Country> findByName(String name);
+
     List<CountryDto> findAllDtoBy();
 
     Optional<CountryDto> findDtoById(Long id);
+
     List<CountryDto> findTop10ByNameStartsWith(String partial);
 }

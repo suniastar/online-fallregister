@@ -13,6 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -80,6 +81,12 @@ public class Infected {
 
     @Column(name = "intensive_care_treatment")
     private boolean intensiveCareTreatment;
+
+    public Infected() {
+        this.phoneNumbers = new LinkedList<>();
+        this.emailAddresses = new LinkedList<>();
+        this.diagnoses = new LinkedList<>();
+    }
 
     public long getId() {
         return id;

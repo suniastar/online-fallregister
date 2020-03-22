@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -40,6 +41,12 @@ public class Laboratory {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("name asc")
     private List<Diagnosis> diagnoses;
+
+    public Laboratory() {
+        this.phoneNumber = new LinkedList<>();
+        this.emailAddresses = new LinkedList<>();
+        this.diagnoses = new LinkedList<>();
+    }
 
     public long getId() {
         return id;

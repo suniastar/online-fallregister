@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -37,12 +38,12 @@ public class InfectedController implements InfectedApi {
     }
 
     @Override
-    public InfectedResponse createInfectedEntry(@RequestBody CreateInfectedRequest newInfected) {
-        return InfectedMapper.toResponse(infectedService.createInfected(newInfected));
+    public InfectedResponse createInfectedEntry(@Valid @RequestBody CreateInfectedRequest request) {
+        return InfectedMapper.toResponse(infectedService.createInfected(request));
     }
 
     @Override
-    public InfectedResponse updateInfectedEntry(@PathVariable long id, @RequestBody UpdateInfectedRequest request) {
+    public InfectedResponse updateInfectedEntry(@Valid @PathVariable long id, @RequestBody UpdateInfectedRequest request) {
         return InfectedMapper.toResponse(infectedService.updateInfected(request, id));
     }
 

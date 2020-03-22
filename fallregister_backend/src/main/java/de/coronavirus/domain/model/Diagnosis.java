@@ -133,6 +133,14 @@ public class Diagnosis {
         this.infected = infected;
     }
 
+    public boolean isDead() {
+        return dead;
+    }
+
+    public void setDead(boolean dead) {
+        this.dead = dead;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
