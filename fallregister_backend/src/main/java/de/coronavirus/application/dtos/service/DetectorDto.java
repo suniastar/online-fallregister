@@ -4,9 +4,13 @@ import java.util.List;
 
 public interface DetectorDto {
 
-    long getId();
+    Long getId();
+
     String getName();
-    List<PhoneNumberDto> getPhoneNumber();
+
+    List<PhoneNumberDto> getPhoneNumbers();
+
     AddressDto getAddress();
-    EmailAddressDto getEmailAddress();
+
+    List<EmailAddressDto> getEmailAddresses();
 }

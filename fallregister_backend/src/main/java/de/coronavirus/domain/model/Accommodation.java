@@ -4,6 +4,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -12,6 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,8 +23,9 @@ import java.util.Objects;
 public class Accommodation {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -43,7 +47,7 @@ public class Accommodation {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "phone_numbers")
-    private List<PhoneNumber> phoneNumber;
+    private List<PhoneNumber> phoneNumbers;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
@@ -57,11 +61,17 @@ public class Accommodation {
     @OrderBy("name asc")
     private List<Infected> infected;
 
-    public long getId() {
+    public Accommodation() {
+        this.phoneNumbers = new LinkedList<>();
+        this.emailAddresses = new LinkedList<>();
+        this.infected = new LinkedList<>();
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -113,12 +123,12 @@ public class Accommodation {
         this.inIcuSince = inIcuSince;
     }
 
-    public List<PhoneNumber> getPhoneNumber() {
-        return phoneNumber;
+    public List<PhoneNumber> getPhoneNumbers() {
+        return phoneNumbers;
     }
 
-    public void setPhoneNumber(List<PhoneNumber> phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumbers(List<PhoneNumber> phoneNumber) {
+        this.phoneNumbers = phoneNumber;
     }
 
     public Address getAddress() {
@@ -159,7 +169,7 @@ public class Accommodation {
         if (!Objects.equals(name, that.name)) return false;
         if (!Objects.equals(inCareSince, that.inCareSince)) return false;
         if (!Objects.equals(inIcuSince, that.inIcuSince)) return false;
-        if (!Objects.equals(phoneNumber, that.phoneNumber)) return false;
+        if (!Objects.equals(phoneNumbers, that.phoneNumbers)) return false;
         if (!Objects.equals(address, that.address)) return false;
         if (!Objects.equals(emailAddresses, that.emailAddresses)) return false;
         return Objects.equals(infected, that.infected);
@@ -174,7 +184,7 @@ public class Accommodation {
         result = 31 * result + (inCareSince != null ? inCareSince.hashCode() : 0);
         result = 31 * result + (inIcu ? 1 : 0);
         result = 31 * result + (inIcuSince != null ? inIcuSince.hashCode() : 0);
-        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (phoneNumbers != null ? phoneNumbers.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (emailAddresses != null ? emailAddresses.hashCode() : 0);
         result = 31 * result + (infected != null ? infected.hashCode() : 0);
@@ -191,7 +201,7 @@ public class Accommodation {
                 ", inCareSince=" + inCareSince +
                 ", inIcu=" + inIcu +
                 ", inIcuSince=" + inIcuSince +
-                ", phoneNumber=" + phoneNumber +
+                ", phoneNumber=" + phoneNumbers +
                 ", address=" + address +
                 ", emailAddresses=" + emailAddresses +
                 ", infected=" + infected +

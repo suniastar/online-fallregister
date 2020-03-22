@@ -6,216 +6,386 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
-import java.util.List;
 
 @ApiModel("Create Infected Entry")
 public class CreateInfectedRequest {
 
-    /* Entity */
-    @ApiModelProperty
-    List<String> phoneNumbers;
-
-    /* -Address */
-    @ApiModelProperty
-    String houseNumber;
-
-    /* --Street */
-    @ApiModelProperty
-    String streetName;
-
-    /* ---PostCode */
-    @ApiModelProperty
-    long postCode;
-
-    /* ----City */
-    @ApiModelProperty
-    String cityName;
-
-    @ApiModelProperty
-    String country;
-
-    /* Infected */
     @NotEmpty
     @ApiModelProperty(required = true)
-    String firstName;
+    String patientFirstName;
 
     @NotEmpty
     @ApiModelProperty(required = true)
-    String lastName;
+    String patientLastName;
+
+    @ApiModelProperty
+    String patientAddressHousenumber;
+
+    @ApiModelProperty
+    String patientAddressStreet;
+
+    @ApiModelProperty
+    long patientAddressZipcode;
+
+    @ApiModelProperty
+    String patientAddressCity;
+
+    @ApiModelProperty
+    String patientAddressCountry;
 
     @NotNull
     @ApiModelProperty(required = true)
-    String gender;
+    Date patientBirthday;
 
     @NotNull
     @ApiModelProperty(required = true)
-    Date dateOfBirth;
+    String patientSex;
 
     @ApiModelProperty
-    boolean jobInMedicalField;
+    String patientPhone;
 
     @ApiModelProperty
-    boolean jobInFoodField;
+    String patientEmail;
 
-    @ApiModelProperty
-    boolean jobInCommunityField;
-
-    /* -Accommodation */
-    @ApiModelProperty
-    String accommodationName;
-
-    /* -Diagnosis */
     @NotEmpty
     @ApiModelProperty(required = true)
-    String diagnosisResult;
+    String detectorFirstName;
+
+    @NotEmpty
+    @ApiModelProperty(required = true)
+    String detectorLastName;
+
+    @ApiModelProperty
+    String detectorAddressHousenumber;
+
+    @ApiModelProperty
+    String detectorAddressStreet;
+
+    @ApiModelProperty
+    long detectorAddressZipcode;
+
+    @ApiModelProperty
+    String detectorAddressCity;
+
+    @ApiModelProperty
+    String detectorAddressCountry;
+
+    @ApiModelProperty
+    String datectorPhone;
+
+    @ApiModelProperty
+    String detectorEmail;
+
+    @NotEmpty
+    @ApiModelProperty(required = true)
+    String diagnosisName;
+
+    @ApiModelProperty
+    boolean diagnosisSuspected;
+
+    @ApiModelProperty
+    boolean diagnosisDiagnosed;
+
+    @ApiModelProperty
+    boolean diagnosisDead;
+
+    @ApiModelProperty
+    Date diagnosisDateOfSickness;
 
     @NotNull
     @ApiModelProperty(required = true)
-    Date date;
-
-    /* --Detector */
-    @NotEmpty
-    @ApiModelProperty(required = true)
-    String detectorName;
-
-    /* --Laboratory */
-    @ApiModelProperty
-    String laboratoryName;
-
-    @ApiModelProperty
-    boolean diagnosisConfirmed;
-
-    @ApiModelProperty
-    Date dateOfIllness;
+    Date diagnosisDateOfDiagnosis;
 
     @ApiModelProperty
     Date dateOfDeath;
 
     @ApiModelProperty
+    boolean jobMedical;
+
+    @ApiModelProperty
+    boolean jobFood;
+
+    @ApiModelProperty
+    boolean jobCommunal;
+
+    @ApiModelProperty
+    String infectionPlace;
+
+    @ApiModelProperty
     String infectionSource;
 
-    @NotNull
-    @ApiModelProperty(required = true)
-    boolean intensiveCareTreatment;
+    @ApiModelProperty
+    boolean infectionEpidemi;
 
-    public String getStreetName() {
-        return streetName;
+    @ApiModelProperty
+    String infectionEpidemiSource;
+
+    @ApiModelProperty
+    boolean accommodationCommunal;
+
+    @ApiModelProperty
+    boolean accommodationHospital;
+
+    @ApiModelProperty
+    Date accommodationDateOfHospitalisation;
+
+    @ApiModelProperty
+    boolean accommodationIcu;
+
+    @ApiModelProperty
+    Date accommodationDateOfIcu;
+
+    @ApiModelProperty
+    String accommodationNameAndAddress;
+
+    @ApiModelProperty
+    String detectionOfficeName;
+
+    @ApiModelProperty
+    String detectionOfficeAddressStreet;
+
+    @ApiModelProperty
+    String detectionOfficeAddressHousenumber;
+
+    @ApiModelProperty
+    long detectionOfficeAddressZipcode;
+
+    @ApiModelProperty
+    String detectionOfficeAddressCity;
+
+    @ApiModelProperty
+    String detectionOfficeAddressCountry;
+
+    @ApiModelProperty
+    String detectionOfficePhone;
+
+    @ApiModelProperty
+    String detectionOfficeEmail;
+
+    @ApiModelProperty
+    String detectionOfficeUntersuchungsstelle;
+
+    @ApiModelProperty
+    String laboratoryCommission;
+
+    @ApiModelProperty
+    String laboratoryName;
+
+    @ApiModelProperty
+    String laboratoryLocation;
+
+    @ApiModelProperty
+    String laboratoryPhone;
+
+    @ApiModelProperty
+    String laboratoryDateOfBiopsy;
+
+    public String getPatientFirstName() {
+        return patientFirstName;
     }
 
-    public void setStreetName(String streetName) {
-        this.streetName = streetName;
+    public void setPatientFirstName(String patientFirstName) {
+        this.patientFirstName = patientFirstName;
     }
 
-    public long getPostCode() {
-        return postCode;
+    public String getPatientLastName() {
+        return patientLastName;
     }
 
-    public void setPostCode(long postCode) {
-        this.postCode = postCode;
+    public void setPatientLastName(String patientLastName) {
+        this.patientLastName = patientLastName;
     }
 
-    public String getCityName() {
-        return cityName;
+    public String getPatientAddressHousenumber() {
+        return patientAddressHousenumber;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public void setPatientAddressHousenumber(String patientAddressHousenumber) {
+        this.patientAddressHousenumber = patientAddressHousenumber;
     }
 
-    public String getCountry() {
-        return country;
+    public String getPatientAddressStreet() {
+        return patientAddressStreet;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setPatientAddressStreet(String patientAddressStreet) {
+        this.patientAddressStreet = patientAddressStreet;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public long getPatientAddressZipcode() {
+        return patientAddressZipcode;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setPatientAddressZipcode(long patientAddressZipcode) {
+        this.patientAddressZipcode = patientAddressZipcode;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getPatientAddressCity() {
+        return patientAddressCity;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPatientAddressCity(String patientAddressCity) {
+        this.patientAddressCity = patientAddressCity;
     }
 
-    public String getGender() {
-        return gender;
+    public String getPatientAddressCountry() {
+        return patientAddressCountry;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setPatientAddressCountry(String patientAddressCountry) {
+        this.patientAddressCountry = patientAddressCountry;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public Date getPatientBirthday() {
+        return patientBirthday;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setPatientBirthday(Date patientBirthday) {
+        this.patientBirthday = patientBirthday;
     }
 
-    public String getAccommodationName() {
-        return accommodationName;
+    public String getPatientSex() {
+        return patientSex;
     }
 
-    public void setAccommodationName(String accommodationName) {
-        this.accommodationName = accommodationName;
+    public void setPatientSex(String patientSex) {
+        this.patientSex = patientSex;
     }
 
-    public String getDiagnosisResult() {
-        return diagnosisResult;
+    public String getPatientPhone() {
+        return patientPhone;
     }
 
-    public void setDiagnosisResult(String diagnosisResult) {
-        this.diagnosisResult = diagnosisResult;
+    public void setPatientPhone(String patientPhone) {
+        this.patientPhone = patientPhone;
     }
 
-    public Date getDate() {
-        return date;
+    public String getPatientEmail() {
+        return patientEmail;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setPatientEmail(String patientEmail) {
+        this.patientEmail = patientEmail;
     }
 
-    public String getDetectorName() {
-        return detectorName;
+    public String getDetectorFirstName() {
+        return detectorFirstName;
     }
 
-    public void setDetectorName(String detectorName) {
-        this.detectorName = detectorName;
+    public void setDetectorFirstName(String detectorFirstName) {
+        this.detectorFirstName = detectorFirstName;
     }
 
-    public String getLaboratoryName() {
-        return laboratoryName;
+    public String getDetectorLastName() {
+        return detectorLastName;
     }
 
-    public void setLaboratoryName(String laboratoryName) {
-        this.laboratoryName = laboratoryName;
+    public void setDetectorLastName(String detectorLastName) {
+        this.detectorLastName = detectorLastName;
     }
 
-    public boolean isDiagnosisConfirmed() {
-        return diagnosisConfirmed;
+    public String getDetectorAddressHousenumber() {
+        return detectorAddressHousenumber;
     }
 
-    public void setDiagnosisConfirmed(boolean diagnosisConfirmed) {
-        this.diagnosisConfirmed = diagnosisConfirmed;
+    public void setDetectorAddressHousenumber(String detectorAddressHousenumber) {
+        this.detectorAddressHousenumber = detectorAddressHousenumber;
     }
 
-    public Date getDateOfIllness() {
-        return dateOfIllness;
+    public String getDetectorAddressStreet() {
+        return detectorAddressStreet;
     }
 
-    public void setDateOfIllness(Date dateOfIllness) {
-        this.dateOfIllness = dateOfIllness;
+    public void setDetectorAddressStreet(String detectorAddressStreet) {
+        this.detectorAddressStreet = detectorAddressStreet;
+    }
+
+    public long getDetectorAddressZipcode() {
+        return detectorAddressZipcode;
+    }
+
+    public void setDetectorAddressZipcode(long detectorAddressZipcode) {
+        this.detectorAddressZipcode = detectorAddressZipcode;
+    }
+
+    public String getDetectorAddressCity() {
+        return detectorAddressCity;
+    }
+
+    public void setDetectorAddressCity(String detectorAddressCity) {
+        this.detectorAddressCity = detectorAddressCity;
+    }
+
+    public String getDetectorAddressCountry() {
+        return detectorAddressCountry;
+    }
+
+    public void setDetectorAddressCountry(String detectorAddressCountry) {
+        this.detectorAddressCountry = detectorAddressCountry;
+    }
+
+    public String getDatectorPhone() {
+        return datectorPhone;
+    }
+
+    public void setDatectorPhone(String datectorPhone) {
+        this.datectorPhone = datectorPhone;
+    }
+
+    public String getDetectorEmail() {
+        return detectorEmail;
+    }
+
+    public void setDetectorEmail(String detectorEmail) {
+        this.detectorEmail = detectorEmail;
+    }
+
+    public String getDiagnosisName() {
+        return diagnosisName;
+    }
+
+    public void setDiagnosisName(String diagnosisName) {
+        this.diagnosisName = diagnosisName;
+    }
+
+    public boolean isDiagnosisSuspected() {
+        return diagnosisSuspected;
+    }
+
+    public void setDiagnosisSuspected(boolean diagnosisSuspected) {
+        this.diagnosisSuspected = diagnosisSuspected;
+    }
+
+    public boolean isDiagnosisDiagnosed() {
+        return diagnosisDiagnosed;
+    }
+
+    public void setDiagnosisDiagnosed(boolean diagnosisDiagnosed) {
+        this.diagnosisDiagnosed = diagnosisDiagnosed;
+    }
+
+    public boolean isDiagnosisDead() {
+        return diagnosisDead;
+    }
+
+    public void setDiagnosisDead(boolean diagnosisDead) {
+        this.diagnosisDead = diagnosisDead;
+    }
+
+    public Date getDiagnosisDateOfSickness() {
+        return diagnosisDateOfSickness;
+    }
+
+    public void setDiagnosisDateOfSickness(Date diagnosisDateOfSickness) {
+        this.diagnosisDateOfSickness = diagnosisDateOfSickness;
+    }
+
+    public Date getDiagnosisDateOfDiagnosis() {
+        return diagnosisDateOfDiagnosis;
+    }
+
+    public void setDiagnosisDateOfDiagnosis(Date diagnosisDateOfDiagnosis) {
+        this.diagnosisDateOfDiagnosis = diagnosisDateOfDiagnosis;
     }
 
     public Date getDateOfDeath() {
@@ -226,6 +396,38 @@ public class CreateInfectedRequest {
         this.dateOfDeath = dateOfDeath;
     }
 
+    public boolean isJobMedical() {
+        return jobMedical;
+    }
+
+    public void setJobMedical(boolean jobMedical) {
+        this.jobMedical = jobMedical;
+    }
+
+    public boolean isJobFood() {
+        return jobFood;
+    }
+
+    public void setJobFood(boolean jobFood) {
+        this.jobFood = jobFood;
+    }
+
+    public boolean isJobCommunal() {
+        return jobCommunal;
+    }
+
+    public void setJobCommunal(boolean jobCommunal) {
+        this.jobCommunal = jobCommunal;
+    }
+
+    public String getInfectionPlace() {
+        return infectionPlace;
+    }
+
+    public void setInfectionPlace(String infectionPlace) {
+        this.infectionPlace = infectionPlace;
+    }
+
     public String getInfectionSource() {
         return infectionSource;
     }
@@ -234,51 +436,179 @@ public class CreateInfectedRequest {
         this.infectionSource = infectionSource;
     }
 
-    public boolean isIntensiveCareTreatment() {
-        return intensiveCareTreatment;
+    public boolean isInfectionEpidemi() {
+        return infectionEpidemi;
     }
 
-    public void setIntensiveCareTreatment(boolean intensiveCareTreatment) {
-        this.intensiveCareTreatment = intensiveCareTreatment;
+    public void setInfectionEpidemi(boolean infectionEpidemi) {
+        this.infectionEpidemi = infectionEpidemi;
     }
 
-    public List<String> getPhoneNumbers() {
-        return phoneNumbers;
+    public String getInfectionEpidemiSource() {
+        return infectionEpidemiSource;
     }
 
-    public void setPhoneNumbers(List<String> phoneNumbers) {
-        this.phoneNumbers = phoneNumbers;
+    public void setInfectionEpidemiSource(String infectionEpidemiSource) {
+        this.infectionEpidemiSource = infectionEpidemiSource;
     }
 
-    public boolean isJobInMedicalField() {
-        return jobInMedicalField;
+    public boolean isAccommodationCommunal() {
+        return accommodationCommunal;
     }
 
-    public void setJobInMedicalField(boolean jobInMedicalField) {
-        this.jobInMedicalField = jobInMedicalField;
+    public void setAccommodationCommunal(boolean accommodationCommunal) {
+        this.accommodationCommunal = accommodationCommunal;
     }
 
-    public boolean isJobInFoodField() {
-        return jobInFoodField;
+    public boolean isAccommodationHospital() {
+        return accommodationHospital;
     }
 
-    public void setJobInFoodField(boolean jobInFoodField) {
-        this.jobInFoodField = jobInFoodField;
+    public void setAccommodationHospital(boolean accommodationHospital) {
+        this.accommodationHospital = accommodationHospital;
     }
 
-    public boolean isJobInCommunityField() {
-        return jobInCommunityField;
+    public Date getAccommodationDateOfHospitalisation() {
+        return accommodationDateOfHospitalisation;
     }
 
-    public void setJobInCommunityField(boolean jobInCommunityField) {
-        this.jobInCommunityField = jobInCommunityField;
+    public void setAccommodationDateOfHospitalisation(Date accommodationDateOfHospitalisation) {
+        this.accommodationDateOfHospitalisation = accommodationDateOfHospitalisation;
     }
 
-    public String getHouseNumber() {
-        return houseNumber;
+    public boolean isAccommodationIcu() {
+        return accommodationIcu;
     }
 
-    public void setHouseNumber(String houseNumber) {
-        this.houseNumber = houseNumber;
+    public void setAccommodationIcu(boolean accommodationIcu) {
+        this.accommodationIcu = accommodationIcu;
+    }
+
+    public Date getAccommodationDateOfIcu() {
+        return accommodationDateOfIcu;
+    }
+
+    public void setAccommodationDateOfIcu(Date accommodationDateOfIcu) {
+        this.accommodationDateOfIcu = accommodationDateOfIcu;
+    }
+
+    public String getAccommodationNameAndAddress() {
+        return accommodationNameAndAddress;
+    }
+
+    public void setAccommodationNameAndAddress(String accommodationNameAndAddress) {
+        this.accommodationNameAndAddress = accommodationNameAndAddress;
+    }
+
+    public String getDetectionOfficeName() {
+        return detectionOfficeName;
+    }
+
+    public void setDetectionOfficeName(String detectionOfficeName) {
+        this.detectionOfficeName = detectionOfficeName;
+    }
+
+    public String getDetectionOfficeAddressStreet() {
+        return detectionOfficeAddressStreet;
+    }
+
+    public void setDetectionOfficeAddressStreet(String detectionOfficeAddressStreet) {
+        this.detectionOfficeAddressStreet = detectionOfficeAddressStreet;
+    }
+
+    public String getDetectionOfficeAddressHousenumber() {
+        return detectionOfficeAddressHousenumber;
+    }
+
+    public void setDetectionOfficeAddressHousenumber(String detectionOfficeAddressHousenumber) {
+        this.detectionOfficeAddressHousenumber = detectionOfficeAddressHousenumber;
+    }
+
+    public long getDetectionOfficeAddressZipcode() {
+        return detectionOfficeAddressZipcode;
+    }
+
+    public void setDetectionOfficeAddressZipcode(long detectionOfficeAddressZipcode) {
+        this.detectionOfficeAddressZipcode = detectionOfficeAddressZipcode;
+    }
+
+    public String getDetectionOfficeAddressCity() {
+        return detectionOfficeAddressCity;
+    }
+
+    public void setDetectionOfficeAddressCity(String detectionOfficeAddressCity) {
+        this.detectionOfficeAddressCity = detectionOfficeAddressCity;
+    }
+
+    public String getDetectionOfficeAddressCountry() {
+        return detectionOfficeAddressCountry;
+    }
+
+    public void setDetectionOfficeAddressCountry(String detectionOfficeAddressCountry) {
+        this.detectionOfficeAddressCountry = detectionOfficeAddressCountry;
+    }
+
+    public String getDetectionOfficePhone() {
+        return detectionOfficePhone;
+    }
+
+    public void setDetectionOfficePhone(String detectionOfficePhone) {
+        this.detectionOfficePhone = detectionOfficePhone;
+    }
+
+    public String getDetectionOfficeEmail() {
+        return detectionOfficeEmail;
+    }
+
+    public void setDetectionOfficeEmail(String detectionOfficeEmail) {
+        this.detectionOfficeEmail = detectionOfficeEmail;
+    }
+
+    public String getDetectionOfficeUntersuchungsstelle() {
+        return detectionOfficeUntersuchungsstelle;
+    }
+
+    public void setDetectionOfficeUntersuchungsstelle(String detectionOfficeUntersuchungsstelle) {
+        this.detectionOfficeUntersuchungsstelle = detectionOfficeUntersuchungsstelle;
+    }
+
+    public String getLaboratoryCommission() {
+        return laboratoryCommission;
+    }
+
+    public void setLaboratoryCommission(String laboratoryCommission) {
+        this.laboratoryCommission = laboratoryCommission;
+    }
+
+    public String getLaboratoryName() {
+        return laboratoryName;
+    }
+
+    public void setLaboratoryName(String laboratoryName) {
+        this.laboratoryName = laboratoryName;
+    }
+
+    public String getLaboratoryLocation() {
+        return laboratoryLocation;
+    }
+
+    public void setLaboratoryLocation(String laboratoryLocation) {
+        this.laboratoryLocation = laboratoryLocation;
+    }
+
+    public String getLaboratoryPhone() {
+        return laboratoryPhone;
+    }
+
+    public void setLaboratoryPhone(String laboratoryPhone) {
+        this.laboratoryPhone = laboratoryPhone;
+    }
+
+    public String getLaboratoryDateOfBiopsy() {
+        return laboratoryDateOfBiopsy;
+    }
+
+    public void setLaboratoryDateOfBiopsy(String laboratoryDateOfBiopsy) {
+        this.laboratoryDateOfBiopsy = laboratoryDateOfBiopsy;
     }
 }

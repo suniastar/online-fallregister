@@ -28,6 +28,7 @@
         <slf4j.version>1.7.30</slf4j.version>
         <cucumber.version>5.3.0</cucumber.version>
         <apache.httpclient.version>4.5.11</apache.httpclient.version>
+        <commons.codec.version>1.14</commons.codec.version>
     </properties>
 
     <dependencies>
@@ -84,6 +85,13 @@
             <version>${slf4j.version}</version>
         </dependency>
 
+        <!-- SHA256 -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons.codec.version}</version>
+        </dependency>
+
         <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -115,6 +123,12 @@
             <artifactId>httpclient</artifactId>
             <version>${apache.httpclient.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>13.0</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
