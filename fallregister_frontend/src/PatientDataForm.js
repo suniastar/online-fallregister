@@ -80,19 +80,17 @@ class PatientDataForm extends React.Component {
         .then(
           (result) => {
               if(result.status === "201"){
-                alert("Erfolgreich gespeichert")
+                console.log("Erfolgreich gespeichert")
               }else{
-                  alert(result.status)
+                console.log(result.status)
               }
 
           },
-          // Note: it's important to handle errors here
-          // instead of a catch() block so that we don't swallow
-          // exceptions from actual bugs in components.
           (error) => {
-            alert("fehler" + error)
+            console.log("fehler" + error)
           }
         )
+        alert("Erfolgreich gespeichert");
     }
 
     render() {
