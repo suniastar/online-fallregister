@@ -12,12 +12,12 @@ class CSVImportForm extends React.Component {
 
                 <Grid>
                 <FormLabel for="user">Benutzername:</FormLabel>
-                <Input type="text" id="fname" name="fname"></Input>
+                <Input required type="text" id="fname" name="fname"></Input>
                 </Grid>
 
                 <Grid>
                 <FormLabel for="password">Password:</FormLabel>
-                <Input type="password" id="lname" name="lname"></Input>
+                <Input required type="password" id="lname" name="lname"></Input>
                 </Grid>
 
                 <Grid>
