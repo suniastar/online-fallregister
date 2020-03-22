@@ -98,7 +98,7 @@ class PatientDataForm extends React.Component {
           container
           direction='column'
           justify="center"
-          alignItems='flex-start'
+          alignItems='stretch'
 
                 >
 
