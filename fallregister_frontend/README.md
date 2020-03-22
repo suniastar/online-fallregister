@@ -1,3 +1,6 @@
+https://github.com/facebook/create-react-app/issues/8680#issuecomment-601896916
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
