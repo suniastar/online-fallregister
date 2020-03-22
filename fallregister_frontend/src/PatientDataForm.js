@@ -278,6 +278,10 @@ class PatientDataForm extends React.Component {
                                 <Input type="date" id="dateOfcare" name="dateOfcare" id="dateOfHospitalisation" ></Input>
                             </Grid>
                             <Grid>
+                                <FormControlLabel control = {<Checkbox id = "intensiveCare" />} label = "Patient/in ist auf der Intensivstation seit:"/>
+                                <Input type="date" id="dateOfIntensiveCare"></Input>
+                            </Grid>
+                            <Grid>
                             <FormLabel for="stay">Name und Ort der Einrichtung</FormLabel>
                             <Input type="text" id="stay" name="stay" id="addressAndPlace"></Input>
                             </Grid>
