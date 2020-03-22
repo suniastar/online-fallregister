@@ -4,30 +4,8 @@ import de.coronavirus.application.dtos.request.CreateInfectedRequest;
 import de.coronavirus.application.dtos.request.UpdateInfectedRequest;
 import de.coronavirus.application.dtos.service.InfectedDto;
 import de.coronavirus.domain.exception.NotFoundException;
-import de.coronavirus.domain.infrastructure.repositories.AccommodationRepository;
-import de.coronavirus.domain.infrastructure.repositories.AddressRepository;
-import de.coronavirus.domain.infrastructure.repositories.CityRepository;
-import de.coronavirus.domain.infrastructure.repositories.CountryRepository;
-import de.coronavirus.domain.infrastructure.repositories.DetectorRepository;
-import de.coronavirus.domain.infrastructure.repositories.DiagnosisRepository;
-import de.coronavirus.domain.infrastructure.repositories.EmailAddressRepository;
-import de.coronavirus.domain.infrastructure.repositories.InfectedRepository;
-import de.coronavirus.domain.infrastructure.repositories.LaboratoryRepository;
-import de.coronavirus.domain.infrastructure.repositories.PhoneNumberRepository;
-import de.coronavirus.domain.infrastructure.repositories.PostCodeRepository;
-import de.coronavirus.domain.infrastructure.repositories.StreetRepository;
-import de.coronavirus.domain.model.Accommodation;
-import de.coronavirus.domain.model.Address;
-import de.coronavirus.domain.model.City;
-import de.coronavirus.domain.model.Country;
-import de.coronavirus.domain.model.Detector;
-import de.coronavirus.domain.model.Diagnosis;
-import de.coronavirus.domain.model.EmailAddress;
-import de.coronavirus.domain.model.Infected;
-import de.coronavirus.domain.model.Laboratory;
-import de.coronavirus.domain.model.PhoneNumber;
-import de.coronavirus.domain.model.PostCode;
-import de.coronavirus.domain.model.Street;
+import de.coronavirus.domain.infrastructure.repositories.*;
+import de.coronavirus.domain.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -118,8 +96,9 @@ public class InfectedService {
                 request.getDetectionOfficeAddressStreet(),
                 request.getDetectionOfficeAddressHousenumber());
 
+        String detectorName = request.getDetectorLastName() + ", " + request.getDetectorFirstName();
         final Detector detector = createOrReadDetector(
-                request.getDetectorLastName() + ", " + request.getDetectorFirstName(),
+                detectorName.length() > 2 ? detectorName : null,
                 detectorAddress,
                 detectorPhoneNumber,
                 detectorEmail);
@@ -147,7 +126,7 @@ public class InfectedService {
                 null);
 
         final Diagnosis diagnosis = new Diagnosis();
-        diagnosis.setDiagnosticResult(request.getDiagnosisName());
+        diagnosis.setDiagnosticResult(removeSpaces(request.getDiagnosisName()));
         diagnosis.setDate(request.getDiagnosisDateOfDiagnosis());
         diagnosis.setSuspicion(request.isDiagnosisSuspected());
         diagnosis.setClinicalDiagnosis(!request.isDiagnosisSuspected());
@@ -159,9 +138,9 @@ public class InfectedService {
         diagnosisRepository.saveAndFlush(diagnosis);
 
         final Infected infected = new Infected();
-        infected.setFirstName(request.getPatientFirstName());
-        infected.setLastName(request.getPatientLastName());
-        infected.setGender(Infected.Gender.valueOf(request.getPatientSex().toUpperCase()));
+        infected.setFirstName(removeSpaces(request.getPatientFirstName()));
+        infected.setLastName(removeSpaces(request.getPatientLastName()));
+        infected.setGender(Infected.Gender.valueOf(removeSpaces(request.getPatientSex().toUpperCase())));
         infected.setDateOfBirth(request.getPatientBirthday());
         if (infectedPhoneNumber != null) infected.getPhoneNumbers().add(infectedPhoneNumber);
         infected.setAddress(infectedAddress);
@@ -173,7 +152,8 @@ public class InfectedService {
         infected.setDateOfIllness(request.getDiagnosisDateOfSickness());
         infected.getDiagnoses().add(diagnosis);
         infected.setDateOfDeath(request.getDateOfDeath());
-        infected.setInfectionSource(request.getInfectionSource() + ", " + request.getInfectionPlace());
+        String infectionSource = request.getInfectionSource() + ", " + request.getInfectionPlace();
+        infected.setInfectionSource(infectionSource.length() > 2 ? infectionSource : null);
         infected.setIntensiveCareTreatment(request.isAccommodationIcu());
         infectedRepository.saveAndFlush(infected);
 
@@ -198,7 +178,7 @@ public class InfectedService {
 
         Address address = null;
 
-        if (countryName != null) {
+        if (notEmpty(countryName)) {
             final Country country = countryRepository.findByName(countryName).orElseGet(() -> {
                 final Country c = new Country();
                 c.setName(countryName);
@@ -206,7 +186,7 @@ public class InfectedService {
                 return c;
             });
 
-            if (cityName != null) {
+            if (notEmpty(cityName)) {
                 final City city = cityRepository.findByCountryAndName(country, cityName).orElseGet(() -> {
                     final City c = new City();
                     c.setCountry(country);
@@ -226,7 +206,7 @@ public class InfectedService {
                         return c;
                     });
 
-                    if (streetName != null) {
+                    if (notEmpty(streetName)) {
                         final Street street = streetRepository.findByPostCodeAndName(postCode, streetName).orElseGet(() -> {
                             final Street s = new Street();
                             s.setPostCode(postCode);
@@ -260,7 +240,7 @@ public class InfectedService {
                                                     Date inIcuSince,
                                                     PhoneNumber phoneNumber,
                                                     EmailAddress emailAddress) {
-        if (name == null) return null;
+        if (notEmpty(name)) return null;
 
         final Accommodation accommodation = accommodationRepository.findByName(name).orElseGet(() -> {
             Accommodation a = new Accommodation();
@@ -288,7 +268,7 @@ public class InfectedService {
     }
 
     private Detector createOrReadDetector(String name, Address address, PhoneNumber phoneNumber, EmailAddress emailAddress) {
-        if (name == null || address == null) return null;
+        if (notEmpty(name) || address == null) return null;
 
         final Detector detector = detectorRepository.findByNameAndAddress(name, address).orElseGet(() -> {
             final Detector d = new Detector();
@@ -309,7 +289,7 @@ public class InfectedService {
     }
 
     private Laboratory createOrReadLaboratory(String name, Address address, PhoneNumber phoneNumber, EmailAddress emailAddress) {
-        if (name == null) return null;
+        if (notEmpty(name)) return null;
 
         final Laboratory laboratory = laboratoryRepository.findByName(name).orElseGet(() -> {
             final Laboratory l = new Laboratory();
@@ -331,7 +311,7 @@ public class InfectedService {
     }
 
     private PhoneNumber createOrReadPhoneNumber(String phoneNumber) {
-        if (phoneNumber == null) return null;
+        if (notEmpty(phoneNumber)) return null;
         return phoneNumberRepository.findByNumber(phoneNumber).orElseGet(() -> {
             final PhoneNumber n = new PhoneNumber();
             n.setNumber(phoneNumber);
@@ -341,12 +321,21 @@ public class InfectedService {
     }
 
     private EmailAddress createOrReadEmailAddress(String emailAddress) {
-        if (emailAddress == null) return null;
+        if (notEmpty(emailAddress)) return null;
         return emailAddressRepository.findByEmail(emailAddress).orElseGet(() -> {
             final EmailAddress e = new EmailAddress();
             e.setEmail(emailAddress);
             emailAddressRepository.saveAndFlush(e);
             return e;
         });
+    }
+
+    private boolean notEmpty(String string) {
+        return string != null && !string.isBlank();
+    }
+
+    private String removeSpaces(final String string) {
+        String removed = string.trim();
+        return removed.length() != 0 ? removed : null;
     }
 }
