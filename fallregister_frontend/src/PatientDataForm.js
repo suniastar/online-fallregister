@@ -51,8 +51,8 @@ class PatientDataForm extends React.Component {
             accommodationCommunal:document.getElementById("accCommunal").checked,
             accommodationHospital: document.getElementById("hospital").checked,
             accommodationDateOfHospitalisation: document.getElementById("dateOfHospitalisation").value,
-            accommodationIcu: document.getElementById("patientFirstName").checked,
-            accommodationDateOfIcu: document.getElementById("patientFirstName").value,
+            accommodationIcu: document.getElementById("intensiveCare").checked,
+            accommodationDateOfIcu: document.getElementById("dateOfIntensiveCare").value,
             accommodationNameAndAddress: document.getElementById("addressAndPlace").value,
             gesundheitsamtName: document.getElementById("gName").value,
             gesundheitsamtAddressStreet : document.getElementById("gStreet").value,
@@ -319,8 +319,7 @@ class PatientDataForm extends React.Component {
                                 <Grid>
                                     <FormControlLabel control={<Checkbox id="hospital"/>}
                                                       label="Patient/in ist in Krankenhaus/Pflegeeinrichtung seit: "/>
-                                    <Input type="date" id="dateOfcare" name="dateOfcare"
-                                           id="dateOfHospitalisation"></Input>
+                                    <Input type="date" name="dateOfcare" id="dateOfHospitalisation"></Input>
                                 </Grid>
                                 <Grid>
                                     <FormControlLabel control={<Checkbox id="intensiveCare"/>}
