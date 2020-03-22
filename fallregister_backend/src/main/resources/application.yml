@@ -19,7 +19,7 @@ spring:
   profiles: postgres
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     properties:
       hibernate:
         jdbc:
