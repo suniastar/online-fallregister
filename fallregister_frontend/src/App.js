@@ -5,6 +5,7 @@ import {Button} from '@material-ui/core/';
 import PatientDataForm from "./PatientDataForm.js"
 import CSVImportForm from './CSVImportForm.js';
 import LoginForm from "./LoginForm"
+import DataView from "./DataView"
 
 class App extends React.Component {
     constructor(){
@@ -31,8 +32,10 @@ class App extends React.Component {
         let form= <h>oh oh</h>;
         if(this.state.buttontext === "manual"){
             form = <PatientDataForm />;
-        }else if(this.state.buttontext === "csvimport"){
-            form = <CSVImportForm />;
+        }else if(this.state.buttontext === "csvimport") {
+            form = <CSVImportForm/>;
+        }else if(this.state.buttontext === "view") {
+            form = <DataView/>;
         }else{
             form = <LoginForm />
         }

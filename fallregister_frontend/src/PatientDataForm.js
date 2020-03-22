@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 import { FormLabel, FormControlLabel, Input, Grid, Checkbox, Button} from '@material-ui/core/';
@@ -14,100 +15,84 @@ class PatientDataForm extends React.Component {
         sex = document.getElementById("sexFemale").checked ? "female" : sex;
         sex = document.getElementById("sexDivers").checked ? "divers" : sex;
         const json = {
-            patient: {
-                firstname: document.getElementById("patientFirstName").value,
-                name: document.getElementById("patientLastName").value,
-                address: {
-                    street: document.getElementById("patientStreet").value,
-                    housenumber: document.getElementById("patientHouse").value,
-                    zipcode: document.getElementById("patientZip").value,
-                    city: document.getElementById("patientCity").value,
-                    country: document.getElementById("patientCountry").value,
-                },
-                birthday: document.getElementById("patientBirthday").value,
-                sex: sex,
-                phone: document.getElementById("patientPhone").value,
-                email: document.getElementById("patientEmail").value
-            },
-            detector: {
-                firstname: document.getElementById("mFname").value,
-                name: document.getElementById("mName").value,
-                address: {
-                    street: document.getElementById("mStreet").value,
-                    housenumber: document.getElementById("mHousenumber").value,
-                    zipcode: document.getElementById("mZip").value,
-                    city: document.getElementById("mCity").value,
-                },
-                phone: document.getElementById("mPhone").value,
-                email: document.getElementById("mMail").value
-            },
-            diagnosis: {
-                suspected: document.getElementById("suspected").checked,
-                diagnosed: document.getElementById("diagnosed").checked,
-                dead: document.getElementById("death").checked,
-                dateOfSickness: document.getElementById("dayOfInfection").value,
-                dateOfDiagnosis: document.getElementById("dayOfDiagnose").value,
-                dateOfDeath: document.getElementById("dayOfDeath").value
-            },
-            jobs: {
-                medical: document.getElementById("medical").checked,
-                food: document.getElementById("food").checked,
-                communal: document.getElementById("epiCommunal").checked,
-            },
-            infection: {
-                place: document.getElementById("infectionPlace").value,
-                source: document.getElementById("infectionPlace").value,
-                epidemi: document.getElementById("epidemi").checked,
-                epidemiSource: document.getElementById("infectionExposition").value
-            },
-            accommodation: {
-                communal: document.getElementById("accCommunal").checked,
-                hospital: document.getElementById("hospital").checked,
-                dateOfHospitalisation: document.getElementById("dateOfHospitalisation").value,
-                icu: document.getElementById("patientFirstName").checked,
-                dateOfIcu: document.getElementById("patientFirstName").value,
-                nameAndAddress: document.getElementById("addressAndPlace").value,
-            },
-            gesundheitsamt: {
-                name: document.getElementById("gName").value,
-                address: {
-                    street: document.getElementById("gStreet").value,
-                    housenumber: document.getElementById("gHousenumber").value,
-                    zipcode: document.getElementById("gZip").value,
-                    city: document.getElementById("gCity").value,
-                },
-                phone: document.getElementById("gPhone").value,
-                email: document.getElementById("gMail").value,
-                untersuchungsstelle: document.getElementById("gStelle").value,
-            },
-            laboratory: {
-                commission: document.getElementById("commission").checked,
-                name: document.getElementById("labname").value,
-                location: document.getElementById("lablocation").value,
-                phone: document.getElementById("labphone").value,
-                dateOfBiopsy: document.getElementById("probedate").value
-            }
+            patientFirstName: document.getElementById("patientFirstName").value,
+            patientLastName: document.getElementById("patientLastName").value,
+            patientAddressStreet : document.getElementById("patientStreet").value,
+            patientAddressHousenumber: document.getElementById("patientHouse").value,
+            patientAddressZipcode: document.getElementById("patientZip").value,
+            patientAddressCity:document.getElementById("patientCity").value,
+            patientAddressCountry:document.getElementById("patientCountry").value,
+            patientBirthday: document.getElementById("patientBirthday").value,
+            patientSex: sex,
+            patientPhone: document.getElementById("patientPhone").value,
+            patientEmail: document.getElementById("patientEmail").value,
+            detectorFirstName: document.getElementById("mFname").value,
+            detectorLastName: document.getElementById("mName").value,
+            detectorAddressStreet: document.getElementById("mStreet").value,
+            detectorAddressHousenumber: document.getElementById("mHousenumber").value,
+            detectorAddressZipcode: document.getElementById("mZip").value,
+            detectorAddressCity:document.getElementById("mCity").value,
+            detectorPhone: document.getElementById("mPhone").value,
+            detectorEmail: document.getElementById("mMail").value,
+            diagnosisName: "COVID19",
+            diagnosisSuspected: document.getElementById("suspected").checked,
+            diagnosisDiagnosed: document.getElementById("diagnosed").checked,
+            diagnosisDead: document.getElementById("death").checked,
+            diagnosisDateOfSickness: document.getElementById("dayOfInfection").value,
+            diagnosisDateOfDiagnosis: document.getElementById("dayOfDiagnose").value,
+            diagnosisDateOfDeath: document.getElementById("dayOfDeath").value,
+            jobsMedical: document.getElementById("medical").checked,
+            jobsFood: document.getElementById("food").checked,
+            jobsCommunal: document.getElementById("epiCommunal").checked,
+            infectionPlace: document.getElementById("infectionPlace").value,
+            infectionSource:  document.getElementById("infectionPlace").value,
+            infectionEpidemi:  document.getElementById("epidemi").checked,
+            infectionEpidemiSource: document.getElementById("infectionExposition").value,
+            accommodationCommunal:document.getElementById("accCommunal").checked,
+            accommodationHospital: document.getElementById("hospital").checked,
+            accommodationDateOfHospitalisation: document.getElementById("dateOfHospitalisation").value,
+            accommodationIcu: document.getElementById("patientFirstName").checked,
+            accommodationDateOfIcu: document.getElementById("patientFirstName").value,
+            accommodationNameAndAddress: document.getElementById("addressAndPlace").value,
+            gesundheitsamtName: document.getElementById("gName").value,
+            gesundheitsamtAddressStreet : document.getElementById("gStreet").value,
+            gesundheitsamtAddressHousenumber: document.getElementById("gHousenumber").value,
+            gesundheitsamtAddressZipcode: document.getElementById("gZip").value,
+            gesundheitsamtAddressCity:document.getElementById("gCity").value,
+            gesundheitsPhone: document.getElementById("gPhone").value,
+            gesundheitsEmail: document.getElementById("gMail").value,
+            gesundheitsUntersuchungsstelle: document.getElementById("gStelle").value,
+            laboratoryCommission: document.getElementById("commission").checked,
+            laboratoryName: document.getElementById("labname").value,
+            laboratoryLocation: document.getElementById("lablocation").value,
+            laboratoryPhone: document.getElementById("labphone").value,
+            laboratoryDateOfBiopsy: document.getElementById("probedate").value
         }
-        fetch('localhost:8080/endpoint/', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(json)
+        fetch('http://localhost:8080/infected', {
+         method: 'POST',
+         headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(json)
         })
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    alert("Erfolgreich gespeichert")
-                },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error) => {
-                    alert("fehler" + error)
-                }
-            )
+        .then(res => res.json())
+        .then(
+          (result) => {
+              if(result.status === "201"){
+                alert("Erfolgreich gespeichert")
+              }else{
+                  alert(result.status)
+              }
+
+          },
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          (error) => {
+            alert("fehler" + error)
+          }
+        )
     }
 
     render() {
