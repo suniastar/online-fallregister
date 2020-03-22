@@ -139,12 +139,12 @@ class PatientDataForm extends React.Component {
 
                             <Grid>
                                 <FormLabel for="fname">Vorname:</FormLabel>
-                                <Input type="text" id="patientFirstName" name="fname" ref="myFirstname"></Input>
+                                <Input required type="text" id="patientFirstName" name="fname" ref="myFirstname"></Input>
                             </Grid>
 
                             <Grid>
                                 <FormLabel for="lname">Nachname:</FormLabel>
-                                <Input type="text" id="patientLastName" name="lname"></Input>
+                                <Input required type="text" id="patientLastName" name="lname"></Input>
                             </Grid>
 
                             <Grid container
@@ -186,7 +186,7 @@ class PatientDataForm extends React.Component {
 
                             <Grid>
                                 <FormLabel for="birthday">Geburtsdatum:</FormLabel>
-                                <Input type="date" id="patientBirthday" name="birthday"></Input>
+                                <Input required type="date" id="patientBirthday" name="birthday"></Input>
                             </Grid>
 
                             <Grid>
@@ -280,6 +280,10 @@ class PatientDataForm extends React.Component {
                                 <Input type="date" id="dateOfcare" name="dateOfcare" id="dateOfHospitalisation" ></Input>
                             </Grid>
                             <Grid>
+                                <FormControlLabel control = {<Checkbox id = "intensiveCare" />} label = "Patient/in ist auf der Intensivstation seit:"/>
+                                <Input type="date" id="dateOfIntensiveCare"></Input>
+                            </Grid>
+                            <Grid>
                             <FormLabel for="stay">Name und Ort der Einrichtung</FormLabel>
                             <Input type="text" id="stay" name="stay" id="addressAndPlace"></Input>
                             </Grid>
@@ -328,7 +332,7 @@ class PatientDataForm extends React.Component {
                             </Grid>
                             <Grid>
                                 <FormLabel for="fname">Gesundheitsamt:</FormLabel>
-                                <Input type="text" id="gName" name="fname"></Input>
+                                <Input required type="text" id="gName" name="fname"></Input>
                             </Grid>
                             <Grid>
                                 <FormLabel for="address">Strasse:</FormLabel>
