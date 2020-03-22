@@ -41,13 +41,16 @@ class App extends React.Component {
             <div id="App">
                 <header className="App-header">
                     <div class='alignleft'>
-                        <Button onClick={this.goToManual}>Manueller Input</Button>
+                        <Button onClick={this.goToManual} color="primary"
+                            variant={this.state.buttontext == "manual" ? "contained" : ""}>Manueller Input</Button>
                     </div>
                     <div class='alignleft'>
-                    <Button onClick={this.goToCsvImport}>CSV Import</Button>
+                    <Button onClick={this.goToCsvImport} color="primary"
+                        variant={this.state.buttontext == "csvimport" ? "contained" : ""}>CSV Import</Button>
                     </div>
                     <div class='alignleft'>
-                    <Button onClick={this.goToView}>Datenansicht</Button>
+                    <Button onClick={this.goToView} color="primary"
+                        variant={this.state.buttontext == "view" ? "contained" : ""}>Datenansicht</Button>
                     </div>
                     <div class='alignright'>
                         <Button onClick={this.Logout}>Logout</Button>
