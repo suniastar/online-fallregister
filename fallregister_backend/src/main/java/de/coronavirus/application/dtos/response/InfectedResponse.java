@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 @ApiModel ("Infected")
@@ -13,11 +14,17 @@ public class InfectedResponse {
 
     /* Entity */
     @ApiModelProperty
-    List<String> phoneNumber;
+    List<String> phoneNumbers;
+
+    @ApiModelProperty
+    List<String> emailAddresses;
+
+    @ApiModelProperty
+    List<String> diagnoses;
 
     /* -Address */
     @ApiModelProperty
-    Integer houseNumber;
+    String houseNumber;
 
     /* --Street */
     @ApiModelProperty
@@ -48,29 +55,13 @@ public class InfectedResponse {
     Date dateOfBirth;
 
     @ApiModelProperty
-    List<String> jobs;
-
-    /* -Accommodation */
-    @ApiModelProperty
-    String accommodationName;
-
-    /* -Diagnosis */
-    @ApiModelProperty
-    String diagnosisResult;
+    boolean jobInMedicalField;
 
     @ApiModelProperty
-    Date diagnosisDate;
-
-    /* --Detector */
-    @ApiModelProperty
-    String detectorName;
-
-    /* --Laboratory */
-    @ApiModelProperty
-    String laboratoryName;
+    boolean jobInFoodField;
 
     @ApiModelProperty
-    boolean diagnosisConfirmed;
+    boolean jobInCommunityField;
 
     @ApiModelProperty
     Date dateOfIllness;
@@ -78,11 +69,37 @@ public class InfectedResponse {
     @ApiModelProperty
     Date dateOfDeath;
 
+    /* -Accommodation */
+    @ApiModelProperty
+    String accommodationName;
+
     @ApiModelProperty
     String infectionSource;
 
     @ApiModelProperty
     boolean intensiveCareTreatment;
+
+    public InfectedResponse() {
+        this.phoneNumbers = new LinkedList<>();
+        this.emailAddresses = new LinkedList<>();
+        this.diagnoses = new LinkedList<>();
+    }
+
+    public List<String> getDiagnoses() {
+        return diagnoses;
+    }
+
+    public void setDiagnoses(List<String> diagnoses) {
+        this.diagnoses = diagnoses;
+    }
+
+    public List<String> getEmailAddresses() {
+        return emailAddresses;
+    }
+
+    public void setEmailAddresses(List<String> emailAddresses) {
+        this.emailAddresses = emailAddresses;
+    }
 
     public long getId() {
         return id;
@@ -92,19 +109,19 @@ public class InfectedResponse {
         this.id = id;
     }
 
-    public List<String> getPhoneNumber() {
-        return phoneNumber;
+    public List<String> getPhoneNumbers() {
+        return phoneNumbers;
     }
 
-    public void setPhoneNumber(List<String> phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumbers(List<String> phoneNumbers) {
+        this.phoneNumbers= phoneNumbers;
     }
 
-    public Integer getHouseNumber() {
+    public String getHouseNumber() {
         return houseNumber;
     }
 
-    public void setHouseNumber(Integer houseNumber) {
+    public void setHouseNumber(String houseNumber) {
         this.houseNumber = houseNumber;
     }
 
@@ -172,12 +189,28 @@ public class InfectedResponse {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public List<String> getJobs() {
-        return jobs;
+    public boolean isJobInMedicalField(){
+        return this.jobInMedicalField;
     }
 
-    public void setJobs(List<String> jobs) {
-        this.jobs = jobs;
+    public void setJobInMedicalField(boolean jobInMedicalField){
+        this.jobInMedicalField = jobInMedicalField;
+    }
+
+    public boolean isJobInFoodField(){
+        return this.jobInFoodField;
+    }
+
+    public void setJobInFoodField(boolean jobInFoodField){
+        this.jobInFoodField = jobInFoodField;
+    }
+
+    public boolean isJobInCommunityField(){
+        return this.jobInCommunityField;
+    }
+
+    public void setJobInCommunityField(boolean jobInCommunityField){
+        this.jobInCommunityField = jobInCommunityField;
     }
 
     public String getAccommodationName() {
@@ -186,46 +219,6 @@ public class InfectedResponse {
 
     public void setAccommodationName(String accommodationName) {
         this.accommodationName = accommodationName;
-    }
-
-    public String getDiagnosisResult() {
-        return diagnosisResult;
-    }
-
-    public void setDiagnosisResult(String diagnosisResult) {
-        this.diagnosisResult = diagnosisResult;
-    }
-
-    public Date getDiagnosisDate() {
-        return diagnosisDate;
-    }
-
-    public void setDiagnosisDate(Date diagnosisDate) {
-        this.diagnosisDate = diagnosisDate;
-    }
-
-    public String getDetectorName() {
-        return detectorName;
-    }
-
-    public void setDetectorName(String detectorName) {
-        this.detectorName = detectorName;
-    }
-
-    public String getLaboratoryName() {
-        return laboratoryName;
-    }
-
-    public void setLaboratoryName(String laboratoryName) {
-        this.laboratoryName = laboratoryName;
-    }
-
-    public boolean isDiagnosisConfirmed() {
-        return diagnosisConfirmed;
-    }
-
-    public void setDiagnosisConfirmed(boolean diagnosisConfirmed) {
-        this.diagnosisConfirmed = diagnosisConfirmed;
     }
 
     public Date getDateOfIllness() {

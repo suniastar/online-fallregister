@@ -11,6 +11,9 @@ import java.util.Optional;
 @Repository
 public interface EmailAddressRepository extends JpaRepository<EmailAddress, Long> {
 
+    Optional<EmailAddress> findByEmail(String email);
+
     List<EmailAddressDto> findAllDtoBy();
+
     Optional<EmailAddressDto> findDtoById(Long id);
 }

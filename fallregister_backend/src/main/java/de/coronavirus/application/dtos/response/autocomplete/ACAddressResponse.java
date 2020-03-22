@@ -1,10 +1,10 @@
-package de.coronavirus.application.dtos.response;
+package de.coronavirus.application.dtos.response.autocomplete;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel("Address")
-public class AddressResponse {
+@ApiModel("Autocomplete Address Response")
+public class ACAddressResponse {
 
     @ApiModelProperty
     String countryName;

@@ -9,9 +9,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface LaboratoryRepository extends JpaRepository<Laboratory,Long> {
+public interface LaboratoryRepository extends JpaRepository<Laboratory, Long> {
+
+    Optional<Laboratory> findByName(String name);
 
     List<LaboratoryDto> findAllDtoBy();
 
     Optional<LaboratoryDto> findDtoById(Long id);
+
+    List<LaboratoryDto> findTop10ByNameStartsWith(String partial);
 }

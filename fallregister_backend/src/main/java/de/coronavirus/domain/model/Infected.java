@@ -4,6 +4,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -13,6 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,8 +24,9 @@ import java.util.Objects;
 public class Infected {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -38,7 +42,7 @@ public class Infected {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "phone_numbers")
-    private List<PhoneNumber> phoneNumber;
+    private List<PhoneNumber> phoneNumbers;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
@@ -81,11 +85,17 @@ public class Infected {
     @Column(name = "intensive_care_treatment")
     private boolean intensiveCareTreatment;
 
-    public long getId() {
+    public Infected() {
+        this.phoneNumbers = new LinkedList<>();
+        this.emailAddresses = new LinkedList<>();
+        this.diagnoses = new LinkedList<>();
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -119,14 +129,6 @@ public class Infected {
 
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
-    }
-
-    public List<PhoneNumber> getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(List<PhoneNumber> phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public Address getAddress() {
@@ -217,6 +219,14 @@ public class Infected {
         this.intensiveCareTreatment = intensiveCareTreatment;
     }
 
+    public List<PhoneNumber> getPhoneNumbers() {
+        return phoneNumbers;
+    }
+
+    public void setPhoneNumbers(List<PhoneNumber> phoneNumbers) {
+        this.phoneNumbers = phoneNumbers;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -233,7 +243,7 @@ public class Infected {
         if (!Objects.equals(lastName, infected.lastName)) return false;
         if (gender != infected.gender) return false;
         if (!Objects.equals(dateOfBirth, infected.dateOfBirth)) return false;
-        if (!Objects.equals(phoneNumber, infected.phoneNumber)) return false;
+        if (!Objects.equals(phoneNumbers, infected.phoneNumbers)) return false;
         if (!Objects.equals(address, infected.address)) return false;
         if (!Objects.equals(emailAddresses, infected.emailAddresses)) return false;
         if (!Objects.equals(accommodation, infected.accommodation)) return false;
@@ -250,7 +260,7 @@ public class Infected {
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         result = 31 * result + (gender != null ? gender.hashCode() : 0);
         result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
-        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (phoneNumbers != null ? phoneNumbers.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (emailAddresses != null ? emailAddresses.hashCode() : 0);
         result = 31 * result + (jobInMedicalField ? 1 : 0);
@@ -273,7 +283,7 @@ public class Infected {
                 ", lastName='" + lastName + '\'' +
                 ", gender=" + gender +
                 ", dateOfBirth=" + dateOfBirth +
-                ", phoneNumber=" + phoneNumber +
+                ", phoneNumber=" + phoneNumbers +
                 ", address=" + address +
                 ", emailAddresses=" + emailAddresses +
                 ", jobInMedicalField=" + jobInMedicalField +

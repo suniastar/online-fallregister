@@ -14,4 +14,5 @@ public interface InfectedRepository extends JpaRepository<Infected, Long> {
     List<InfectedDto> findAllDtoBy();
 
     Optional<InfectedDto> findDtoById(Long id);
+
 }

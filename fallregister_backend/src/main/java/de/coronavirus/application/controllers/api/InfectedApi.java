@@ -8,14 +8,21 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
 @Api(tags = {"infected"}, description = "Corona-Virus Infected API")
 @RequestMapping("/infected")
-public interface InfectedAPI {
+public interface InfectedApi {
 
 
     /* * * * * * * * * * * * * *
@@ -23,11 +30,11 @@ public interface InfectedAPI {
      * * * * * * * * * * * * * */
 
     @GetMapping
-    @ApiOperation( value = "Finds all listed infected")
+    @ApiOperation(value = "Finds all listed infected")
     List<InfectedResponse> getAllInfectedEntries();
 
     @GetMapping("/{id}")
-    @ApiOperation( value = "Finds a specific infected")
+    @ApiOperation(value = "Finds a specific infected")
     @ApiResponses({
             @ApiResponse(code = 404, message = "infected not found")
     })
@@ -40,11 +47,11 @@ public interface InfectedAPI {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @ApiOperation( value = "Creates a new infected")
+    @ApiOperation(value = "Creates a new infected")
     @ApiResponses({
             @ApiResponse(code = 400, message = "infected was not valid")
     })
-    InfectedResponse createInfectedEntry(@RequestBody CreateInfectedRequest newInfected);
+    InfectedResponse createInfectedEntry(@Valid @RequestBody CreateInfectedRequest request);
 
 
     /* * * * * * * * * * * * * *
@@ -57,7 +64,7 @@ public interface InfectedAPI {
             @ApiResponse(code = 404, message = "infected not found"),
             @ApiResponse(code = 400, message = "request was not valid")
     })
-    InfectedResponse updateInfectedEntry(@PathVariable long id, @RequestBody UpdateInfectedRequest request);
+    InfectedResponse updateInfectedEntry(@PathVariable long id, @Valid @RequestBody UpdateInfectedRequest request);
 
 
     /* * * * * * * * * * * * * *
@@ -69,6 +76,6 @@ public interface InfectedAPI {
     @ApiResponses({
             @ApiResponse(code = 404, message = "infected not found")
     })
-    boolean deleteInfectedEntry(@PathVariable long id);
+    void deleteInfectedEntry(@PathVariable long id);
 
 }

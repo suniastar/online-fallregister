@@ -9,8 +9,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AccommodationRepository extends JpaRepository<Accommodation,Long> {
+public interface AccommodationRepository extends JpaRepository<Accommodation, Long> {
+
+    Optional<Accommodation> findByName(String name);
 
     List<AccommodationDto> findAllDtoBy();
+
     Optional<AccommodationDto> findDtoById(Long id);
 }
