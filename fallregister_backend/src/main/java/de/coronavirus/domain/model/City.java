@@ -1,8 +1,5 @@
 package de.coronavirus.domain.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,9 +11,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import java.util.List;
+import java.util.Objects;
 
-@Data
-@EqualsAndHashCode
 @Entity
 @Table(name = "cities")
 public class City {
@@ -35,4 +31,68 @@ public class City {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "country_id")
     private Country country;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<PostCode> getPostCodes() {
+        return postCodes;
+    }
+
+    public void setPostCodes(List<PostCode> postCodes) {
+        this.postCodes = postCodes;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        City city = (City) o;
+
+        if (id != city.id) return false;
+        if (!Objects.equals(name, city.name)) return false;
+        if (!Objects.equals(postCodes, city.postCodes)) return false;
+        return Objects.equals(country, city.country);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (postCodes != null ? postCodes.hashCode() : 0);
+        result = 31 * result + (country != null ? country.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", postCodes=" + postCodes +
+                ", country=" + country +
+                '}';
+    }
 }

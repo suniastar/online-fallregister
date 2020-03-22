@@ -2,13 +2,23 @@ package de.coronavirus.application.dtos.mapper;
 
 import de.coronavirus.application.dtos.response.PhoneNumberResponse;
 import de.coronavirus.application.dtos.service.PhoneNumberDto;
-import org.mapstruct.Mapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@Mapper(componentModel = "spring")
-public interface PhoneNumberMapper {
+public class PhoneNumberMapper {
 
-    PhoneNumberResponse toResponse(PhoneNumberDto phoneNumberDto);
-    List<PhoneNumberResponse> toResponseList(List<PhoneNumberDto> phoneNumberDtoList);
+    public static PhoneNumberResponse toResponse(PhoneNumberDto phoneNumberDto){
+        PhoneNumberResponse phoneNumberResponse = new PhoneNumberResponse();
+        phoneNumberResponse.getNumbers().add(phoneNumberDto.getNumber());
+        return phoneNumberResponse;
+    }
+
+    public static PhoneNumberResponse toResponse(List<PhoneNumberDto> phoneNumberDtoList){
+        PhoneNumberResponse phoneNumberResponse = new PhoneNumberResponse();
+        for(PhoneNumberDto phoneNumberDto : phoneNumberDtoList){
+            phoneNumberResponse.getNumbers().add(phoneNumberDto.getNumber());
+        }
+        return phoneNumberResponse;
+    }
 }

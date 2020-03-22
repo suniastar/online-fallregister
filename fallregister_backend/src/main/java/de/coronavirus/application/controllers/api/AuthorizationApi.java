@@ -13,23 +13,25 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import javax.validation.Valid;
+
 @Api(tags = {"auth"}, description = "Corona-Virus Backend Authorization API")
 @RequestMapping("/auth")
 public interface AuthorizationApi {
 
     @PostMapping(value = "/login")
     @ResponseStatus(HttpStatus.OK)
-    @ApiOperation(value = "Tries to login the User and returns a Sessiontoken")
+    @ApiOperation(value = "Login via user name and password to acquire a user session token")
     @ApiResponses({
             @ApiResponse(code = 401, message = "Invalid credentials")
     })
-    TokenResponse postLogin(@RequestBody LoginRequest request);
+    TokenResponse postLogin(@Valid @RequestBody LoginRequest request);
 
     @PostMapping(value = "/refresh")
     @ResponseStatus(HttpStatus.OK)
-    @ApiOperation(value = "Tries to refresh the Users Sessiontoken and returns the  Sessiontoken")
+    @ApiOperation(value = "Refresh the current user session token")
     @ApiResponses({
-            @ApiResponse(code = 401, message = "Out-dated token credentials")
+            @ApiResponse(code = 401, message = "Out-dated token")
     })
     TokenResponse postRefresh(@RequestHeader(name = "Authorization") String token);
 

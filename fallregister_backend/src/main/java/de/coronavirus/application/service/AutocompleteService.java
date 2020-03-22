@@ -1,60 +1,72 @@
 package de.coronavirus.application.service;
 
+import de.coronavirus.application.dtos.service.*;
+import de.coronavirus.domain.infrastructure.repositories.*;
+import de.coronavirus.domain.model.PostCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import de.coronavirus.domain.infrastructure.repositories.AddressRepository;
-import de.coronavirus.domain.infrastructure.repositories.EmailAddressRepository;
-import de.coronavirus.domain.infrastructure.repositories.PhoneNumberRepository;
-import de.coronavirus.domain.infrastructure.repositories.DiagnosisRepository;
-
-import de.coronavirus.application.dtos.service.AddressDTO;
-import de.coronavirus.application.dtos.service.EmailAddressDTO;
-import de.coronavirus.application.dtos.service.PhoneNumberDTO;
-import de.coronavirus.application.dtos.service.DiagnosisDTO;
 
 import java.util.List;
 
 @Service
 @Transactional
 public class AutocompleteService {
-	
-	private final AddressRepository addressRepository;
+
+    private final CountryRepository countryRepository;
+	private final CityRepository cityRepository;
+	private final PostCodeRepository postCodeRepository;
+	private final StreetRepository streetRepository;
 	private final EmailAddressRepository emailAddressRepository;
 	private final PhoneNumberRepository phoneNumberRepository;
 	private final DiagnosisRepository diagnosisRepository;
 
 
     @Autowired
-    public AutocompleteService(AddressRepository addressRepository, 
+    public AutocompleteService(CountryRepository countryRepository,
+            CityRepository cityRepository,
+    		PostCodeRepository postCodeRepository,
+    		StreetRepository streetRepository,
     		EmailAddressRepository emailAddressRepository, 
     		PhoneNumberRepository phoneNumberRepository,
     		DiagnosisRepository diagnosisRepository) {
-    	
-    	this.addressRepository = addressRepository;
+
+        this.countryRepository = countryRepository;
+    	this.cityRepository = cityRepository;
+    	this.postCodeRepository = postCodeRepository;
+    	this.streetRepository = streetRepository;
     	this.emailAddressRepository = emailAddressRepository;
     	this.phoneNumberRepository = phoneNumberRepository;
     	this.diagnosisRepository = diagnosisRepository;
 
     }
     
-    public List<PhoneNumberDTO> findPhoneNumbersStartingWith(String partialNumber){
+    public List<PhoneNumberDto> findPhoneNumbersStartingWith(String partialNumber){
     	return phoneNumberRepository.findTop10DtoByNumberStartsWithOrderByNumberAsc(partialNumber);
     }
     
-    
-    public List<AddressDTO> findAddressesStartingWith(String partialAddress){
+    public List<StreetDto> findStreetsStartingWith(String partialStreet){
+        return streetRepository.findTop10ByNameStartsWithOrderByNameAsc(partialStreet);
+    }
 
+    public List<PostCodeDto> findPostCodesStartingWith(String partialPostCode) {
+        return postCodeRepository.findTop10ByCodeStartsWith(partialPostCode);
+    }
+
+    public List<CityDto> findCitiesStartingWith(String partialCity){
+        return cityRepository.findTop10ByNameStartsWith(partialCity);
+    }
+
+    public List<CountryDto> findCountriesStartingWith(String partialCountry){
+        return countryRepository.findTop10ByNameStartsWith(partialCountry);
     }
     
-    
-    public List<EmailAddressDTO> findEmailAddressesStartingWith(String partialEmailAddress){
-    	
+    public List<EmailAddressDto> findEmailAddressesStartingWith(String partialEmailAddress){
+    	return null;
     }
     
-    
-    public List<DiagnosisDTO> findDiagnosisStartingWith(String partialDiagnosis){
-    	
+    public List<DiagnosisDto> findDiagnosisStartingWith(String partialDiagnosis){
+    	return null;
     }
 
     

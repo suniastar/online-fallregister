@@ -2,13 +2,17 @@ package de.coronavirus.application.dtos.mapper;
 
 import de.coronavirus.application.dtos.response.TokenResponse;
 import de.coronavirus.application.dtos.service.TokenDto;
-import org.mapstruct.Mapper;
 
-import java.util.List;
+public class TokenMapper {
 
-@Mapper(componentModel = "spring")
-public interface TokenMapper {
+    private TokenMapper() {
+    }
 
-    TokenResponse toResponse(TokenDto tokenDto);
-    List<TokenResponse> toResponseList(List<TokenDto> tokenDtoList);
+    public static TokenResponse toResponse(TokenDto tokenDto) {
+        TokenResponse response = new TokenResponse();
+        response.setUser(tokenDto.getUser().getName());
+        response.setToken(tokenDto.getValue());
+        response.setValidUntil(tokenDto.getValidUntil());
+        return response;
+    }
 }

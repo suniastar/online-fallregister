@@ -2,13 +2,29 @@ package de.coronavirus.application.dtos.mapper;
 
 import de.coronavirus.application.dtos.response.DiagnosisResponse;
 import de.coronavirus.application.dtos.service.DiagnosisDto;
-import org.mapstruct.Mapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@Mapper(componentModel = "spring")
-public interface DiagnosisMapper {
+public class DiagnosisMapper {
 
-    DiagnosisResponse toResponse(DiagnosisDto diagnosisDto);
-    List<DiagnosisResponse> toResponseList(List<DiagnosisDto> diagnosisDtoList);
+    public static DiagnosisResponse toResponse(DiagnosisDto diagnosisDto) {
+        DiagnosisResponse diagnosisResponse = new DiagnosisResponse();
+        diagnosisResponse.setDiagnosticResult(diagnosisDto.getDiagnosticResult());
+        diagnosisResponse.setDate(diagnosisDto.getDate());
+        diagnosisResponse.setLaboratoryName(diagnosisDto.getLaboratory().getName());
+        diagnosisResponse.setConfirmed(diagnosisDto.isConfirmed());
+        diagnosisResponse.setSuspicion(diagnosisDto.isSuspicion());
+        diagnosisResponse.setClinicalDiagnosis(diagnosisDto.isClinicalDiagnosis());
+        diagnosisResponse.setDead(diagnosisDto.isDead());
+        return diagnosisResponse;
+    }
+
+    public static List<DiagnosisResponse> toResponseList(List<DiagnosisDto> diagnosisDtoList){
+        List<DiagnosisResponse> diagnosisResponseList = new ArrayList<>();
+        for(DiagnosisDto diagnosisDto : diagnosisDtoList){
+            diagnosisResponseList.add(toResponse(diagnosisDto));
+        }
+        return diagnosisResponseList;
+    }
 }

@@ -25,7 +25,7 @@ public interface InfectedDto {
     String getInfectionSource();
     boolean getIntensiveCareTreatment();
 
-    List<PhoneNumberDto> getPhoneNumber();
+    List<PhoneNumberDto> getPhoneNumbers();
     AddressDto getAddress();
     EmailAddressDto getEmailAddress();
     

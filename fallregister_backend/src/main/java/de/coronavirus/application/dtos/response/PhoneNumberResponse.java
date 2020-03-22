@@ -2,13 +2,20 @@ package de.coronavirus.application.dtos.response;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 
 import java.util.List;
 
-@Data
-@ApiModel("PhoneNumber")
+@ApiModel("Phone Number")
 public class PhoneNumberResponse {
-    @ApiModelProperty
-    List<String> phoneNumber;
+
+    @ApiModelProperty(position = 1)
+    List<String> numbers;
+
+    public List<String> getNumbers() {
+        return numbers;
+    }
+
+    public void setNumbers(List<String> numbers) {
+        this.numbers = numbers;
+    }
 }

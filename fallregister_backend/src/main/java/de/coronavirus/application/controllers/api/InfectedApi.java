@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@Api(tags = {"infected"}, description = "Corona-Virus Backend Infected API")
+@Api(tags = {"infected"}, description = "Corona-Virus Infected API")
 @RequestMapping("/infected")
 public interface InfectedApi {
 

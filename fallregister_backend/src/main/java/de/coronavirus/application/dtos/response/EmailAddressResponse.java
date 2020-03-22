@@ -2,13 +2,20 @@ package de.coronavirus.application.dtos.response;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 
 import java.util.List;
 
-@Data
-@ApiModel("EmailAddress")
+@ApiModel("Email Address")
 public class EmailAddressResponse {
-    @ApiModelProperty
-    List<String> emailAddress;
+
+    @ApiModelProperty(position = 1)
+    List<String> emailAddresses;
+
+    public List<String> getEmailAddresses() {
+        return emailAddresses;
+    }
+
+    public void setEmailAddresses(List<String> emailAddresses) {
+        this.emailAddresses = emailAddresses;
+    }
 }

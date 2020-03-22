@@ -14,4 +14,5 @@ public interface StreetRepository extends JpaRepository<Street, Long> {
     List<StreetDto> findAllDtoBy();
 
     Optional<StreetDto> findDtoById(Long id);
+    List<StreetDto> findTop10ByNameStartsWithOrderByNameAsc(String partial);
 }

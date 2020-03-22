@@ -2,13 +2,22 @@ package de.coronavirus.application.dtos.mapper;
 
 import de.coronavirus.application.dtos.response.EmailAddressResponse;
 import de.coronavirus.application.dtos.service.EmailAddressDto;
-import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
-public interface EmailAddressMapper {
+public class EmailAddressMapper {
 
-    EmailAddressResponse toResponse(EmailAddressDto emailAddressDto);
-    List<EmailAddressResponse> toResponseList(List<EmailAddressDto> emailAddressDtoList);
+    public static EmailAddressResponse toResponse(EmailAddressDto emailAddressDto){
+        EmailAddressResponse emailAddressResponse = new EmailAddressResponse();
+        emailAddressResponse.getEmailAddresses().add(emailAddressDto.getEmail());
+        return emailAddressResponse;
+    }
+
+    public static EmailAddressResponse toResponseList(List<EmailAddressDto> emailAddressDtoList){
+        EmailAddressResponse emailAddressResponse = new EmailAddressResponse();
+        for(EmailAddressDto emailAddressDto : emailAddressDtoList) {
+            emailAddressResponse.getEmailAddresses().add(emailAddressDto.getEmail());
+        }
+        return emailAddressResponse;
+    }
 }

@@ -5,6 +5,6 @@ import java.util.List;
 public interface PostCodeDto {
 
     long getCode();
-    String getCity();
+    CityDto getCity();
     List<StreetDto> getStreets();
 }

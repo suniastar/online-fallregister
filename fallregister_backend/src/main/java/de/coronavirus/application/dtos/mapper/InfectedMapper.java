@@ -2,13 +2,40 @@ package de.coronavirus.application.dtos.mapper;
 
 import de.coronavirus.application.dtos.response.InfectedResponse;
 import de.coronavirus.application.dtos.service.InfectedDto;
-import org.mapstruct.Mapper;
+import de.coronavirus.application.dtos.service.PhoneNumberDto;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@Mapper(componentModel = "spring")
-public interface InfectedMapper {
+public class InfectedMapper {
 
-    InfectedResponse toResponse(InfectedDto infectedDto);
-    List<InfectedResponse> toResponseList(List<InfectedDto> infectedDtoList);
+    public static InfectedResponse toResponse(InfectedDto infectedDto) {
+        InfectedResponse infectedResponse = new InfectedResponse();
+        infectedResponse.setFirstName(infectedDto.getFirstName());
+        infectedResponse.setLastName(infectedDto.getLastName());
+        infectedResponse.setGender(infectedDto.getGender().toString());
+        infectedResponse.setDateOfBirth(infectedDto.getDateOfBirth());
+        for (PhoneNumberDto phoneNumberDto : infectedDto.getPhoneNumbers()) {
+            infectedResponse.getPhoneNumbers().add(phoneNumberDto.getNumber());
+        }
+        infectedResponse.setHouseNumber(infectedDto.getAddress().getHouseNumber());
+        infectedResponse.setStreetName(infectedDto.getAddress().getStreet().getName());
+        infectedResponse.setCityName(infectedDto.getAddress().getStreet().getPostCode().getCity().getName());
+        infectedResponse.setCountry(infectedDto.getAddress().getStreet().getPostCode().getCity().getCountry().getName());
+        infectedResponse.setAccommodationName(infectedDto.getAccommodation().getName());
+        infectedResponse.setDateOfIllness(infectedDto.getDateOfIllness());
+        infectedResponse.setDateOfDeath(infectedDto.getDateOfDeath());
+        infectedResponse.setInfectionSource(infectedDto.getInfectionSource());
+        infectedResponse.setIntensiveCareTreatment(infectedDto.getIntensiveCareTreatment());
+        return infectedResponse;
+    }
+
+    public static List<InfectedResponse> toResponseList(List<InfectedDto> infectedDtoList) {
+        List<InfectedResponse> infectedResponseList = new ArrayList<>();
+        for (InfectedDto infectedDto : infectedDtoList) {
+            infectedResponseList.add(toResponse(infectedDto));
+        }
+        return infectedResponseList;
+    }
+
 }
