@@ -23,7 +23,7 @@ class PatientDataForm extends React.Component {
             patientAddressZipcode: document.getElementById("patientZip").value,
             patientAddressCity:document.getElementById("patientCity").value,
             patientAddressCountry:document.getElementById("patientCountry").value,
-            patientBirthday: document.getElementById("patientBirthday").value,
+            patientBirthday: new Date(Date.parse(document.getElementById("patientBirthday").value)||0).toISOString(),
             patientSex: sex,
             patientPhone: document.getElementById("patientPhone").value,
             patientEmail: document.getElementById("patientEmail").value,
@@ -39,9 +39,9 @@ class PatientDataForm extends React.Component {
             diagnosisSuspected: document.getElementById("suspected").checked,
             diagnosisDiagnosed: document.getElementById("diagnosed").checked,
             diagnosisDead: document.getElementById("death").checked,
-            diagnosisDateOfSickness: document.getElementById("dayOfInfection").value,
-            diagnosisDateOfDiagnosis: document.getElementById("dayOfDiagnose").value,
-            diagnosisDateOfDeath: document.getElementById("dayOfDeath").value,
+            diagnosisDateOfSickness: new Date(Date.parse(document.getElementById("dayOfInfection").value)||0).toISOString(),
+            diagnosisDateOfDiagnosis: new Date(Date.parse(document.getElementById("dayOfDiagnose").value)||0).toISOString(),
+            diagnosisDateOfDeath: new Date(Date.parse(document.getElementById("dayOfDeath").value)||0).toISOString(),
             jobsMedical: document.getElementById("medical").checked,
             jobsFood: document.getElementById("food").checked,
             jobsCommunal: document.getElementById("epiCommunal").checked,
@@ -51,9 +51,9 @@ class PatientDataForm extends React.Component {
             infectionEpidemiSource: document.getElementById("infectionExposition").value,
             accommodationCommunal:document.getElementById("accCommunal").checked,
             accommodationHospital: document.getElementById("hospital").checked,
-            accommodationDateOfHospitalisation: document.getElementById("dateOfHospitalisation").value,
+            accommodationDateOfHospitalisation: new Date(Date.parse(document.getElementById("dateOfHospitalisation").value)||0).toISOString(),
             accommodationIcu: document.getElementById("intensiveCare").checked,
-            accommodationDateOfIcu: document.getElementById("dateOfIntensiveCare").value,
+            accommodationDateOfIcu: new Date(Date.parse(document.getElementById("dateOfIntensiveCare").value)||0).toISOString(),
             accommodationNameAndAddress: document.getElementById("addressAndPlace").value,
             gesundheitsamtName: document.getElementById("gName").value,
             gesundheitsamtAddressStreet : document.getElementById("gStreet").value,
@@ -67,7 +67,7 @@ class PatientDataForm extends React.Component {
             laboratoryName: document.getElementById("labname").value,
             laboratoryLocation: document.getElementById("lablocation").value,
             laboratoryPhone: document.getElementById("labphone").value,
-            laboratoryDateOfBiopsy: document.getElementById("probedate").value
+            laboratoryDateOfBiopsy: new Date(Date.parse(document.getElementById("probedate").value)||0).toISOString()
         }
         fetch('https://apimelderegister.fenste.de/infected', {
          method: 'POST',
